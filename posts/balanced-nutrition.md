@@ -1,10 +1,9 @@
 ---
-title: 'Understanding Balanced Nutrition'
-date: '2024-03-20'
-author: 'Sanjana Shenoy'
-image: '/images/blog/balanced-nutrition.jpg'
-tags: ['Nutrition', 'Health', 'Diet']
-excerpt: 'A comprehensive guide to maintaining a balanced diet and healthy lifestyle...'
+title: "Balanced Nutrition"
+date: "2024-01-01"
+category: "Nutrition"
+image: "/images/balanced-nutrition.jpg"
+description: "Learn about balanced nutrition..."
 ---
 
 Your markdown content here... 
