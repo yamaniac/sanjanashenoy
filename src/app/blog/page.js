@@ -17,9 +17,9 @@ export default async function Blog() {
       : 'https://sanjanashenoy.com'
 
     console.log('Environment:', process.env.NODE_ENV)
-    console.log('Fetching from:', `${baseUrl}/api/posts?page=1`)
+    console.log('Fetching from:', `${process.env.NEXT_PUBLIC_API_URL}/api/blog`)
 
-    const response = await fetch(`${baseUrl}/api/posts?page=1`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog`, {
       headers: {
         'Content-Type': 'application/json',
       },

@@ -40,7 +40,9 @@ export default function BlogPost({ params }) {
   useEffect(() => {
     async function loadPost() {
       try {
-        const response = await fetch(`/api/posts/${unwrappedParams.slug}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog/${unwrappedParams.slug}`, {
+          cache: 'no-store'
+        });
         if (!response.ok) throw new Error('Failed to fetch post');
         const data = await response.json();
         setPost(data);
