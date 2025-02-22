@@ -12,8 +12,7 @@ export default async function Blog(props) {
   const searchParams = await props.searchParams
   const page = searchParams && 'page' in searchParams ? Number(searchParams.page) : 1
   
-  // Fetch posts from API instead of using fs directly
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts?page=${page}`)
+  const response = await fetch(`${process.env.API_URL}/api/posts?page=${page}`)
   const { posts, pagination } = await response.json()
   
   // Map image to featuredImage for consistency
