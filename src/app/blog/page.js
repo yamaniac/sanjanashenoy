@@ -6,20 +6,25 @@ import BlogImage from '@/components/blog/BlogImage'
 // Add route segment config
 // export const runtime = 'edge' // Use edge runtime
 // export const preferredRegion = 'auto' // Automatically choose closest region
+export const fetchCache = 'force-no-store'
+export const revalidate = 0
 export const dynamic = 'force-dynamic'
 
 export default async function Blog() {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 
-                   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+    const baseUrl = process.env.NODE_ENV === 'development' 
+      ? 'http://localhost:3000'
+      : 'https://sanjanashenoy.com'
 
-    console.log('Attempting to fetch from:', `${baseUrl}/api/posts?page=1`) // Debug log
+    console.log('Environment:', process.env.NODE_ENV)
+    console.log('Fetching from:', `${baseUrl}/api/posts?page=1`)
 
     const response = await fetch(`${baseUrl}/api/posts?page=1`, {
       headers: {
         'Content-Type': 'application/json',
       },
       cache: 'no-store',
+      next: { revalidate: 0 }
     })
 
     if (!response.ok) {
@@ -28,13 +33,22 @@ export default async function Blog() {
         statusText: response.statusText,
         url: response.url
       })
+      
+      const errorText = await response.text()
+      console.error('Error response body:', errorText)
+      
       throw new Error(`HTTP error! status: ${response.status}`)
     }
 
-    const posts = await response.json()
+    const data = await response.json()
+    
+    if (!data || !data.posts) {
+      console.error('Invalid data structure received:', data)
+      throw new Error('Invalid data structure received from API')
+    }
 
-    // Destructure the response to get posts and pagination
-    const { posts: blogPosts, pagination } = posts
+    // Destructure with default values to prevent undefined errors
+    const { posts: blogPosts = [], pagination = { currentPage: 1, totalPages: 1 } } = data
 
     // Update postsWithImages to use blogPosts instead of posts
     const postsWithImages = blogPosts.map(post => ({
@@ -183,7 +197,8 @@ export default async function Blog() {
         <div className="container mx-auto px-6 py-8 pt-20">
           <div className="text-center text-red-600 dark:text-red-400">
             <h2 className="text-2xl font-bold mb-4">Error Loading Blog Posts</h2>
-            <p>We're having trouble loading the blog posts. Please try again later.</p>
+            <p>Error details: {error.message}</p>
+            <p className="mt-4">Please try again later or contact support if the problem persists.</p>
           </div>
         </div>
       </div>
