@@ -43,7 +43,7 @@ export default async function Home() {
             </div>
             <div className="relative mt-10 h-96 w-full max-w-lg sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2">
               <Image
-                src={`${process.env.NEXT_PUBLIC_URL || ''}/images/Sanjana_shenoy.png`}
+                src="/images/Sanjana_shenoy.png"
                 alt="Sanjana Shenoy - Professional Dietitian"
                 width={800}
                 height={600}
@@ -175,7 +175,7 @@ export default async function Home() {
               <article key={post.id} className="flex flex-col items-start">
                 <div className="relative w-full">
                   <Image
-                    src={post.image}
+                    src={post.image || '/images/blog-placeholder.jpg'}
                     alt={post.title}
                     width={400}
                     height={300}
