@@ -4,16 +4,24 @@ import Header from '@/components/Header'
 import BlogImage from '@/components/blog/BlogImage'
 
 // Add route segment config
-export const runtime = 'edge' // Use edge runtime
-export const preferredRegion = 'auto' // Automatically choose closest region
+// export const runtime = 'edge' // Use edge runtime
+// export const preferredRegion = 'auto' // Automatically choose closest region
 export const dynamic = 'force-dynamic'
 
 export default async function Blog(props) {
   const searchParams = await props.searchParams
   const page = searchParams && 'page' in searchParams ? Number(searchParams.page) : 1
   
-  // Fetch posts from API instead of using fs directly
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts?page=${page}`)
+  // Get the protocol and host from the request headers
+  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https'
+  const host = process.env.NEXT_PUBLIC_VERCEL_URL || 'localhost:3000'
+  const baseUrl = `${protocol}://${host}`
+  
+  const response = await fetch(`${baseUrl}/api/posts?page=${page}`, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
   const { posts, pagination } = await response.json()
   
   // Map image to featuredImage for consistency
