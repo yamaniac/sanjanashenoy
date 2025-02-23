@@ -12,6 +12,7 @@ import BlogInteractiveElements from '@/components/blog/BlogInteractiveElements'
 import Script from 'next/script'
 import ClientReadingProgress from '@/components/blog/ClientReadingProgress'
 
+
 // Remove fetchCache and use these configurations
 export const runtime = 'nodejs'
 export const revalidate = false

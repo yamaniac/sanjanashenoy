@@ -2,8 +2,10 @@
 title: 'Getting Started with Nutrition'
 date: '2024-03-16'
 category: 'Nutrition Basics'
+excerpt: 'Learn the fundamentals of nutrition and how to build a balanced diet that works for your lifestyle.'
 description: 'Learn the fundamentals of nutrition and how to build a balanced diet that works for your lifestyle.'
 image: '/images/food-restriction.webp'
+tags: ['nutrition', 'health', 'lifestyle']
 ---
 
 Good nutrition is the cornerstone of a healthy lifestyle. Whether you're looking to improve your overall health, manage your weight, or boost your energy levels, understanding the basics of nutrition is your first step toward success.

@@ -76,7 +76,7 @@ export default async function About() {
                         </div>
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Media Presence</h3>
                         <p className="mt-2 text-gray-600 dark:text-gray-400">
-                            Expert speaker of "Diet Tips with Sanjana Shenoy" on <a href="https://www.daijiworld.com/news/newsDisplay?newsID=148614" target="_blank" rel="noopener noreferrer" className='text-indigo-600 dark:text-teal-400'>Daijiworld</a> and regular features on various channels.
+                            Expert speaker of "Diet Tips with Sanjana Shenoy" on <a href="https://www.daijiworld.com/news/newsDisplay?newsID=148614" target="_blank" rel="noopener noreferrer" className='text-indigo-600 dark:text-teal-400 underline'>Daijiworld</a> and regular features on various channels.
                         </p>
                     </div>
                 </div>
