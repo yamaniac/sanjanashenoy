@@ -56,7 +56,7 @@ export default async function About() {
             Comprehensive Nutrition Care
           </h2>
           <p className="mt-6">
-            Beyond consulting, I actively engage with schools and parents to promote healthy lifestyles for children. I've also supported sports nutrition for swimming and badminton associations in Mangalore. Today, I continue my mission to enhance lives through scientific, personalized nutrition plans at my private clinic in Ballalbagh, Mangalore, while also pursuing full-time research.
+            Beyond consulting, I actively engage with schools and parents to promote healthy lifestyles for children. I also provide sports nutrition support to swimming and badminton associations in Mangalore. Today, I continue my mission to enhance lives through scientific, personalized nutrition plans at my private clinic in Ballalbagh, Mangalore, while also pursuing full-time research.
           </p>
           <figure className="mt-10 border-l border-indigo-600 dark:border-teal-400 pl-9">
             <blockquote className="font-semibold text-gray-900 dark:text-white">

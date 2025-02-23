@@ -19,6 +19,13 @@ export default function Experience() {
             department: 'Department of Food, Nutrition and Dietetics',
             period: '2010 - 2015',
           },
+          {
+            title: 'Guest Lecturer',
+            institution: 'Zulekha College of Nursing',
+            department: 'Department of Allied Science',
+            period: '2010 - 2011',
+          },
+
       ],
     },
     {
@@ -27,11 +34,11 @@ export default function Experience() {
       positions: [
         {
           title: 'Dietitian Consultant',
-          institution: 'Baby 9',
+          institution: 'Baby Nine - IVF Center',
           period: '2024 - Present',
         },
         {
-          title: 'Clinical Dietitian Consultant',
+          title: 'Clinical Dietitian ',
           institution: 'KMC Hospitals',
           period: '2012 - Present',
         },

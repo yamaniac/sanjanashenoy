@@ -17,9 +17,27 @@ module.exports = {
   },
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        scroll: 'scroll 30s linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+    },
   },
   plugins: [
     typography,
+    function({ addUtilities }) {
+      addUtilities({
+        '.mask-gradient': {
+          'mask-image': 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+          '-webkit-mask-image': 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+        }
+      })
+    }
   ],
 } 
