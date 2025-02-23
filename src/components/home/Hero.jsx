@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import sanjana from '../../../public/images/Sanjana_shenoy.png'
 
 export default function Hero() {
     return (
@@ -34,7 +33,7 @@ export default function Hero() {
             </div>
             <div className="relative mt-10 h-96 w-full max-w-lg sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2">
               <Image
-                src={sanjana}
+                src="/images/Sanjana_shenoy.png"
                 alt="Sanjana Shenoy - Professional Dietitian"
                 width={800}
                 height={600}

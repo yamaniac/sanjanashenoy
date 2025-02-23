@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import happyfamily from '../../../public/images/happy_family.png'
 
 export default function Experience() {
     const stats = [
@@ -12,8 +11,10 @@ export default function Experience() {
     return (
         <div className="relative bg-white dark:bg-gray-900">
         <Image
-          alt=""
-          src={happyfamily}
+          alt="Happy Family"
+          width={1000}
+          height={1000}
+          src="/images/happy_family.png"
           className="h-56 w-full bg-gray-50 dark:bg-gray-800 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2"
         />
         <div className="mx-auto grid max-w-7xl lg:grid-cols-2">

@@ -10,7 +10,6 @@ import Specializations from "@/components/home/Specializations";
 import Experience from "@/components/home/Experience";
 import Clients from "@/components/home/Clients";
 import Latestblogs from "@/components/home/Latestblogs";
-import Testimonials from "@/components/home/Testimonials";
 import Featured from "@/components/home/Featured";
 import { XMarkIcon } from '@heroicons/react/20/solid';
 
