@@ -9,7 +9,7 @@ const navigation = {
     social: [
       {
         name: 'Facebook',
-        href: '#',
+        href: 'https://www.facebook.com/dietsanjana/',
         icon: (props) => (
           <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
             <path
@@ -22,7 +22,7 @@ const navigation = {
       },
       {
         name: 'Instagram',
-        href: '#',
+        href: 'https://www.instagram.com/dietsanjana/',
         icon: (props) => (
           <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
             <path
@@ -36,7 +36,7 @@ const navigation = {
      
       {
         name: 'YouTube',
-        href: '#',
+        href: 'https://www.youtube.com/channel/UC5n0DcL_T_CrTxrVgL6D82Q',
         icon: (props) => (
           <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
             <path
