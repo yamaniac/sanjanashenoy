@@ -23,10 +23,24 @@ Meal prepping saves time, money, and helps you stick to your nutrition goals. Wh
    - Consider your schedule for the week
    - Make a detailed shopping list
 
+<div className="video-container">
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/u9x5mJOd6g0"
+        title="Meal Planning 101"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen>
+    </iframe>
+</div>
+
 2. **Prep in Batches**
    - Cook multiple portions at once
    - Use your oven efficiently
    - Prepare versatile base ingredients
+
+
 
 3. **Storage Solutions**
    - Invest in quality containers
