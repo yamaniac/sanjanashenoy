@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 // If using public directory:
 // No import needed, use direct path in img tag
 
-export default function Services() {
+export default function Consultations() {
     return (
         <>
             <Header />
@@ -11,7 +11,7 @@ export default function Services() {
                 <div className="bg-white dark:bg-gray-900 py-32">
                     <div className="container mx-auto px-6 lg:px-8">
                         <div className="text-base/7 text-gray-700 dark:text-gray-300">
-                            <p className="text-base/7 font-semibold text-indigo-600 dark:text-teal-400">Services</p>
+                            <p className="text-base/7 font-semibold text-indigo-600 dark:text-teal-400">Consultations</p>
                             <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-5xl">
                                 Dietary Specializations
                             </h1>

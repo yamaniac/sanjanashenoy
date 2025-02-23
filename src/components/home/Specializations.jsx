@@ -7,37 +7,37 @@ export default function Specializations() {
           title: 'Weight Management',
           description: 'Personalized plans to help you achieve and maintain a healthy weight through sustainable lifestyle changes.',
           icon: '/images/icons/weighing-machine.svg',
-          href: '/services'
+          href: '/consultations'
         },
         {
           title: 'Diabetes Management',
           description: 'Comprehensive dietary guidance to control blood sugar levels and manage diabetes effectively.',
           icon: '/images/icons/diabetes.svg',
-          href: '/services'
+          href: '/consultations'
         },
         {
           title: 'Heart Health',
           description: 'Specialized nutrition plans to promote cardiovascular health and manage heart conditions.',
           icon: '/images/icons/heart-health.svg',
-          href: '/services'
+          href: '/consultations'
         },
         {
           title: 'Sports Nutrition',
           description: 'Tailored nutrition strategies to enhance athletic performance and support recovery.',
           icon: '/images/icons/runningrun.svg',
-          href: '/services'
+          href: '/consultations'
         },
         {
           title: 'Pregnancy Nutrition',
           description: 'Expert guidance for optimal nutrition during pregnancy and postpartum recovery.',
           icon: '/images/icons/womb.svg',
-          href: '/services'
+          href: '/consultations'
         },
         {
           title: 'Child Nutrition',
           description: 'Age-appropriate nutrition plans to support healthy growth and development in children.',
           icon: '/images/icons/child.svg',
-          href: '/services'
+          href: '/consultations'
         }
       ];
       
@@ -45,7 +45,7 @@ export default function Specializations() {
         <div className="bg-gray-50 dark:bg-gray-800 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Consultation for</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Speciality</h2>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
               Expert nutrition services tailored to your unique needs
             </p>
