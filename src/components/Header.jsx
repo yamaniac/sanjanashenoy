@@ -76,12 +76,16 @@ export default function Header() {
               Contact
             </Link>
           </nav>
-          <ThemeToggle />
+          <div className="text-gray-800 dark:text-white">
+            <ThemeToggle />
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center space-x-4 md:hidden">
-          <ThemeToggle />
+          <div className="text-gray-800 dark:text-white">
+            <ThemeToggle />
+          </div>
           <button 
             className="text-gray-600 dark:text-gray-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
