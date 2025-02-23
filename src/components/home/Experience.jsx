@@ -9,7 +9,7 @@ export default function Experience() {
         { id: 4, name: "Weight Loss Programs", value: "50+" },
     ];
     return (
-        <div className="relative bg-white dark:bg-gray-900">
+        <div className="relative bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
         <Image
           alt="Happy Family"
           width={1000}
@@ -48,6 +48,7 @@ export default function Experience() {
             </div>
           </div>
         </div>
+        
       </div>
     )
 }
