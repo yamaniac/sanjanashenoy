@@ -150,7 +150,7 @@ export default async function BlogPost({ params }) {
 
               {/* Featured Image */}
               {post.image && (
-                <div className="relative w-full h-[600px] mb-12 rounded-xl overflow-hidden shadow-lg">
+                <div className="relative w-full h-[300px] md:h-[600px] mb-6 md:mb-12 rounded-xl overflow-hidden shadow-lg">
                   <BlogImage
                     src={post.image}
                     alt={post.title}
@@ -164,8 +164,8 @@ export default async function BlogPost({ params }) {
               )}
 
               {/* Article header */}
-              <header className="mb-12">
-                <h1 className="text-6xl font-bold text-gray-800 dark:text-white mb-8 leading-tight">
+              <header className="mb-8 md:mb-12">
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4 md:mb-8 leading-tight">
                   {post.title}
                 </h1>
                 <div className="flex items-center text-gray-500 dark:text-gray-400 text-base mb-6">
@@ -215,10 +215,12 @@ export default async function BlogPost({ params }) {
           </div>
 
           {/* Add the client component at the bottom */}
-          <BlogInteractiveElements 
-            url={`https://sanjanashenoy.com/blog/${params.slug}`}
-            title={post.title}
-          />
+          <div className="hidden md:block">
+            <BlogInteractiveElements 
+              url={`https://sanjanashenoy.com/blog/${params.slug}`}
+              title={post.title}
+            />
+          </div>
         </main>
       </div>
     </>
