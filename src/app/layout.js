@@ -12,8 +12,8 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'Sanjana Shenoy',
-  description: 'Dietitian and Nutritionist',
+  title: 'Sanjana Shenoy - Dietitian and Nutritionist',
+  description: 'Sanjana Shenoy is a Dietitian and a Nutritionist based in Mangalore, India. She specializes in weight loss, sports nutrition, and general nutrition.',
 }
 
 export default function RootLayout({ children }) {
