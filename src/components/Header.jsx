@@ -1,7 +1,18 @@
+"use client"
+
 import Link from 'next/link'
 import { ThemeToggle } from './ThemeToggle'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
+  const pathname = usePathname()
+
+  const isActive = (path) => {
+    return pathname === path ? 
+      "text-teal-600 dark:text-teal-400" : 
+      "text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400"
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow z-50">
     <div className="container mx-auto px-6">
@@ -24,35 +35,36 @@ export default function Header() {
           <nav className="flex items-center space-x-8">
             <Link 
               href="/"
-              className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              className={`${isActive('/')} transition-colors`}
               title="Home"
             >
               Home
             </Link>
             <Link 
               href="/about"
-              className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              className={`${isActive('/about')} transition-colors`}
               title="About"
             >
               About
             </Link>
+           
             <Link 
-              href="/services"
-              className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-              title="Services"
+              href="/consultations"
+              className={`${isActive('/consultations')} transition-colors`}
+              title="Consultations"
             >
-              Services
+              Consultations
             </Link>
             <Link 
               href="/blog"
-              className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              className={`${isActive('/blog')} transition-colors`}
               title="Blog"
             >
               Blog
             </Link>
             <Link 
               href="/contact"
-              className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              className={`${isActive('/contact')} transition-colors`}
               title="Contact"
             >
               Contact

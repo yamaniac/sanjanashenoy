@@ -42,12 +42,42 @@ export default function Experience() {
         },
         {
           title: 'Dietitian Consultant',
+          institution: 'City Hospital',
+          period: '2010 - Present',
+        },
+        {
+          title: 'Dietitian Consultant',
+          institution: 'Athena Hospital',
+          period: '2010 - Present',
+        },
+        {
+          title: 'Dietitian Consultant',
           institution: 'Yenepoya Hospital',
           period: '2010 - Present',
         },
         {
           title: 'Dietitian Consultant',
+          institution: 'Highland Hospital',
+          period: '2009 - Present',
+        },
+        {
+          title: 'Dietitian Consultant',
           institution: 'Unity Hospital',
+          period: '2008 - Present',
+        },
+        {
+          title: 'Dietitian Consultant',
+          institution: 'Vijaya Clinic',
+          period: '2008 - Present',
+        },
+        {
+          title: 'Dietitian Consultant',
+          institution: 'SCS Hospital',
+          period: '2008 - Present',
+        },
+        {
+          title: 'Dietitian Consultant',
+          institution: 'Indira Hospital',
           period: '2008 - Present',
         },
       ],
@@ -100,8 +130,8 @@ export default function Experience() {
         </div>
 
         <div className="mx-auto mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Professional Experience Columns */}
-          {experiences.map((category) => (
+          {/* Academic Experience */}
+          {experiences.filter(cat => cat.type === 'Academic').map((category) => (
             <div key={category.type} className="flex flex-col items-center">
               <div className="flex items-center gap-x-3">
                 <category.icon className="h-6 w-6 text-teal-600 dark:text-teal-400" />
@@ -175,6 +205,41 @@ export default function Experience() {
               ))}
             </div>
           </div>
+
+          {/* Clinical Experience */}
+          {experiences.filter(cat => cat.type === 'Clinical').map((category) => (
+            <div key={category.type} className="flex flex-col items-center">
+              <div className="flex items-center gap-x-3">
+                <category.icon className="h-6 w-6 text-teal-600 dark:text-teal-400" />
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  {category.type} Experience
+                </h3>
+              </div>
+
+              <div className="mt-6 w-full border-l-2 border-teal-600 dark:border-teal-400">
+                {category.positions.map((position, index) => (
+                  <div
+                    key={index}
+                    className="relative pl-6 pb-6 last:pb-0"
+                  >
+                    <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full bg-teal-600 dark:bg-teal-400" />
+                    <div className="flex flex-col gap-y-1">
+                      <div className="flex items-center gap-x-2 text-sm text-gray-500 dark:text-gray-400">
+                        <CalendarIcon className="h-4 w-4" />
+                        <span>{position.period}</span>
+                      </div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                        {position.title}
+                      </h4>
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {position.institution}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
