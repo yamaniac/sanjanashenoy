@@ -6,7 +6,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { Suspense } from 'react'
-
+import Footer from '@/components/Footer'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -203,6 +203,7 @@ async function BlogContent({ searchParams }) {
           )}
         </>
       )}
+      <Footer />
     </>
   )
 } 

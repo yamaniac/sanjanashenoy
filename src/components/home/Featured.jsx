@@ -6,21 +6,21 @@ export default function Featured() {
           name: "Personalized Nutrition Plans",
           description:
             "Custom-tailored meal plans and nutrition strategies designed specifically for your lifestyle, preferences, and health goals.",
-          href: "/services",
+          href: "/consultation",
           icon: ClipboardIcon,
         },
         {
           name: "Health Coaching",
           description:
             "One-on-one coaching sessions to help you develop sustainable healthy habits and overcome obstacles in your wellness journey.",
-          href: "/services",
+          href: "/consultation",
           icon: UserGroupIcon,
         },
         {
           name: "Specialized Programs",
           description:
             "Targeted nutrition programs for specific health conditions, weight management, sports nutrition, and prenatal care.",
-          href: "/services",
+          href: "/consultation",
           icon: StarIcon,
         },
       ];
@@ -105,12 +105,12 @@ export default function Featured() {
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 dark:text-gray-300">
                   <p className="flex-auto">{service.description}</p>
                   <p className="mt-6">
-                    <Link
+                    {/* <Link
                       href={service.href}
                       className="text-sm font-semibold leading-6 text-teal-600 dark:text-teal-400"
                     >
                       Learn more <span aria-hidden="true">→</span>
-                    </Link>
+                    </Link> */}
                   </p>
                 </dd>
               </div>
