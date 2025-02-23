@@ -1,5 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+// If using public directory:
+// No import needed, use direct path in img tag
 
 export default function Services() {
     return (

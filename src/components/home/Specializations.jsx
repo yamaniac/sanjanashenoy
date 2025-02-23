@@ -1,48 +1,42 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import weighingMachine from '../../../public/images/icons/weighing-machine.svg'
-import diabetes from '../../../public/images/icons/diabetes.svg'
-import runningrun from '../../../public/images/icons/runningrun.svg'
-import womb from '../../../public/images/icons/womb.svg'
-import child from '../../../public/images/icons/child.svg'
-import heartHealth from '../../../public/images/icons/heart-health.svg'
 
 export default function Specializations() {
     const specializations = [
         {
           title: 'Weight Management',
           description: 'Personalized plans to help you achieve and maintain a healthy weight through sustainable lifestyle changes.',
-          icon: weighingMachine,
+          icon: '/images/icons/weighing-machine.svg',
           href: '/services'
         },
         {
           title: 'Diabetes Management',
           description: 'Comprehensive dietary guidance to control blood sugar levels and manage diabetes effectively.',
-          icon: diabetes,
+          icon: '/images/icons/diabetes.svg',
           href: '/services'
         },
         {
           title: 'Heart Health',
           description: 'Specialized nutrition plans to promote cardiovascular health and manage heart conditions.',
-            icon: heartHealth,
+          icon: '/images/icons/heart-health.svg',
           href: '/services'
         },
         {
           title: 'Sports Nutrition',
           description: 'Tailored nutrition strategies to enhance athletic performance and support recovery.',
-          icon: runningrun,
+          icon: '/images/icons/runningrun.svg',
           href: '/services'
         },
         {
           title: 'Pregnancy Nutrition',
           description: 'Expert guidance for optimal nutrition during pregnancy and postpartum recovery.',
-          icon: womb,
+          icon: '/images/icons/womb.svg',
           href: '/services'
         },
         {
           title: 'Child Nutrition',
           description: 'Age-appropriate nutrition plans to support healthy growth and development in children.',
-          icon: child,
+          icon: '/images/icons/child.svg',
           href: '/services'
         }
       ];
