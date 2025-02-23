@@ -14,7 +14,7 @@ export default function Experience() {
           alt="Happy Family"
           width={1000}
           height={1000}
-          src="/images/happy_family.png"
+          src="/images/eat_healthy.webp"
           className="h-56 w-full bg-gray-50 dark:bg-gray-800 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2"
         />
         <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
