@@ -1,4 +1,30 @@
+"use client";
+
+import { useState, useEffect } from 'react';
+
 const TableOfContents = ({ headings }) => {
+  const [activeId, setActiveId] = useState('');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    headings.forEach((heading) => {
+      const element = document.getElementById(heading.id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [headings]);
+
   if (headings.length === 0) return null;
   
   return (
@@ -14,7 +40,12 @@ const TableOfContents = ({ headings }) => {
           >
             <a
               href={`#${heading.id}`}
-              className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-base"
+              className={`
+                text-base transition-colors duration-200
+                ${activeId === heading.id 
+                  ? 'text-teal-600 dark:text-teal-400 font-medium' 
+                  : 'text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400'}
+              `}
             >
               {heading.text}
             </a>
