@@ -1,15 +1,16 @@
 ---
-title: 'Why Indian cuisine is Healthy'
+title: 'Why Indian cooking is Healthy'
 date: '2025-02-24'
 category: 'Health'
-excerpt: 'Indian cuisine just like other cuisines follows the traditional methods of cooking. As we know that Indian food is now being eaten all over the globe. Various misconceptions that it is unhealthy.'
+excerpt: 'Indian cooking just like other cuisines follows the traditional methods of cooking. As we know that Indian food is now being eaten all over the globe. Various misconceptions that it is unhealthy.'
 description: 'Learn the fundamentals of nutrition and how to build a balanced diet that works for your lifestyle.'
 author: 'Sanjana Shenoy'
 image: '/images/blog/why_is_indian_cooking_healthy.jpg'
+thumbnail: '/images/blog/why_is_indian_cooking_healthy.jpg'
 tags: ['nutrition', 'health', 'Cooking']
 ---
 
-Indian cuisine just like other cuisines follows the traditional methods of cooking. As we know that Indian food is now being eaten all over the globe. Various misconceptions that it is unhealthy, too rich in fat and oil and spicy, has made a lot of people think twice before opting for Indian food. In India, I am shocked to see so many of our cooking methods are dying out. Let us have a look at the facts that justify Indian cooking is healthy.
+Indian cooking just like other cuisines follows the traditional methods of cooking. As we know that Indian food is now being eaten all over the globe. Various misconceptions that it is unhealthy, too rich in fat and oil and spicy, has made a lot of people think twice before opting for Indian food. In India, I am shocked to see so many of our cooking methods are dying out. Let us have a look at the facts that justify Indian cooking is healthy.
 
 ## Seasoning
 
