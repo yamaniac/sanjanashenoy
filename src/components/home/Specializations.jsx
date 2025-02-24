@@ -45,9 +45,9 @@ export default function Specializations() {
         <div className="bg-gray-50 dark:bg-gray-800 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Speciality</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Diet & Nutrition Consultations</h2>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-              Expert nutrition services tailored to your unique needs
+              Expert Diet & nutrition services tailored to your unique needs
             </p>
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:max-w-none lg:grid-cols-3">

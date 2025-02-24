@@ -19,10 +19,10 @@ export default async function About() {
                     <div className="text-base/7 text-gray-700 dark:text-gray-300 border-r border-gray-200 dark:border-gray-700 pr-12 ">
                         <p className="text-base/7 font-semibold text-indigo-600 dark:text-teal-400">About Sanjana Shenoy</p>
                         <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-5xl">
-                            Sanjana M. Shenoy
+                           Sanjana M Shenoy
                         </h1>
                         <p className="mt-6 text-xl/8">
-                            A dedicated dietitian, educator, and health advocate based in Mangalore. With a strong academic background, I hold a PG Diploma in Dietetics from Manipal University and an MSc in Dietetics and Food Service Management from IGNOU. Currently, I'm pursuing my PhD at Mangalore University, focusing on advanced nutrition research.
+                            A dietitian, Nutritionist, educator based in Mangalore, India. With a strong academic background, I hold a PG Diploma in Dietetics from Manipal University and an MSc in Dietetics and Food Service Management. Pursuing a PhD at Mangalore University, focusing on advanced nutrition research.
                         </p>
                     </div>
                     <div className="relative h-[500px] rounded-2xl overflow-hidden">
@@ -50,6 +50,7 @@ export default async function About() {
                         <p className="mt-2 text-gray-600 dark:text-gray-400">
                             Extensive experience working with leading hospitals in Mangalore, providing personalized nutrition counseling.
                         </p>
+                        
                     </div>
                     <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
                         <div className="h-40 relative mb-4 rounded-lg overflow-hidden">

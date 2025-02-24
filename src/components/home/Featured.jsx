@@ -78,7 +78,7 @@ export default function Featured() {
         );
       }
     return (
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32 bg-gray-50 dark:bg-gray-800">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32 bg-gray-50 dark:bg-gray-800 mb-20">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-teal-600 dark:text-teal-400">
             Comprehensive Care
