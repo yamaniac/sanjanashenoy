@@ -11,14 +11,36 @@ import AuthorCard from '@/components/blog/AuthorCard'
 import BlogInteractiveElements from '@/components/blog/BlogInteractiveElements'
 import Script from 'next/script'
 import ClientReadingProgress from '@/components/blog/ClientReadingProgress'
-
+import Footer from '@/components/Footer'
+import LatestPosts from '@/components/blog/LatestPosts'
 
 // Remove fetchCache and use these configurations
 export const runtime = 'nodejs'
 export const revalidate = false
 
-// Move the client-side components to a separate Client Component file
-// Create a new file: src/components/blog/BlogInteractiveElements.js
+
+
+// Add this function at the top of the file, after the imports
+async function getLatestPosts(currentSlug) {
+  const postsDirectory = path.join(process.cwd(), 'posts')
+  const files = fs.readdirSync(postsDirectory)
+  
+  const posts = files
+    .filter(file => file.endsWith('.md'))
+    .map(file => {
+      const fileContents = fs.readFileSync(path.join(postsDirectory, file), 'utf-8')
+      const { data } = matter(fileContents)
+      return {
+        ...data,
+        slug: file.replace('.md', ''),
+      }
+    })
+    .filter(post => post.slug !== currentSlug) // Exclude current post
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 5)
+
+  return posts
+}
 
 // The server component
 export default async function BlogPost({ params }) {
@@ -109,6 +131,9 @@ export default async function BlogPost({ params }) {
     "datePublished": post.date,
     "dateModified": post.date,
   }
+
+  // Add this line before the return statement
+  const latestPosts = await getLatestPosts(slug)
 
   // 8. Return the complete page UI
   return (
@@ -210,12 +235,7 @@ export default async function BlogPost({ params }) {
               />
             </div>
 
-            {/* Sidebar: Table of Contents + Author Card */}
-            <div className="hidden lg:block w-80 sticky top-24 self-start space-y-8">
-              <TableOfContents headings={headings} />
-              <AuthorCard />
-            </div>
-          </div>
+
 
           {/* Add the client component at the bottom */}
           <div className="hidden md:block">
@@ -224,8 +244,17 @@ export default async function BlogPost({ params }) {
               title={post.title}
             />
           </div>
+                      {/* Sidebar: Table of Contents + Author Card */}
+                      <div className="hidden lg:block w-80 sticky top-24 self-start space-y-8">
+              <TableOfContents headings={headings} />
+              <AuthorCard />
+              <LatestPosts posts={latestPosts} />
+
+            </div>
+          </div>
         </main>
       </div>
+      <Footer />
     </>
   )
 }

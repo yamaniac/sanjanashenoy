@@ -11,7 +11,7 @@ export default function Header() {
 
   const isActive = (path) => {
     return pathname === path ? 
-      "text-teal-600 dark:text-teal-400" : 
+      "text-teal-600 dark:text-teal-600" : 
       "text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400"
   }
 
