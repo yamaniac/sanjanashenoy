@@ -179,7 +179,7 @@ export default async function BlogPost({ params }) {
                 <div className="relative w-full h-[300px] md:h-[600px] mb-6 md:mb-12 rounded-xl overflow-hidden shadow-lg">
                   <BlogImage
                     src={post.image}
-                    alt={post.title}
+                    alt={post.image_alt}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 1100px"
