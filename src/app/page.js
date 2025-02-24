@@ -11,7 +11,7 @@ import Experience from "@/components/home/Experience";
 import Clients from "@/components/home/Clients";
 import Latestblogs from "@/components/home/Latestblogs";
 import Featured from "@/components/home/Featured";
-import Testimonials from "@/components/home/Testimonials";
+// import Testimonials from "@/components/home/Testimonials";
 import { XMarkIcon } from '@heroicons/react/20/solid';
 
 // Add metadata export
@@ -72,7 +72,7 @@ export default async function Home() {
       {/* Featured Services */}
       <Featured />
       {/* Testimonials Section */}
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       {/* Latest Blog Posts */}
       <Latestblogs posts={posts} />
