@@ -6,6 +6,13 @@ import Latestblogs from "@/components/home/Latestblogs";
 import { getSortedPosts } from "@/lib/posts";
 import Experience from "@/components/about/Experience";
 
+export async function generateMetadata() {
+  return {
+    title: 'About Sanjana Shenoy | Dietitian & Nutritionist in Mangalore',
+    description: 'Learn more about Sanjana Shenoy, a registered dietitian based in Mangalore, India. Discover her background, qualifications, and commitment to providing personalized nutrition counseling.',
+  }
+}
+
 export default async function About() {
     const posts = await getSortedPosts();
 

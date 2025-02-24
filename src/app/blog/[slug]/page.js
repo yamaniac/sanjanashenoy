@@ -16,6 +16,29 @@ import LatestPosts from '@/components/blog/LatestPosts'
 import References from '@/components/blog/References'
 import ShareButton from '@/components/blog/ShareButton'
 
+export async function generateMetadata({ params }) {
+  const { slug } = params
+  const postsDirectory = path.join(process.cwd(), 'posts')
+  const fullPath = path.join(postsDirectory, `${slug}.md`)
+
+  let post = null
+  try {
+    const fileContents = fs.readFileSync(fullPath, 'utf-8')
+    const { data } = matter(fileContents)
+    return {
+      title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
+      description: data.description || "Sanjana Shenoy",
+      openGraph: {
+        title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
+        description: data.description,
+        images: data.image ? [data.image] : [],
+      },
+    }
+  } catch (error) {
+    console.error('Error reading post:', error)
+  }
+}
+
 // Remove fetchCache and use these configurations
 export const runtime = 'nodejs'
 export const revalidate = false
