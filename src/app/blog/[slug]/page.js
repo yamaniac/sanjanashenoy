@@ -13,6 +13,8 @@ import Script from 'next/script'
 import ClientReadingProgress from '@/components/blog/ClientReadingProgress'
 import Footer from '@/components/Footer'
 import LatestPosts from '@/components/blog/LatestPosts'
+import References from '@/components/blog/References'
+import ShareButton from '@/components/blog/ShareButton'
 
 // Remove fetchCache and use these configurations
 export const runtime = 'nodejs'
@@ -257,6 +259,7 @@ export default async function BlogPost({ params }) {
                            prose-img:shadow-lg"
                 dangerouslySetInnerHTML={{ __html: contentWithIds }}
               />
+              <References references={post.references} />
             </div>
 
             {/* Sidebar: Table of Contents + Author Card */}
@@ -268,6 +271,7 @@ export default async function BlogPost({ params }) {
           </div>
         </main>
       </div>
+      <ShareButton />
       <Footer />
     </>
   )

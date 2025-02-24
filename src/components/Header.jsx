@@ -76,15 +76,27 @@ export default function Header() {
               Contact
             </Link>
           </nav>
-          <div className="text-gray-800 dark:text-white">
+          <div className="text-gray-800 dark:text-white relative group">
             <ThemeToggle />
+            {/* Tooltip */}
+            <div className="absolute right-0 top-full mt-3 px-3 py-1.5 bg-gray-800 dark:bg-gray-700 text-white text-xs font-medium rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50">
+              Switch to dark/light mode
+              {/* Triangle pointer */}
+              <div className="absolute right-4 top-0 -translate-y-1 w-0 h-0 border-4 border-transparent border-b-gray-800 dark:border-b-gray-700" />
+            </div>
           </div>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center space-x-4 md:hidden">
-          <div className="text-gray-800 dark:text-white">
+          <div className="text-gray-800 dark:text-white relative group">
             <ThemeToggle />
+            {/* Tooltip */}
+            <div className="absolute right-0 top-full mt-3 px-3 py-1.5 bg-gray-800 dark:bg-gray-700 text-white text-xs font-medium rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50">
+              Switch to dark/light mode
+              {/* Triangle pointer */}
+              <div className="absolute right-4 top-0 -translate-y-1 w-0 h-0 border-4 border-transparent border-b-gray-800 dark:border-b-gray-700" />
+            </div>
           </div>
           <button 
             className="text-gray-600 dark:text-gray-300"

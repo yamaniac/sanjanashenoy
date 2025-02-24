@@ -8,6 +8,10 @@ author: 'Sanjana Shenoy'
 image: '/images/blog/why_is_indian_cooking_healthy.jpg'
 image_alt: 'an image of a healthy indian meal'
 thumbnail: '/images/blog/why_is_indian_cooking_healthy.jpg'
+# references: [
+#   { text: "Reference 1", url: "https://example.com/1" },
+#   { text: "Reference 2", url: "https://example.com/2" }
+# ]
 tags: ['nutrition', 'health', 'Cooking']
 ---
 
