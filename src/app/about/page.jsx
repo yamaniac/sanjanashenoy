@@ -22,7 +22,7 @@ export default async function About() {
                            Sanjana M Shenoy
                         </h1>
                         <p className="mt-6 text-xl/8">
-                            A dietitian, Nutritionist, educator based in Mangalore, India. With a strong academic background, I hold a PG Diploma in Dietetics from Manipal University and an MSc in Dietetics and Food Service Management. Pursuing a PhD at Mangalore University, focusing on advanced nutrition research.
+                            A dietitian & nutritionist and educator based in Mangalore, India. With a strong academic background, I hold a PG Diploma in Dietetics from Manipal University and an MSc in Dietetics and Food Service Management. Pursuing a PhD at Mangalore University, focusing on advanced nutrition research.
                         </p>
                     </div>
                     <div className="relative h-[500px] rounded-2xl overflow-hidden">
