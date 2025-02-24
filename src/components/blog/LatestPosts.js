@@ -17,7 +17,7 @@ export default function LatestPosts({ posts }) {
                 <div className="flex-shrink-0">
                   <Image
                     src={post.thumbnail}
-                    alt={post.title}
+                    alt={post.image_alt}
                     width={60}
                     height={60}
                     className="rounded-md object-cover"
