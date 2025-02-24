@@ -18,7 +18,13 @@ import LatestPosts from '@/components/blog/LatestPosts'
 export const runtime = 'nodejs'
 export const revalidate = false
 
-
+// Add this at the top of the file with other imports
+const AUTHOR_INFO = {
+  name: "Sanjana Shenoy",
+  image: "/images/author.png",
+  jobTitle: "Dietitian & Nutrition expert",
+  accreditations: "PDG Dietitics, BSc allied health sciences, MSc in Dietetics and Food Service Management",
+};
 
 // Add this function at the top of the file, after the imports
 async function getLatestPosts(currentSlug) {
@@ -194,20 +200,38 @@ export default async function BlogPost({ params }) {
                 <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4 md:mb-8 leading-tight">
                   {post.title}
                 </h1>
-                <div className="flex items-center text-gray-500 dark:text-gray-400 text-base mb-6">
-                  <time dateTime={post.date}>
-                    {format(new Date(post.date), 'MMMM d, yyyy')}
-                  </time>
+                <div className="flex items-center justify-between text-gray-500 dark:text-gray-400 text-base mb-6">
+                  {/* Author info on the left */}
                   {post.author && (
-                    <>
-                      <span className="mx-3">•</span>
-                      <Link href="/about" className="hover:text-teal-500 dark:hover:text-teal-400 text-teal-300 underline">
-                        By {post.author}
-                      </Link>
-                    </>
+                    <div className="flex items-center">
+                      <img
+                        src={AUTHOR_INFO.image}
+                        alt={AUTHOR_INFO.name}
+                        className="w-8 h-8 rounded-full mr-2 object-cover"
+                      />
+                      <div className="flex flex-col">
+                        <Link 
+                          href="/about" 
+                          className="hover:text-teal-500 dark:hover:text-teal-400 text-teal-500 underline"
+                        >
+                          By {AUTHOR_INFO.name}
+                        </Link>
+                        <span className="text-sm text-gray-500 dark:text-gray-400">
+                          {AUTHOR_INFO.jobTitle}<br />
+                          {AUTHOR_INFO.accreditations}
+                        </span>
+                      </div>
+                    </div>
                   )}
-                  <span className="mx-3">•</span>
-                  <span>{readingTime} min read</span>
+
+                  {/* Date and reading time on the right */}
+                  <div className="flex items-center">
+                    <time dateTime={post.date}>
+                      {format(new Date(post.date), 'MMMM d, yyyy')}
+                    </time>
+                    <span className="mx-3">•</span>
+                    <span>{readingTime} min read</span>
+                  </div>
                 </div>
                 {post.tags && (
                   <div className="flex flex-wrap gap-3">
@@ -235,21 +259,11 @@ export default async function BlogPost({ params }) {
               />
             </div>
 
-
-
-          {/* Add the client component at the bottom */}
-          <div className="hidden md:block">
-            <BlogInteractiveElements 
-              url={`https://sanjanashenoy.com/blog/${params.slug}`}
-              title={post.title}
-            />
-          </div>
-                      {/* Sidebar: Table of Contents + Author Card */}
-                      <div className="hidden lg:block w-80 sticky top-24 self-start space-y-8">
+            {/* Sidebar: Table of Contents + Author Card */}
+            <div className="hidden lg:block w-80 sticky top-24 self-start space-y-8">
               <TableOfContents headings={headings} />
-              <AuthorCard />
+              {/* <AuthorCard /> */}
               <LatestPosts posts={latestPosts} />
-
             </div>
           </div>
         </main>
