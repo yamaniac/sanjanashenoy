@@ -23,7 +23,7 @@ const AUTHOR_INFO = {
   name: "Sanjana Shenoy",
   image: "/images/author.png",
   jobTitle: "Dietitian & Nutrition expert",
-  accreditations: "PDG Dietitic, MSc in Dietetics and Food Service Management",
+  accreditations: "PDG Dietitics, BSc allied health sciences, MSc in Dietetics and Food Service Management",
 };
 
 // Add this function at the top of the file, after the imports
@@ -212,13 +212,12 @@ export default async function BlogPost({ params }) {
                       <div className="flex flex-col">
                         <Link 
                           href="/about" 
-                          className="hover:text-teal-500 dark:hover:text-teal-400 text-teal-300 underline"
+                          className="hover:text-teal-500 dark:hover:text-teal-400 text-teal-500 underline"
                         >
                           By {AUTHOR_INFO.name}
                         </Link>
                         <span className="text-sm text-gray-500 dark:text-gray-400">
-                          {AUTHOR_INFO.jobTitle}
-                          {' • '}
+                          {AUTHOR_INFO.jobTitle}<br />
                           {AUTHOR_INFO.accreditations}
                         </span>
                       </div>
@@ -263,7 +262,7 @@ export default async function BlogPost({ params }) {
             {/* Sidebar: Table of Contents + Author Card */}
             <div className="hidden lg:block w-80 sticky top-24 self-start space-y-8">
               <TableOfContents headings={headings} />
-              <AuthorCard />
+              {/* <AuthorCard /> */}
               <LatestPosts posts={latestPosts} />
             </div>
           </div>
