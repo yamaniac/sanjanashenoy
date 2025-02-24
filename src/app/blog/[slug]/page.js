@@ -222,48 +222,51 @@ export default async function BlogPost({ params }) {
 
               {/* Article header */}
               <header className="mb-8 md:mb-12">
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4 md:mb-8 leading-tight">
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6 leading-tight">
                   {post.title}
                 </h1>
-                <div className="flex items-center justify-between text-gray-500 dark:text-gray-400 text-base mb-6">
-                  {/* Author info on the left */}
-                  {post.author && (
-                    <div className="flex items-center">
-                      <img
-                        src={AUTHOR_INFO.image}
-                        alt={AUTHOR_INFO.name}
-                        className="w-8 h-8 rounded-full mr-2 object-cover"
-                      />
-                      <div className="flex flex-col">
-                        <Link 
-                          href="/about" 
-                          className="hover:text-teal-500 dark:hover:text-teal-400 text-teal-500 underline"
-                        >
-                          By {AUTHOR_INFO.name}
-                        </Link>
-                        <span className="text-sm text-gray-500 dark:text-gray-400">
-                          {AUTHOR_INFO.jobTitle}<br />
-                          {AUTHOR_INFO.accreditations}
-                        </span>
-                      </div>
+                
+                {/* Author info */}
+                {post.author && (
+                  <div className="flex items-center mb-4">
+                    <img
+                      src={AUTHOR_INFO.image}
+                      alt={AUTHOR_INFO.name}
+                      className="w-12 h-12 rounded-full mr-3 object-cover"
+                    />
+                    <div className="flex flex-col">
+                      <Link 
+                        href="/about" 
+                        className="text-lg font-medium hover:text-teal-500 dark:hover:text-teal-400 text-gray-900 dark:text-white"
+                      >
+                        {AUTHOR_INFO.name}
+                      </Link>
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                        {AUTHOR_INFO.jobTitle}
+                      </span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                        {AUTHOR_INFO.accreditations}
+                      </span>
                     </div>
-                  )}
-
-                  {/* Date and reading time on the right */}
-                  <div className="flex items-center">
-                    <time dateTime={post.date}>
-                      {format(new Date(post.date), 'MMMM d, yyyy')}
-                    </time>
-                    <span className="mx-3">•</span>
-                    <span>{readingTime} min read</span>
                   </div>
+                )}
+
+                {/* Date and reading time */}
+                <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm mb-6">
+                  <time dateTime={post.date} className="font-medium">
+                    {format(new Date(post.date), 'MMMM d, yyyy')}
+                  </time>
+                  <span className="mx-2">•</span>
+                  <span className="font-medium">{readingTime} min read</span>
                 </div>
+
+                {/* Tags */}
                 {post.tags && (
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-base font-medium"
+                        className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium"
                       >
                         {tag}
                       </span>
@@ -282,7 +285,11 @@ export default async function BlogPost({ params }) {
                            prose-img:shadow-lg"
                 dangerouslySetInnerHTML={{ __html: contentWithIds }}
               />
-              <References references={post.references} />
+              
+              {/* References and Share button */}
+              <div className="mt-8 space-y-8">
+                <References references={post.references} />
+              </div>
             </div>
 
             {/* Sidebar: Table of Contents + Author Card */}
@@ -294,7 +301,6 @@ export default async function BlogPost({ params }) {
           </div>
         </main>
       </div>
-      <ShareButton />
       <Footer />
     </>
   )
