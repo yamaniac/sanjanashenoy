@@ -11,19 +11,20 @@ import Experience from "@/components/home/Experience";
 import Clients from "@/components/home/Clients";
 import Latestblogs from "@/components/home/Latestblogs";
 import Featured from "@/components/home/Featured";
+import Testimonials from "@/components/home/Testimonials";
 import { XMarkIcon } from '@heroicons/react/20/solid';
 
 // Add metadata export
 export const metadata = {
-  title: 'Dt. Sanjana Shenoy - Dietitian & Nutrition Expert',
+  title: 'Sanjana M Shenoy - Dietitian & Nutrition Expert',
   description: 'Expert nutrition and diet consultation services by Dt. Sanjana Shenoy. Specializing in personalized diet plans, weight management, and holistic wellness since 2007.',
   keywords: 'nutrition expert, diet consultation, weight management, holistic wellness, Indian dietitian',
   openGraph: {
-    title: 'Dt.Sanjana Shenoy - Dietitian & Nutrition Expert',
+    title: 'Sanjana M Shenoy - Dietitian & Nutrition Expert',
     description: 'Expert nutrition and diet consultation services by Dt. Sanjana Shenoy. Specializing in personalized diet plans, weight management, and holistic wellness.',
     type: 'website',
     locale: 'en_IN',
-    siteName: 'Dt. Sanjana Shenoy',
+    siteName: 'sanjanashenoy.com',
   },
   robots: {
     index: true,
@@ -71,6 +72,7 @@ export default async function Home() {
       {/* Featured Services */}
       <Featured />
       {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Latest Blog Posts */}
       <Latestblogs posts={posts} />
