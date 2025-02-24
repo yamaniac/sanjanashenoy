@@ -3,6 +3,13 @@ import Footer from '@/components/Footer'
 // If using public directory:
 // No import needed, use direct path in img tag
 
+export async function generateMetadata() {
+  return {
+    title: 'Consultations | Sanjana Shenoy - Dietitian & Nutritionist',
+    description: 'Comprehensive nutrition care tailored to your specific health needs and goals. My evidence-based approach ensures personalized dietary solutions for various health conditions and lifestyle requirements.',
+  }
+}
+
 export default function Consultations() {
     return (
         <>

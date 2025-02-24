@@ -8,6 +8,13 @@ import matter from 'gray-matter'
 import { Suspense } from 'react'
 import Footer from '@/components/Footer'
 
+export async function generateMetadata() {
+  return {
+    title: 'Blog | Sanjana Shenoy - Dietitian & Nutritionist',
+    description: 'Read the latest articles and insights from Sanjana Shenoy, a registered dietitian based in Mangalore, India.',
+  }
+}
+
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 

@@ -2,6 +2,13 @@ import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/2
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 
+export async function generateMetadata() {
+  return {
+    title: 'Contact Sanjana Shenoy | Book Your Diet Consultation',
+    description: 'Schedule a consultation with Sanjana Shenoy, Registered Dietitian. Available for both in-person and virtual appointments in Mangalore.',
+  }
+}
+
 export default function Contact() {
   return (
     <>
@@ -45,7 +52,7 @@ export default function Contact() {
                 />
               </div>
             </div>
-            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-5xl">Get in touch</h2>
+            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-3xl">Contact Sanjana Shenoy</h2>
             <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
               Schedule a consultation to discuss your Diet needs. There are both in-person and virtual appointments 
               to provide you with flexible options that work best for you.
