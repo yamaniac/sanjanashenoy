@@ -6,6 +6,7 @@ excerpt: 'Flax Seeds may be tiny, but they are mighty. They carry one of the big
 description: 'Flax Seeds may be tiny, but they are mighty. They carry one of the biggest nutrient payloads on the planet. And while it''s not technically a grain, it has a similar vitamin and mineral profile to grains, while the amount of fiber, antioxidants, and Omega-3 fatty acids in flax is not available in grains.'
 author: 'Sanjana Shenoy'
 image: '/images/blog/flax-seeds-in-glass-jar.jpg'
+image_alt: 'Flax Seeds in Glass Jar'
 thumbnail: '/images/blog/flax-seeds-in-glass-jar.jpg'
 tags: ['nutrition', 'health', 'superfoods', 'recipes', 'omega-3', 'fiber', 'natural-remedies']
 ---

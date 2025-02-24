@@ -6,6 +6,7 @@ excerpt: 'Indian cooking just like other cuisines follows the traditional method
 description: 'Learn the fundamentals of nutrition and how to build a balanced diet that works for your lifestyle.'
 author: 'Sanjana Shenoy'
 image: '/images/blog/why_is_indian_cooking_healthy.jpg'
+image_alt: 'an image of a healthy indian meal'
 thumbnail: '/images/blog/why_is_indian_cooking_healthy.jpg'
 tags: ['nutrition', 'health', 'Cooking']
 ---
@@ -20,13 +21,13 @@ I love it when my kitchen emanates with the lovely smells after I season my dish
 
 Eating a cereal and pulse/ pulse and milk group/ cereal and milk group combination helps to meet the required protein intake. This is cheaper on the pocket and is healthy. Most of the vegetarians eat this way. Classic examples are khichdi, curd rice, dhokla, pongal etc. 	Use of whole spices- Adding bayleaf, mustard, cumin seeds, fennel seeds, sesame seeds, ginger, garlic, cloves etc helps in enriching our food with antioxidants, act as diuretics, add fiber to our diets. 	
 
-#### Use of ground spices
+### Use of ground spices
 Turmeric powder acts as an antiseptic and hence most of our meat our always washed and then smeared with turmeric. Fenugreek powder helps to reduce blood sugars. 	
 
-#### Healthy cooking methods
+### Healthy cooking methods
 Most of the dishes are ground, sauteed, steamed, stir fried, pressure cooking which are healthier methods and retain more nutrients than baking. Hence less trans-fats in the food. But sadly deep fried foods are a delicacy, that is where we fall back. 	
 
-## Indian Cuisine is Healthy because...
+### Indian Cuisine is Healthy because...
 
 **Fresh Ingredients-** Most of the dishes are made from the scratch with fresh ingredients and always seasonal vegetables and fruits are used. Curry leaves, ginger, tamarind, lemons, raw mangoes etc are available in most of the Indian households. 	
 
