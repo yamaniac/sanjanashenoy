@@ -159,7 +159,7 @@ export default async function BlogPost({ params }) {
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 1100px"
                     priority
-                    quality={90}
+                    quality={80}
                   />
                 </div>
               )}
@@ -176,7 +176,9 @@ export default async function BlogPost({ params }) {
                   {post.author && (
                     <>
                       <span className="mx-3">•</span>
-                      <span>{post.author}</span>
+                      <Link href="/about" className="hover:text-teal-500 dark:hover:text-teal-400 text-teal-300 underline">
+                        By {post.author}
+                      </Link>
                     </>
                   )}
                   <span className="mx-3">•</span>
