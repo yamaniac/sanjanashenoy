@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
-export default {
+const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: process.env.IMAGE_DOMAIN || 'sanjanashenoy.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
   compress: true,
   poweredByHeader: false,
@@ -21,4 +29,7 @@ export default {
     }
     return config
   },
-} 
+  output: 'standalone',
+}
+
+export default nextConfig 
