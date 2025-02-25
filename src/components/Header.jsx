@@ -3,25 +3,11 @@
 import Link from 'next/link'
 import { ThemeToggle } from './ThemeToggle'
 import { usePathname } from 'next/navigation'
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function Header() {
   const pathname = usePathname()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isCalculatorsOpen, setIsCalculatorsOpen] = useState(false)
-  const dropdownRef = useRef(null)
-
-  // Add click outside handler
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsCalculatorsOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
 
   const isActive = (path) => {
     return pathname === path ? 
@@ -89,35 +75,6 @@ export default function Header() {
             >
               Contact
             </Link>
-            <div className="relative" ref={dropdownRef}>
-              <button 
-                className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-                onClick={() => setIsCalculatorsOpen(!isCalculatorsOpen)}
-              >
-                Calculators
-                <span className="ml-1 font-sm">▼</span>
-              </button>
-              {isCalculatorsOpen && (
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
-                  <div className="py-1">
-                    <Link
-                      href="/bmi-calculator"
-                      className={`block px-4 py-2 text-sm ${isActive('/bmi-calculator')}`}
-                      onClick={() => setIsCalculatorsOpen(false)}
-                    >
-                      BMI Calculator
-                    </Link>
-                    <Link
-                      href="/bmr-calculator"
-                      className={`block px-4 py-2 text-sm ${isActive('/bmr-calculator')}`}
-                      onClick={() => setIsCalculatorsOpen(false)}
-                    >
-                      BMR Calculator
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
           </nav>
           <div className="text-gray-800 dark:text-white relative group">
             <ThemeToggle />
@@ -201,33 +158,6 @@ export default function Header() {
           >
             Contact
           </Link>
-          <div>
-            <button
-              className="flex items-center justify-between w-full py-2 text-gray-600 dark:text-gray-300"
-              onClick={() => setIsCalculatorsOpen(!isCalculatorsOpen)}
-            >
-              <span>Calculators</span>
-              <span>{isCalculatorsOpen ? '▼' : '▶'}</span>
-            </button>
-            {isCalculatorsOpen && (
-              <div className="pl-4 space-y-2">
-                <Link
-                  href="/bmi-calculator"
-                  className="block py-2 text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400"
-                  onClick={handleMobileMenuClick}
-                >
-                  BMI Calculator
-                </Link>
-                <Link
-                  href="/bmr-calculator"
-                  className="block py-2 text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400"
-                  onClick={handleMobileMenuClick}
-                >
-                  BMR Calculator
-                </Link>
-              </div>
-            )}
-          </div>
         </nav>
       </div>
     )}

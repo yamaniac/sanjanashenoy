@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const navigation = {
     main: [
       { name: 'Home', href: '/' },
@@ -52,26 +54,88 @@ const navigation = {
   
   export default function Footer() {
     return (
-      <footer className="bg-gray-900">
-        <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-          <nav aria-label="Footer" className="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6">
-            {navigation.main.map((item) => (
-              <a key={item.name} href={item.href} className="text-gray-400 hover:text-white">
-                {item.name}
-              </a>
-            ))}
-          </nav>
-          <div className="mt-16 flex justify-center gap-x-10">
-            {navigation.social.map((item) => (
-              <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
-                <span className="sr-only">{item.name}</span>
-                <item.icon aria-hidden="true" className="size-6" />
-              </a>
-            ))}
+      <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <div className="container mx-auto px-6 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-gray-900 dark:text-white font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Calculators */}
+            <div>
+              <h3 className="text-gray-900 dark:text-white font-semibold mb-4">Health Calculators</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/bmi-calculator" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
+                    BMI Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/bmr-calculator" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
+                    BMR Calculator
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h3 className="text-gray-900 dark:text-white font-semibold mb-4">Contact</h3>
+              <ul className="space-y-2">
+                <li className="text-gray-600 dark:text-gray-300 text-sm">
+                  Email: diet@sanjanashenoy.com
+                </li>
+                <li className="text-gray-600 dark:text-gray-300 text-sm">
+                  Phone: +91 9880268082
+                </li>
+              </ul>
+            </div>
+
+            {/* Social Media */}
+            <div>
+              <h3 className="text-gray-900 dark:text-white font-semibold mb-4">Social Media</h3>
+              <div className="flex space-x-4">
+                {navigation.social.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="sr-only">{item.name}</span>
+                    <item.icon className="h-6 w-6" aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
-          <p className="mt-10 text-center text-sm/6 text-gray-400">
-            &copy; {new Date().getFullYear()} sanjanashenoy.com. All rights reserved.
-          </p>        </div>
+
+          {/* Copyright */}
+          <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center">
+            <p className="text-gray-600 dark:text-gray-300 text-sm">
+              © {new Date().getFullYear()} Sanjana Shenoy. All rights reserved.
+            </p>
+          </div>
+        </div>
       </footer>
     )
   }
