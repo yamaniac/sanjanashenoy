@@ -45,7 +45,7 @@ export const revalidate = false
 
 // Add this at the top of the file with other imports
 const AUTHOR_INFO = {
-  name: "Sanjana Shenoy",
+  name: "Sanjana M Shenoy",
   image: "/images/author.png",
   jobTitle: "Dietitian & Nutrition expert",
   accreditations: "PDG Dietitics, BSc allied health sciences, MSc in Dietetics and Food Service Management",
@@ -236,7 +236,7 @@ export default async function BlogPost({ params }) {
                     />
                     <div className="flex flex-col">
                       <Link 
-                        href="/about" 
+                        href="/about-sanjana-m-shenoy" 
                         className="text-lg font-medium hover:text-teal-500 dark:hover:text-teal-400 text-gray-900 dark:text-white"
                       >
                         {AUTHOR_INFO.name}

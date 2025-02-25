@@ -24,7 +24,7 @@ export default async function About() {
                 {/* Hero Section with Image */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border-b border-gray-200 dark:border-gray-700 ">
                     <div className="text-base/7 text-gray-800 dark:text-gray-300 border-r border-gray-200 dark:border-gray-700 pr-12 ">
-                        <p className="text-base/7 font-semibold text-indigo-600 dark:text-teal-400">About Sanjana Shenoy</p>
+                        <p className="text-base/7 font-semibold text-indigo-600 dark:text-teal-400">About Sanjana M Shenoy</p>
                         <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-5xl">
                            Sanjana M Shenoy
                         </h1>
