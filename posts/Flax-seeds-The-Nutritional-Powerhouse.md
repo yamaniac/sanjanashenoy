@@ -24,6 +24,16 @@ Flax seeds (also called linseeds) are one of nature's most perfect superfoods. T
 ## Nutritional Profile
 
 Flax seeds are exceptionally nutrient-dense, containing:
+
+| Nutrient | Amount per Tablespoon (10g) |
+|----------|----------------------------|
+| Fat | 4.3g |
+| Fiber | 3.0g |
+| Carbs | 3.0g |
+| Omega-3 | 2.4g |
+| Protein | 2.0g |
+
+### Key Nutrients
 - **Omega-3 Fatty Acids**: One of the richest plant sources of alpha-linolenic acid (ALA)
 - **Fiber**: Both soluble and insoluble fiber (about 3 grams per tablespoon)
 - **Protein**: High-quality plant protein (about 2 grams per tablespoon)

@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { useTheme } from "next-themes";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import Header from "@/components/Header";
@@ -11,8 +9,6 @@ import Experience from "@/components/home/Experience";
 import Clients from "@/components/home/Clients";
 import Latestblogs from "@/components/home/Latestblogs";
 import Featured from "@/components/home/Featured";
-// import Testimonials from "@/components/home/Testimonials";
-import { XMarkIcon } from '@heroicons/react/20/solid';
 
 // Add metadata export
 export const metadata = {

@@ -7,14 +7,12 @@ import matter from 'gray-matter'
 import markdownIt from 'markdown-it'
 import BlogImage from '@/components/blog/BlogImage'
 import TableOfContents from '@/components/blog/TableOfContents'
-import AuthorCard from '@/components/blog/AuthorCard'
-import BlogInteractiveElements from '@/components/blog/BlogInteractiveElements'
 import Script from 'next/script'
 import ClientReadingProgress from '@/components/blog/ClientReadingProgress'
 import Footer from '@/components/Footer'
 import LatestPosts from '@/components/blog/LatestPosts'
 import References from '@/components/blog/References'
-import ShareButton from '@/components/blog/ShareButton'
+
 
 export async function generateMetadata({ params }) {
   const { slug } = params
