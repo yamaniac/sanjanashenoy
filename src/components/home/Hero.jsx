@@ -26,7 +26,7 @@ export default function Hero() {
                 >
                   Book a Consultation
                 </Link>
-                <Link href="/about" className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+                <Link href="/about-sanjana-m-shenoy" className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
                   Learn More <span aria-hidden="true">→</span>
                 </Link>
               </div>

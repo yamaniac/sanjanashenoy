@@ -62,7 +62,7 @@ const navigation = {
               <h3 className="text-gray-900 dark:text-white font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
+                  <Link href="/about-sanjana-m-shenoy" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
                     About
                   </Link>
                 </li>
