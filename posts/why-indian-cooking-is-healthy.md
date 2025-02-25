@@ -19,7 +19,7 @@ Indian cooking just like other cuisines follows the traditional methods of cooki
 
 ## Seasoning
 
-I love it when my kitchen emanates with the lovely smells after I season my dishes. Add a teaspoon or two of oil/ghee for the portion cooked for the whole family is really harmless. In-fact, it helps to absorb the fat soluble vitamins from food and aids digestion. For eg. adding a teaspoon of oil to greens such as Spinach, amaranth etc helps to absorb the vitamin K from it. So chuck the boiled vegetables and boiled dal and get the seasoning on. 	
+I love it when my kitchen emanates with the lovely aromas after I season my dishes. Add a teaspoon or two of oil/ghee for the portion cooked for the whole family is really harmless. In-fact, it helps to absorb the fat soluble vitamins from food and aids digestion. For eg. adding a teaspoon of oil to greens such as Spinach, amaranth etc helps to absorb the vitamin K from it. So chuck the boiled vegetables and boiled dal and get the seasoning on. 	
 
 ## Mutual supplementation
 
