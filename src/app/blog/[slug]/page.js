@@ -94,12 +94,28 @@ export default async function BlogPost({ params }) {
     const fileContents = fs.readFileSync(fullPath, 'utf-8')
     const { data, content } = matter(fileContents)
 
-    // 2. Convert Markdown to HTML
+    // Modify markdown-it configuration
     const md = markdownIt({
       html: true,
       breaks: true,
       linkify: true,
     })
+
+    // Add custom renderer for code blocks
+    md.renderer.rules.fence = function(tokens, idx) {
+      const token = tokens[idx];
+      const code = token.content.trim();
+      const lang = token.info.trim();
+
+      // Check if it's a mermaid diagram
+      if (lang === 'mermaid') {
+        return `<div class="mermaid-wrapper"><MermaidDiagram chart={\`${code}\`} /></div>`;
+      }
+
+      // Regular code block
+      return `<pre><code class="language-${lang}">${code}</code></pre>`;
+    };
+
     const contentHtml = md.render(content)
 
     // 3. Construct our "post" object
@@ -296,6 +312,7 @@ export default async function BlogPost({ params }) {
               
               {/* References and Share button */}
               <div className="mt-8 space-y-8">
+                {console.log('References:', post.references)}
                 <References references={post.references} />
               </div>
             </div>

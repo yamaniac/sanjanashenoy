@@ -21,10 +21,8 @@ export default function References({ references }) {
         </h2>
         <ol className="list-none pl-0 space-y-4">
           {references.map((ref, index) => {
-            // Handle both string and object references
-            const isObject = typeof ref === 'object' && ref !== null;
-            const text = isObject ? ref.text : ref;
-            const url = isObject ? ref.url : null;
+            // Format the citation text
+            const citationText = `${ref.authors}. (${ref.year}). ${ref.title}. ${ref.journal}`;
             
             return (
               <li 
@@ -34,17 +32,17 @@ export default function References({ references }) {
                 <span className="font-mono text-sm min-w-[2rem] pt-1 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-200">
                   [{index + 1}]
                 </span>
-                {url ? (
+                {ref.url ? (
                   <a 
-                    href={url}
+                    href={ref.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-light hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 hover:underline"
                   >
-                    {text}
+                    {citationText}
                   </a>
                 ) : (
-                  <span className="font-light">{text}</span>
+                  <span className="font-light">{citationText}</span>
                 )}
               </li>
             );
