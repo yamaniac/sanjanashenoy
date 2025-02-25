@@ -107,10 +107,42 @@ export default async function BlogPage({ searchParams }) {
     
     const data = await getBlogPosts(pageNumber)
     posts = data.posts || []
+    
+    // Sort posts by date in descending order (latest first)
+    posts.sort((a, b) => {
+      try {
+        // Log dates to debug
+        console.log('Sorting dates:', {
+          aDate: a.date,
+          bDate: b.date
+        });
+        
+        // Ensure we have valid dates before comparing
+        if (!a.date || !b.date) return 0;
+        
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        
+        // Check if dates are valid
+        if (isNaN(dateA.getTime()) || isNaN(dateB.getTime())) {
+          console.error('Invalid date found:', { a: a.date, b: b.date });
+          return 0;
+        }
+        
+        return dateB.getTime() - dateA.getTime();
+      } catch (error) {
+        console.error('Error sorting dates:', error);
+        return 0;
+      }
+    });
+    
     pagination = data.pagination
   } catch (error) {
     console.error('Error fetching blog posts:', error)
   }
+
+  // Log sorted posts to verify order
+  console.log('Sorted posts:', posts.map(p => ({ title: p.title, date: p.date })));
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">

@@ -131,7 +131,7 @@ export default function Header() {
             Home
           </Link>
           <Link 
-            href="/about"
+           href="/about-sanjana-m-shenoy"
             className={`block py-2 ${isActive('/about')}`}
             onClick={handleMobileMenuClick}
           >

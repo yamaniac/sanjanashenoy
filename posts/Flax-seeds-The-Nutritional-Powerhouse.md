@@ -41,6 +41,7 @@ Flax seeds are exceptionally nutrient-dense, containing:
 - **Minerals**: Excellent source of magnesium, phosphorus, and manganese
 - **Lignans**: Contains up to 800 times more lignans than other plant foods
 
+
 ## Health Benefits
 
 ### Anti-Inflammatory Properties
