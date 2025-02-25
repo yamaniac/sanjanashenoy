@@ -12,20 +12,32 @@ import ClientReadingProgress from '@/components/blog/ClientReadingProgress'
 import Footer from '@/components/Footer'
 import LatestPosts from '@/components/blog/LatestPosts'
 import References from '@/components/blog/References'
+import { getAllPosts } from '@/lib/posts'
 
+// This tells Next.js to pre-render all blog posts at build time
+export async function generateStaticParams() {
+  const posts = await getAllPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+// Force static rendering since we're pre-rendering all posts
+export const dynamic = 'force-static'
+export const dynamicParams = false // Return 404 for non-existent blog posts
 
 export async function generateMetadata({ params }) {
-  const { slug } = params
-  const postsDirectory = path.join(process.cwd(), 'posts')
-  const fullPath = path.join(postsDirectory, `${slug}.md`)
-
-  let post = null
   try {
+    // We can safely use params.slug directly because we're using force-static
+    const postsDirectory = path.join(process.cwd(), 'posts')
+    const fullPath = path.join(postsDirectory, `${params.slug}.md`)
     const fileContents = fs.readFileSync(fullPath, 'utf-8')
     const { data } = matter(fileContents)
+    
     return {
       title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
       description: data.description || "Sanjana Shenoy",
+      metadataBase: new URL('https://sanjanashenoy.com'),
       openGraph: {
         title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
         description: data.description,
@@ -34,12 +46,12 @@ export async function generateMetadata({ params }) {
     }
   } catch (error) {
     console.error('Error reading post:', error)
+    return {
+      title: 'Blog Post Not Found',
+      description: 'The requested blog post could not be found',
+    }
   }
 }
-
-// Remove fetchCache and use these configurations
-export const runtime = 'nodejs'
-export const revalidate = false
 
 // Add this at the top of the file with other imports
 const AUTHOR_INFO = {
@@ -73,11 +85,9 @@ async function getLatestPosts(currentSlug) {
 
 // The server component
 export default async function BlogPost({ params }) {
-  const { slug } = params
-
-  // 1. Read the .md file from the filesystem on the server
+  // We can safely use params.slug directly because we're using force-static
   const postsDirectory = path.join(process.cwd(), 'posts')
-  const fullPath = path.join(postsDirectory, `${slug}.md`)
+  const fullPath = path.join(postsDirectory, `${params.slug}.md`)
 
   let post = null
   try {
@@ -95,7 +105,7 @@ export default async function BlogPost({ params }) {
     // 3. Construct our "post" object
     post = {
       ...data,
-      slug,
+      slug: params.slug,
       contentHtml,
     }
   } catch (error) {
@@ -148,7 +158,7 @@ export default async function BlogPost({ params }) {
     "@type": "BlogPosting",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://sanjanashenoy.com/blog/${slug}`
+      "@id": `https://sanjanashenoy.com/blog/${params.slug}`
     },
     "headline": post.title,
     "description": post.description || "",
@@ -162,7 +172,7 @@ export default async function BlogPost({ params }) {
   }
 
   // Add this line before the return statement
-  const latestPosts = await getLatestPosts(slug)
+  const latestPosts = await getLatestPosts(params.slug)
 
   // 8. Return the complete page UI
   return (

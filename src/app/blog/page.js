@@ -7,6 +7,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { Suspense } from 'react'
 import Footer from '@/components/Footer'
+import { getBlogPosts } from '@/lib/posts'
 
 export async function generateMetadata() {
   return {
@@ -18,42 +19,15 @@ export async function generateMetadata() {
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
-async function getBlogPosts(page = 1, postsPerPage = 9) {
-  try {
-    const postsDirectory = path.join(process.cwd(), 'posts')
-    const files = fs.readdirSync(postsDirectory)
-    
-    const allPosts = files
-      .filter(file => file.endsWith('.md'))
-      .map(file => {
-        const filePath = path.join(postsDirectory, file)
-        const fileContent = fs.readFileSync(filePath, 'utf8')
-        const { data } = matter(fileContent)
-        
-        return {
-          ...data,
-          slug: file.replace('.md', ''),
-        }
-      })
-      .sort((a, b) => new Date(b.date) - new Date(a.date))
-
-    const totalPosts = allPosts.length
-    const totalPages = Math.ceil(totalPosts / postsPerPage)
-    const startIndex = (page - 1) * postsPerPage
-    const paginatedPosts = allPosts.slice(startIndex, startIndex + postsPerPage)
-
-    return { 
-      posts: paginatedPosts,
-      pagination: {
-        currentPage: page,
-        totalPages,
-        postsPerPage
-      }
-    }
-  } catch (error) {
-    console.error('Error reading blog posts:', error)
-    throw error
-  }
+// Pre-render the first few pages
+export async function generateStaticParams() {
+  return [
+    { searchParams: { page: '1' } },
+    { searchParams: { page: '2' } },
+    { searchParams: { page: '3' } },
+    { searchParams: { page: '4' } },
+    { searchParams: { page: '5' } },
+  ]
 }
 
 function BlogCard({ post }) {
@@ -122,7 +96,22 @@ function Pagination({ currentPage, totalPages }) {
   )
 }
 
-export default async function Blog({ searchParams }) {
+export default async function BlogPage({ searchParams }) {
+  let posts = []
+  let pagination = {}
+
+  try {
+    // Properly handle searchParams in Next.js 15
+    const resolvedParams = await Promise.resolve(searchParams)
+    const pageNumber = resolvedParams?.page ? parseInt(resolvedParams.page) : 1
+    
+    const data = await getBlogPosts(pageNumber)
+    posts = data.posts || []
+    pagination = data.pagination
+  } catch (error) {
+    console.error('Error fetching blog posts:', error)
+  }
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
       <Header />
@@ -153,64 +142,21 @@ export default async function Blog({ searchParams }) {
             ))}
           </div>
         }>
-          <BlogContent searchParams={searchParams} />
-        </Suspense>
-      </main>
-    </div>
-  )
-}
-
-async function BlogContent({ searchParams }) {
-  let posts = []
-  let pagination = null
-  let error = null
-
-  try {
-    const page = parseInt(searchParams?.page) || 1
-    const data = await getBlogPosts(page)
-    posts = data.posts || []
-    pagination = data.pagination
-  } catch (e) {
-    error = e
-  }
-
-  return (
-    <>
-      {error && (
-        <div className="text-center py-10">
-          <p className="text-gray-600 dark:text-gray-400 mb-2">
-            Error loading blog posts. Please try again later.
-          </p>
-          <p className="text-sm text-red-600 dark:text-red-400">
-            {error.message}
-          </p>
-        </div>
-      )}
-
-      {!error && posts.length === 0 && (
-        <div className="text-center py-10">
-          <p className="text-gray-600 dark:text-gray-400">
-            No blog posts available at the moment. Please check back later.
-          </p>
-        </div>
-      )}
-
-      {!error && posts.length > 0 && (
-        <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
             {posts.map((post) => (
               <BlogCard key={post.slug || post.id} post={post} />
             ))}
           </div>
+          
           {pagination && pagination.totalPages > 1 && (
             <Pagination
               currentPage={pagination.currentPage}
               totalPages={pagination.totalPages}
             />
           )}
-        </>
-      )}
+        </Suspense>
+      </main>
       <Footer />
-    </>
+    </div>
   )
 } 

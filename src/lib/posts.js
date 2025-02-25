@@ -103,4 +103,77 @@ export async function getPostData(id) {
     contentHtml,
     ...matterResult.data
   }
+}
+
+export async function getAllPosts() {
+  // Get file names under /posts
+  const fileNames = fs.readdirSync(postsDirectory)
+  
+  const allPostsData = fileNames
+    .filter(fileName => fileName.endsWith('.md'))
+    .map(fileName => {
+      // Remove ".md" from file name to get slug
+      const slug = fileName.replace(/\.md$/, '')
+
+      // Read markdown file as string
+      const fullPath = path.join(postsDirectory, fileName)
+      const fileContents = fs.readFileSync(fullPath, 'utf8')
+
+      // Use gray-matter to parse the post metadata section
+      const { data } = matter(fileContents)
+
+      // Combine the data with the slug
+      return {
+        slug,
+        ...data,
+        date: data.date ? new Date(data.date).toISOString() : null
+      }
+    })
+
+  // Sort posts by date
+  return allPostsData.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1
+    } else {
+      return -1
+    }
+  })
+}
+
+export async function getBlogPosts(page = 1, postsPerPage = 9) {
+  try {
+    const postsDirectory = path.join(process.cwd(), 'posts')
+    const files = fs.readdirSync(postsDirectory)
+    
+    const allPosts = files
+      .filter(file => file.endsWith('.md'))
+      .map(file => {
+        const filePath = path.join(postsDirectory, file)
+        const fileContent = fs.readFileSync(filePath, 'utf8')
+        const { data } = matter(fileContent)
+        
+        return {
+          ...data,
+          slug: file.replace('.md', ''),
+        }
+      })
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+
+    const totalPosts = allPosts.length
+    const totalPages = Math.ceil(totalPosts / postsPerPage)
+    const startIndex = (page - 1) * postsPerPage
+    const paginatedPosts = allPosts.slice(startIndex, startIndex + postsPerPage)
+
+    return { 
+      posts: paginatedPosts,
+      pagination: {
+        currentPage: page,
+        totalPages,
+        postsPerPage
+      }
+    }
+  } catch (error) {
+    console.error('Error reading blog posts:', error)
+    throw error
+  }
 } 
