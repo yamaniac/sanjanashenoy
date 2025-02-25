@@ -152,7 +152,8 @@ export default function BMICalculator() {
   }, [animation]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+    <>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8 mb-10">
       <Header />
       <main className="max-w-6xl mx-auto pt-16">
         <div className="text-center mb-12">
@@ -375,7 +376,9 @@ export default function BMICalculator() {
         {/* Add the health action section */}
         {renderHealthAction()}
       </main>
-      <Footer />
+
     </div>
+          <Footer />
+          </>
   );
 }

@@ -45,7 +45,7 @@ export const revalidate = false
 
 // Add this at the top of the file with other imports
 const AUTHOR_INFO = {
-  name: "Sanjana Shenoy",
+  name: "Sanjana M Shenoy",
   image: "/images/author.png",
   jobTitle: "Dietitian & Nutrition expert",
   accreditations: "PDG Dietitics, BSc allied health sciences, MSc in Dietetics and Food Service Management",

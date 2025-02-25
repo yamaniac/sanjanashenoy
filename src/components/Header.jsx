@@ -47,8 +47,8 @@ export default function Header() {
               Home
             </Link>
             <Link 
-              href="/about"
-              className={`${isActive('/about')} transition-colors`}
+              href="/about-sanjana-m-shenoy"
+              className={`${isActive('/about-sanjana-m-shenoy')} transition-colors`}
               title="About"
             >
               About
