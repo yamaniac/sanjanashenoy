@@ -141,8 +141,6 @@ export default async function BlogPage({ searchParams }) {
     console.error('Error fetching blog posts:', error)
   }
 
-  // Log sorted posts to verify order
-  console.log('Sorted posts:', posts.map(p => ({ title: p.title, date: p.date })));
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">

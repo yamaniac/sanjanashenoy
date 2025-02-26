@@ -13,6 +13,8 @@ import Footer from '@/components/Footer'
 import LatestPosts from '@/components/blog/LatestPosts'
 import References from '@/components/blog/References'
 import { getAllPosts } from '@/lib/posts'
+import AuthorSection from '@/components/blog/AuthorSection'
+import PostNavigation from '@/components/blog/PostNavigation'
 
 // This tells Next.js to pre-render all blog posts at build time
 export async function generateStaticParams() {
@@ -81,6 +83,17 @@ async function getLatestPosts(currentSlug) {
     .slice(0, 5)
 
   return posts
+}
+
+// Add this function after getLatestPosts
+async function getAdjacentPosts(currentSlug) {
+  const posts = await getAllPosts()
+  const currentIndex = posts.findIndex(post => post.slug === currentSlug)
+  
+  return {
+    previousPost: currentIndex > 0 ? posts[currentIndex - 1] : null,
+    nextPost: currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null
+  }
 }
 
 // The server component
@@ -184,11 +197,12 @@ export default async function BlogPost({ params }) {
       "name": post.author || "",
     },
     "datePublished": post.date,
-    "dateModified": post.date,
+    "dateModified": post.lastUpdated || post.date,
   }
 
   // Add this line before the return statement
   const latestPosts = await getLatestPosts(params.slug)
+  const { previousPost, nextPost } = await getAdjacentPosts(params.slug)
 
   // 8. Return the complete page UI
   return (
@@ -278,8 +292,16 @@ export default async function BlogPost({ params }) {
                 {/* Date and reading time */}
                 <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm mb-6">
                   <time dateTime={post.date} className="font-medium">
-                    {format(new Date(post.date), 'MMMM d, yyyy')}
+                    Published: {format(new Date(post.date), 'MMMM d, yyyy')}
                   </time>
+                  {post.lastUpdated && post.lastUpdated !== post.date && (
+                    <>
+                      <span className="mx-2">•</span>
+                      <time dateTime={post.lastUpdated} className="font-medium">
+                        Updated: {format(new Date(post.lastUpdated), 'MMMM d, yyyy')}
+                      </time>
+                    </>
+                  )}
                   <span className="mx-2">•</span>
                   <span className="font-medium">{readingTime} min read</span>
                 </div>
@@ -310,10 +332,16 @@ export default async function BlogPost({ params }) {
                 dangerouslySetInnerHTML={{ __html: contentWithIds }}
               />
               
+              {/* About the Author Section */}
+              <AuthorSection />
+              
+              {/* Post Navigation */}
+              
               {/* References and Share button */}
               <div className="mt-8 space-y-8">
-                {console.log('References:', post.references)}
                 <References references={post.references} />
+                <PostNavigation previousPost={previousPost} nextPost={nextPost} />
+
               </div>
             </div>
 
