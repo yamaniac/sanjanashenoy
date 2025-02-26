@@ -5,31 +5,116 @@ import Footer from "@/components/Footer";
 import Latestblogs from "@/components/home/Latestblogs";
 import { getSortedPosts } from "@/lib/posts";
 import Experience from "@/components/about/Experience";
+import Clients from "@/components/home/Clients";
+import Script from 'next/script';
+import ClientList from '@/components/about/ClientList'
 
 export async function generateMetadata() {
   return {
-    title: 'About Sanjana Shenoy | Dietitian & Nutritionist in Mangalore',
-    description: 'Learn more about Sanjana Shenoy, a registered dietitian based in Mangalore, India. Discover her background, qualifications, and commitment to providing personalized nutrition counseling.',
+    title: 'About Sanjana Shenoy | Leading Dietitian & Nutritionist in Mangalore',
+    description: 'Dr. Sanjana Shenoy is a renowned dietitian and nutritionist in Mangalore with 15+ years of experience. Specializing in clinical nutrition, weight management, and sports nutrition. Book a consultation today!',
+    openGraph: {
+      title: 'About Sanjana Shenoy | Leading Dietitian & Nutritionist in Mangalore',
+      description: 'Dr. Sanjana Shenoy is a renowned dietitian and nutritionist in Mangalore with 15+ years of experience. Specializing in clinical nutrition, weight management, and sports nutrition.',
+      images: ['/images/sanjana_shenoy.png'],
+      type: 'website',
+    },
+    alternates: {
+      canonical: 'https://www.sanjanashenoy.com/about-sanjana-m-shenoy'
+    }
   }
 }
 
 export default async function About() {
     const posts = await getSortedPosts();
+    
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sanjana M Shenoy",
+      "jobTitle": "Dietitian & Nutritionist",
+      "description": "Experienced dietitian and nutritionist based in Mangalore, specializing in clinical nutrition and personalized diet plans",
+      "image": "https://www.sanjanashenoy.com/images/sanjana_shenoy.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ballalbagh",
+        "addressRegion": "Mangalore",
+        "addressCountry": "India",
+        "postalCode": "575003",
+        "phone": "+91 98802 68082"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Manipal University"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Mangalore University"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "IGNOU"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "PG Diploma",
+          "name": "Dietetics"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Master's Degree",
+          "name": "Dietetics and Food Service Management"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Bachelor's Degree",
+          "name": "Bachelor of allied sciences"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "PhD",
+          "name": "Nutrition Research"
+        }
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Indian Dietetic Association"
+        }
+      ],
+      "certifications": [
+        {
+          "@type": "Certification",
+          "name": "Certified Bariatric Nutritionist",
+          "issuer": "CODS"
+        },
+        {
+          "@type": "Certification",
+          "name": "Certified Diabetes Educator",
+          "issuer": "HOPE"
+        }
+      ]
+    };
 
     return (
         <>
+        <Script id="structured-data" type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </Script>
         <Header />
-        <div className="bg-white dark:bg-gray-900 py-32">
+        <main className="bg-white dark:bg-gray-900 py-32">
             <div className="container mx-auto px-6 lg:px-8">
                 {/* Hero Section with Image */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border-b border-gray-200 dark:border-gray-700 ">
-                    <div className="text-base/7 text-gray-800 dark:text-gray-300 border-r border-gray-200 dark:border-gray-700 pr-12 ">
-                        <p className="text-base/7 font-semibold text-indigo-600 dark:text-teal-400">About Sanjana M Shenoy</p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border-b border-gray-200 dark:border-gray-700">
+                    <div className="text-base/7 text-gray-800 dark:text-gray-300 border-r border-gray-200 dark:border-gray-700 pr-12">
                         <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-5xl">
-                           Sanjana M Shenoy
+                           Dr. Sanjana M Shenoy - Expert Dietitian & Nutritionist
                         </h1>
                         <p className="mt-6 text-xl/8 text-gray-800 dark:text-gray-300">
-                            A dietitian & nutritionist and educator based in Mangalore, India. With a strong academic background, I hold a PG Diploma in Dietetics from Manipal University and an MSc in Dietetics and Food Service Management. Pursuing a PhD at Mangalore University, focusing on advanced nutrition research.
+                            A leading dietitian & nutritionist and educator based in Mangalore, India. With over 10 years of experience, I hold a PG Diploma in Dietetics from Manipal University and an MSc in Dietetics and Food Service Management. Currently pursuing a PhD at Mangalore University, focusing on advanced nutrition research to better serve my patients.
                         </p>
                     </div>
                     <div className="relative h-[500px] rounded-2xl overflow-hidden">
@@ -53,7 +138,7 @@ export default async function About() {
                                 className="object-cover"
                             />
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Clinical Experience</h3>
+                        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Clinical Experience</h2>
                         <p className="mt-2 text-gray-800 dark:text-gray-300">
                             Extensive experience working with leading hospitals in Mangalore, providing personalized nutrition counseling.
                         </p>
@@ -68,7 +153,7 @@ export default async function About() {
                                 className="object-cover"
                             />
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Academic Excellence</h3>
+                        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Academic Excellence</h2>
                         <p className="mt-2 text-gray-800 dark:text-gray-300">
                             Former Assistant Professor and Head of Department for Food, Nutrition & Dietetics.
                         </p>
@@ -82,7 +167,7 @@ export default async function About() {
                                 className="object-cover"
                             />
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Media Presence</h3>
+                        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Media Presence</h2>
                         <p className="mt-2 text-gray-800 dark:text-gray-300">
                             Expert speaker of "Diet Tips with Sanjana Shenoy" on <a href="https://www.daijiworld.com/news/newsDisplay?newsID=148614" target="_blank" rel="noopener noreferrer" className='text-indigo-600 dark:text-teal-400 underline'>Daijiworld</a> and regular features on various channels.
                         </p>
@@ -113,12 +198,15 @@ export default async function About() {
                         </figure>
                     </div>
                 </div>
+                <ClientList />
 
                 <div className="mt-16">
                     <Experience />
                 </div>
+
+
             </div>
-        </div>
+        </main>
         <Latestblogs posts={posts} />
         <Footer />
         </>

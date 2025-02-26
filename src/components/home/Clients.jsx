@@ -51,16 +51,7 @@ export default function Clients() {
                 className="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1 dark:invert"
               />
             </div>
-            
-            {/* View All Clients button */}
-            {/* <div className="mt-12 flex justify-center">
-              <Link 
-                href="/clients"
-                className="rounded-md bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 transition-colors duration-200"
-              >
-                View All Clients
-              </Link>
-            </div> */}
+          
           </div>
         </div>
       </div>
