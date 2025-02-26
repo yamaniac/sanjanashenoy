@@ -1,6 +1,7 @@
 ---
 title: 'Why Indian cooking is Healthy'
 date: '2025-02-24'
+lastUpdated: ""
 category: 'Health'
 excerpt: 'Indian cooking just like other cuisines follows the traditional methods of cooking. As we know that Indian food is now being eaten all over the globe. Various misconceptions that it is unhealthy.'
 description: 'Learn the fundamentals of nutrition and how to build a balanced diet that works for your lifestyle.'

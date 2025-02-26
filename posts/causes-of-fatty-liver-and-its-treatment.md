@@ -1,6 +1,7 @@
 ---
 title: 'Causes of Fatty Liver and Its Treatment'
 date: '2025-02-26'
+lastUpdated: ""
 category: 'Health'
 excerpt: 'Fatty Liver is defined as the condition in which fat starts accumulating in the liver cells or hepatocytes. This can lead to liver inflammation where the liver swells up in size compared to its normal size. The liver is an organ that helps to detoxify the blood by breaking down toxins, drugs, alcohol, and caffeine.'
 description: 'Fatty Liver is defined as the condition in which fat starts accumulating in the liver cells or hepatocytes. This can lead to liver inflammation where the liver swells up in size compared to its normal size. The liver is an organ that helps to detoxify the blood by breaking down toxins, drugs, alcohol, and caffeine.'
@@ -89,6 +90,14 @@ references:
 Fatty Liver is defined as the condition in which fat starts accumulating in the liver cells or hepatocytes. This can lead to liver inflammation where the liver swells up in size compared to its normal size. The liver is an organ that helps to detoxify the blood by breaking down toxins, drugs, alcohol, and caffeine. It produces bile to digest food, processes the nutrients from food, regulates blood sugar by storing glucose in the form of glycogen and releasing it back into the blood when blood sugar goes low, produces cholesterol and specialized proteins, processes hemoglobin, regulates blood clotting, and many more functions.
 
 Our lifestyles have changed drastically, with poor dietary habits and lack of exercise and movement. Due to this, there is a drastic increase in non-communicable diseases such as diabetes, heart diseases, hormonal disorders, and obesity. Fatty liver has now come under the radar as it is one of the most concerning medical conditions affecting people worldwide.
+
+## Key Takeaways
+- Fatty liver is a reversible medical condition when detected early.
+- To reverse fatty liver, lifestyle modifications such as diet, exercise, and weight loss, along with treatment of metabolic conditions, can help to manage fatty liver.
+- Regular monitoring is crucial to prevent progression of the disease.
+
+
+
 
 ## Types of Fatty Liver
 
@@ -255,11 +264,3 @@ It is said that nearly 25% of adults worldwide are living with fatty liver disea
 
 <Image src="/images/blog/fatty-liver-piechart.jpg" alt="A chart showing the prevalence of fatty liver in different regions" width="800" height="500" />
 *Fatty liver prevalence in different regions.*
-
-
-## Key Takeaways
-- Fatty liver is a reversible medical condition when detected early.
-- To reverse fatty liver, lifestyle modifications such as diet, exercise, and weight loss, along with treatment of metabolic conditions, can help to manage fatty liver.
-- Regular monitoring is crucial to prevent progression of the disease.
-
-

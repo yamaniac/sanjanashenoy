@@ -1,6 +1,7 @@
 ---
 title: 'Flax Seeds: The Nutritional Powerhouse'
 date: '2025-02-24'
+lastUpdated: ""
 category: 'Health'
 excerpt: 'Flax seeds may be tiny, but they are mighty nutritional powerhouses. These small brown or golden seeds come from the flax plant (*Linum usitatissimum*), which has been cultivated for thousands of years.'
 description: 'Discover the powerful health benefits of flax seeds, from omega-3 fatty acids to lignans. Learn how to prepare, store, and enjoy this nutritional powerhouse in your daily diet.'
