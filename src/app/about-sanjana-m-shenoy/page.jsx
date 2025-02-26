@@ -21,7 +21,7 @@ export async function generateMetadata() {
       type: 'website',
     },
     alternates: {
-      canonical: 'https://www.sanjanashenoy.com/about-sanjana-m-shenoy'
+      canonical: 'https://www.sanjanashenoy.in/about-sanjana-m-shenoy'
     }
   }
 }
@@ -33,12 +33,12 @@ export default async function About() {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Sanjana M Shenoy",
-      "url": "https://www.sanjanashenoy.com/about-sanjana-m-shenoy",
+      "url": "https://www.sanjanashenoy.in/about-sanjana-m-shenoy",
       "jobTitle": "Dietitian & Nutritionist",
       "description": "Experienced dietitian and nutritionist based in Mangalore, specializing in clinical nutrition and personalized diet plans",
       "image": {
         "@type": "ImageObject",
-        "url": "https://www.sanjanashenoy.com/images/sanjana_shenoy.png",
+        "url": "https://www.sanjanashenoy.in/images/sanjana_shenoy.png",
         "width": "800",
         "height": "800"
       },

@@ -40,7 +40,7 @@ export async function generateMetadata({ params }) {
     return {
       title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
       description: data.description || "Sanjana Shenoy",
-      metadataBase: new URL('https://sanjanashenoy.com'),
+      metadataBase: new URL('https://sanjanashenoy.in'),
       openGraph: {
         title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
         description: data.description,
@@ -188,24 +188,24 @@ export default async function BlogPost({ params }) {
     "@type": "BlogPosting",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://sanjanashenoy.com/blog/${params.slug}`
+      "@id": `https://sanjanashenoy.in/blog/${params.slug}`
     },
     "headline": post.title,
     "description": post.description || "",
-    "image": post.image ? [`https://sanjanashenoy.com${post.image}`] : [],
+    "image": post.image ? [`https://sanjanashenoy.in${post.image}`] : [],
     "author": {
       "@type": "Person",
       "name": AUTHOR_INFO.name,
       "jobTitle": AUTHOR_INFO.jobTitle,
-      "image": `https://sanjanashenoy.com${AUTHOR_INFO.image}`,
-      "url": "https://sanjanashenoy.com/about-sanjana-m-shenoy"
+      "image": `https://sanjanashenoy.in${AUTHOR_INFO.image}`,
+      "url": "https://sanjanashenoy.in/about-sanjana-m-shenoy"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Sanjana Shenoy",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://sanjanashenoy.com/images/logo.png"
+        "url": "https://sanjanashenoy.in/images/logo.png"
       }
     },
     "datePublished": new Date(post.date).toISOString(),

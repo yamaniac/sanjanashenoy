@@ -101,7 +101,7 @@ const navigation = {
               <h3 className="text-gray-900 dark:text-white font-semibold mb-4">Contact</h3>
               <ul className="space-y-2">
                 <li className="text-gray-600 dark:text-gray-300 text-sm">
-                  Email: diet@sanjanashenoy.com
+                  Email: diet@sanjanashenoy.in
                 </li>
                 <li className="text-gray-600 dark:text-gray-300 text-sm">
                   Phone: +91 9880268082

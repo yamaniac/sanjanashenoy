@@ -5,6 +5,6 @@ export const metadata = {
     title: 'BMI Calculator | Check Your Body Mass Index',
     description: 'Calculate your Body Mass Index (BMI) with our free online calculator. Learn if you are at a healthy weight and understand BMI categories.',
     type: 'website',
-    url: 'https://sanjanashenoy.com/bmi-calculator',
+    url: 'https://sanjanashenoy.in/bmi-calculator',
   },
 }; 

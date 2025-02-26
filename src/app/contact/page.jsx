@@ -9,12 +9,12 @@ export async function generateMetadata() {
     title: 'Contact Sanjana Shenoy | Book Diet Consultation in Mangalore',
     description: 'Schedule a diet consultation with Sanjana Shenoy in Mangalore. Available for both in-person visits at Lalbagh Towers and online consultations via WhatsApp & Google Meet.',
     alternates: {
-      canonical: 'https://sanjanashenoy.com/contact'
+      canonical: 'https://sanjanashenoy.in/contact'
     },
     openGraph: {
       title: 'Contact Sanjana Shenoy | Book Diet Consultation in Mangalore',
       description: 'Schedule a diet consultation with Sanjana Shenoy in Mangalore. Available for both in-person visits at Lalbagh Towers and online consultations.',
-      url: 'https://sanjanashenoy.com/contact',
+      url: 'https://sanjanashenoy.in/contact',
       siteName: 'Sanjana Shenoy',
       locale: 'en_US',
       type: 'website',
@@ -31,10 +31,10 @@ export default function Contact() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Sanjana M Shenoy - Dietitian & Nutritionist",
-            "image": "https://sanjanashenoy.com/images/sanjana_shenoy.png",
+            "image": "https://sanjanashenoy.in/images/sanjana_shenoy.png",
             "description": "Professional dietitian and nutritionist offering personalized diet consultations in Mangalore",
-            "@id": "https://sanjanashenoy.com",
-            "url": "https://sanjanashenoy.com",
+            "@id": "https://sanjanashenoy.in",
+            "url": "https://sanjanashenoy.in",
             "telephone": "+919880268082",
             "address": {
               "@type": "PostalAddress",
@@ -126,8 +126,8 @@ export default function Contact() {
                       <EnvelopeIcon aria-hidden="true" className="h-7 w-6 text-gray-500 dark:text-gray-400" />
                     </dt>
                     <dd>
-                      <a href="mailto:diet@sanjanashenoy.com" className="text-lg hover:text-gray-900 dark:hover:text-white">
-                        diet[@]sanjanashenoy.com
+                      <a href="mailto:diet@sanjanashenoy.in" className="text-lg hover:text-gray-900 dark:hover:text-white">
+                        diet[@]sanjanashenoy.in
                       </a>
                     </dd>
                   </div>
