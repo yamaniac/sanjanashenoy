@@ -225,7 +225,7 @@ export default async function BlogPost({ params }) {
               {/* Back button */}
               <Link
                 href="/blog"
-                className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 mb-12 text-lg"
+                className="inline-flex items-center text-teal-700 dark:text-teal-300 hover:text-teal-800 dark:hover:text-teal-500 mb-12 text-lg"
               >
                 <svg
                   className="w-6 h-6 mr-2"
@@ -275,14 +275,14 @@ export default async function BlogPost({ params }) {
                     <div className="flex flex-col">
                       <Link 
                         href="/about-sanjana-m-shenoy" 
-                        className="text-lg font-medium hover:text-teal-500 dark:hover:text-teal-400 text-gray-900 dark:text-white"
+                        className="text-lg font-medium hover:text-teal-700 dark:hover:text-teal-400 text-gray-900 dark:text-white"
                       >
                         {AUTHOR_INFO.name}
                       </Link>
-                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                      <span className="text-sm text-gray-700 dark:text-gray-400">
                         {AUTHOR_INFO.jobTitle}
                       </span>
-                      <span className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                      <span className="text-xs text-gray-700 dark:text-gray-400 mt-0.5">
                         {AUTHOR_INFO.accreditations}
                       </span>
                     </div>
@@ -290,7 +290,7 @@ export default async function BlogPost({ params }) {
                 )}
 
                 {/* Date and reading time */}
-                <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm mb-6">
+                <div className="flex items-center text-gray-700 dark:text-gray-400 text-sm mb-6">
                   <time dateTime={post.date} className="font-medium">
                     Published: {format(new Date(post.date), 'MMMM d, yyyy')}
                   </time>
@@ -312,7 +312,7 @@ export default async function BlogPost({ params }) {
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium"
+                        className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium"
                       >
                         {tag}
                       </span>
@@ -327,7 +327,7 @@ export default async function BlogPost({ params }) {
                            prose-headings:text-gray-800 dark:prose-headings:text-white
                            prose-img:rounded-xl prose-headings:font-bold
                            prose-p:text-lg prose-p:leading-relaxed
-                           prose-a:text-teal-600 dark:prose-a:text-teal-400
+                           prose-a:text-teal-700 dark:prose-a:text-teal-400
                            prose-img:shadow-lg"
                 dangerouslySetInnerHTML={{ __html: contentWithIds }}
               />

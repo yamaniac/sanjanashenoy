@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const AUTHOR_INFO = {
   name: "Sanjana M Shenoy",
@@ -25,92 +26,88 @@ const AUTHOR_INFO = {
       organization: "HOPE",
       year: "2010"
     },
-   
   ]
 };
 
 export default function AuthorSection() {
+  const authorSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": AUTHOR_INFO.name,
+    "jobTitle": AUTHOR_INFO.jobTitle,
+    "image": AUTHOR_INFO.image,
+    "description": AUTHOR_INFO.bio,
+    "hasCredential": AUTHOR_INFO.certifications.map(cert => ({
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": cert.title,
+      "recognizedBy": cert.organization,
+      "dateCreated": cert.year
+    }))
+  };
+
   return (
-    <div className="mt-16 mb-12 p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-        About the Author
-      </h2>
-      <div className="flex flex-col md:flex-row gap-6 items-start">
-        <div className="flex-shrink-0">
+    <article className="mt-16 mb-12 p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl" itemScope itemType="https://schema.org/Article">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema) }}
+      />
+      
+      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          About the Author
+        </h2>
+        <div className="flex items-start gap-4">
           <img
             src={AUTHOR_INFO.image}
-            alt={AUTHOR_INFO.name}
-            className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-lg"
+            alt={`Portrait of ${AUTHOR_INFO.name}`}
+            className="w-24 h-24 rounded-full object-cover"
           />
-        </div>
-        <div className="flex-grow">
-          <Link 
-            href="/about-sanjana-m-shenoy"
-            className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-          >
-            {AUTHOR_INFO.name}
-          </Link>
-          <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mt-1">
-            {AUTHOR_INFO.jobTitle}
-          </p>
-          <div className="flex flex-wrap gap-2 mt-2">
-            {AUTHOR_INFO.degrees.map((degree, index) => (
-              <span 
-                key={index}
-                className="text-sm text-blue-800 dark:text-blue-200"
-              >
-                {index > 0 ? ' • ' : ''}{degree}
-              </span>
-            ))}
-          </div>
-          <p className="mt-4 text-gray-700 dark:text-gray-300">
-            {AUTHOR_INFO.bio}
-          </p>
-          <div className="mt-6 p-4 bg-white dark:bg-gray-700 rounded-xl">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-              Certifications & Memberships
+          <div>
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+              {AUTHOR_INFO.name}
             </h3>
-            <div className="space-y-3">
-              {AUTHOR_INFO.certifications.map((cert, index) => (
-                <div key={index} className="flex items-center">
-                  <span className="text-sm text-gray-700 dark:text-gray-300">
-                    {cert.title}
-                    {cert.organization && (
-                      <span className="ml-1">
-                        • {cert.organization}
-                      </span>
-                    )}
-                    {cert.year && (
-                      <span className="ml-1">
-                        • {cert.year}
-                      </span>
-                    )}
-                  </span>
-                </div>
-              ))}
+            
+            {/* Inline Education section */}
+            <div className="mt-1">
+              <p className="text-gray-800 dark:text-gray-300 text-sm italic">
+                {AUTHOR_INFO.degrees.join(" • ")}
+              </p>
             </div>
-          </div>
-          <Link 
-            href="/about-sanjana-m-shenoy"
-            className="inline-flex items-center mt-4 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300"
-          >
-            Learn more about Sanjana
-            <svg
-              className="w-5 h-5 ml-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+
+            <p className="text-gray-800 dark:text-gray-300 mt-4">
+              {AUTHOR_INFO.bio}
+            </p>
+
+            {/* Certifications */}
+            <div className="mt-4 bg-gray-100/80 dark:bg-gray-700/50 rounded-lg p-4">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                Certifications & Memberships
+              </h4>
+              <ul className="list-disc list-inside space-y-2">
+                {AUTHOR_INFO.certifications.map((cert, index) => (
+                  <li key={index} className="text-gray-800 dark:text-gray-300">
+                    {cert.title}
+                    {cert.organization && cert.year && (
+                      <span className="text-gray-700 dark:text-gray-400">
+                        {' '}
+                        - {cert.organization}, {cert.year}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <Link
+              href="/about-sanjana-m-shenoy"
+              className="inline-flex items-center text-teal-800 dark:text-teal-400 hover:text-teal-900 dark:hover:text-teal-300 mt-4"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </Link>
+              Learn more about Sanjana
+              <span className="ml-2">→</span>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   )
 } 
