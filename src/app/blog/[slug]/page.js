@@ -191,13 +191,30 @@ export default async function BlogPost({ params }) {
     },
     "headline": post.title,
     "description": post.description || "",
-    "image": post.image ? `https://sanjanashenoy.com${post.image}` : "",
+    "image": post.image ? [`https://sanjanashenoy.com${post.image}`] : [],
     "author": {
       "@type": "Person",
-      "name": post.author || "",
+      "name": AUTHOR_INFO.name,
+      "jobTitle": AUTHOR_INFO.jobTitle,
+      "image": `https://sanjanashenoy.com${AUTHOR_INFO.image}`,
+      "url": "https://sanjanashenoy.com/about-sanjana-m-shenoy"
     },
-    "datePublished": post.date,
-    "dateModified": post.lastUpdated || post.date,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sanjana Shenoy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sanjanashenoy.com/images/logo.png"
+      }
+    },
+    "datePublished": new Date(post.date).toISOString(),
+    "dateModified": post.lastUpdated 
+      ? new Date(post.lastUpdated).toISOString() 
+      : new Date(post.date).toISOString(),
+    "keywords": post.tags ? post.tags.join(", ") : "",
+    "wordCount": wordCount,
+    "articleBody": post.contentHtml.replace(/<[^>]*>/g, ''),
+    "inLanguage": "en-US"
   }
 
   // Add this line before the return statement

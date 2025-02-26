@@ -32,17 +32,24 @@ export default async function About() {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Sanjana M Shenoy",
+      "url": "https://www.sanjanashenoy.com/about-sanjana-m-shenoy",
       "jobTitle": "Dietitian & Nutritionist",
       "description": "Experienced dietitian and nutritionist based in Mangalore, specializing in clinical nutrition and personalized diet plans",
-      "image": "https://www.sanjanashenoy.com/images/sanjana_shenoy.png",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.sanjanashenoy.com/images/sanjana_shenoy.png",
+        "width": "800",
+        "height": "800"
+      },
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Ballalbagh",
         "addressLocality": "Ballalbagh",
         "addressRegion": "Mangalore",
         "addressCountry": "India",
-        "postalCode": "575003",
-        "phone": "+91 98802 68082"
+        "postalCode": "575003"
       },
+      "telephone": "+91 98802 68082",
       "alumniOf": [
         {
           "@type": "CollegeOrUniversity",
@@ -98,6 +105,9 @@ export default async function About() {
         }
       ]
     };
+
+    structuredData.datePublished = new Date().toISOString();
+    structuredData.dateModified = new Date().toISOString();
 
     return (
         <>
