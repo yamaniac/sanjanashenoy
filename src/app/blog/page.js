@@ -8,6 +8,7 @@ import matter from 'gray-matter'
 import { Suspense } from 'react'
 import Footer from '@/components/Footer'
 import { getBlogPosts } from '@/lib/posts'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export async function generateMetadata() {
   return {
@@ -146,6 +147,12 @@ export default async function BlogPage({ searchParams }) {
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
       <Header />
       <main className="container mx-auto px-4 sm:px-6 py-8 pt-20">
+        <Breadcrumbs
+          items={[
+            { href: '/', label: 'Home' },
+            { href: '/blog', label: 'Blog' },
+          ]}
+        />
         <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-8">
           Blog Posts
         </h1>

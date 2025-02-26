@@ -15,6 +15,7 @@ import References from '@/components/blog/References'
 import { getAllPosts } from '@/lib/posts'
 import AuthorSection from '@/components/blog/AuthorSection'
 import PostNavigation from '@/components/blog/PostNavigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 // This tells Next.js to pre-render all blog posts at build time
 export async function generateStaticParams() {
@@ -236,6 +237,15 @@ export default async function BlogPost({ params }) {
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
         <Header />
         <main className="container mx-auto px-4 sm:px-6 py-8 pt-20">
+          {/* Add Breadcrumbs here */}
+          <Breadcrumbs
+            items={[
+              { href: '/', label: 'Home' },
+              { href: '/blog', label: 'Blog' },
+              { href: `/blog/${params.slug}`, label: post.title },
+            ]}
+          />
+
           <div className="flex gap-16">
             {/* Main Article Content */}
             <div className="flex-1 max-w-[1100px]">
