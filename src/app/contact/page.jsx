@@ -39,13 +39,13 @@ export default function Contact() {
               "@type": "PostalAddress",
               "streetAddress": "2nd floor, Lalbagh Towers, Ballalbagh Junction",
               "addressLocality": "Mangalore",
-              "postalCode": "675003",
+              "postalCode": "575003",
               "addressCountry": "IN"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": 12.8654,
-              "longitude": 74.8433
+              "latitude": 12.8827016,
+              "longitude": 74.8394863
             },
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",
