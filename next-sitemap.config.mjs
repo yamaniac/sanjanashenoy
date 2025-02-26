@@ -1,4 +1,4 @@
 export default {
-  siteUrl: process.env.SITE_URL || 'https://sanjanashenoy.com',
+  siteUrl: process.env.SITE_URL || 'https://sanjanashenoy.in',
   generateRobotsTxt: true,
 } 

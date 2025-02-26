@@ -1,7 +1,7 @@
 import { getAllPosts } from '@/lib/posts'
 
 export default async function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://sanjanashenoy.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://sanjanashenoy.in'
   
   // Get all blog posts
   const posts = await getAllPosts()

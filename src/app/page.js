@@ -20,7 +20,7 @@ export const metadata = {
     description: 'Expert nutrition and diet consultation services by Dt. Sanjana Shenoy from Mangalore, India. Specializing in personalized diet plans, weight management, and holistic wellness.',
     type: 'website',
     locale: 'en_IN',
-    siteName: 'sanjanashenoy.com',
+    siteName: 'sanjanashenoy.in',
   },
   robots: {
     index: true,

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://sanjanashenoy.com
+Host: https://sanjanashenoy.in
 
 # Sitemaps
-Sitemap: https://sanjanashenoy.com/sitemap-0.xml
+Sitemap: https://sanjanashenoy.in/sitemap-0.xml
