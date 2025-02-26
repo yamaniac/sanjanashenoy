@@ -55,23 +55,31 @@ export default async function Home() {
       {/* Hero Section */}
       <Hero />
       
-
-
       {/* Experience Section */}
-      <Experience />
+      <div className="mt-8 sm:mt-0">
+        <Experience />
+      </div>
 
       {/* Specializations Section */}
-      <Specializations />
+      <div className="mt-8 sm:mt-16">
+        <Specializations />
+      </div>
       {/* Clients Section */}
-      <Clients />
+      <div className="mt-8 sm:mt-16">
+        <Clients />
+      </div>
 
       {/* Featured Services */}
-      <Featured />
+      <div className="mt-8 sm:mt-16">
+        <Featured />
+      </div>
       {/* Testimonials Section */}
       {/* <Testimonials /> */}
 
       {/* Latest Blog Posts */}
-      <Latestblogs posts={posts} />
+      <div className="mt-8 sm:mt-16">
+        <Latestblogs posts={posts} />
+      </div>
 
       <Footer />
     </main>

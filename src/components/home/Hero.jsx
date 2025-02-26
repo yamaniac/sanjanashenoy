@@ -31,13 +31,13 @@ export default function Hero() {
                 </Link>
               </div>
             </div>
-            <div className="relative mt-10 h-96 w-full max-w-lg sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2">
+            <div className="relative mt-10 w-full max-w-lg sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2">
               <Image
                 src="/images/sanjana_shenoy.png"
                 alt="Sanjana Shenoy - Professional Dietitian"
                 width={800}
                 height={600}
-                className="aspect-[5/3] w-full rounded-2xl object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
+                className="w-full rounded-2xl object-cover h-[400px] sm:h-[500px] lg:h-full"
                 priority
               />
             </div>

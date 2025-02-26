@@ -46,44 +46,46 @@ export default function AuthorSection() {
   };
 
   return (
-    <article className="mt-16 mb-12 p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl" itemScope itemType="https://schema.org/Article">
+    <article className="mt-16 mb-12 p-4 sm:p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl" itemScope itemType="https://schema.org/Article">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema) }}
       />
       
-      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 sm:p-6">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
           About the Author
         </h2>
-        <div className="flex items-start gap-4">
-          <img
-            src={AUTHOR_INFO.image}
-            alt={`Portrait of ${AUTHOR_INFO.name}`}
-            className="w-24 h-24 rounded-full object-cover"
-          />
-          <div>
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+        <div className="block md:flex md:items-start md:gap-8">
+          <div className="flex justify-center md:justify-start mb-6 md:mb-0">
+            <Image
+              src={AUTHOR_INFO.image}
+              alt={`Portrait of ${AUTHOR_INFO.name}`}
+              className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover"
+              width={192}
+              height={192}
+            />
+          </div>
+          <div className="text-center md:text-left flex-1">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
               {AUTHOR_INFO.name}
             </h3>
             
-            {/* Inline Education section */}
-            <div className="mt-1">
-              <p className="text-gray-800 dark:text-gray-300 text-sm italic">
+            <div className="mt-2">
+              <p className="text-gray-800 dark:text-gray-300 text-base italic">
                 {AUTHOR_INFO.degrees.join(" • ")}
               </p>
             </div>
 
-            <p className="text-gray-800 dark:text-gray-300 mt-4">
+            <p className="text-gray-800 dark:text-gray-300 mt-4 text-lg">
               {AUTHOR_INFO.bio}
             </p>
 
-            {/* Certifications */}
-            <div className="mt-4 bg-gray-100/80 dark:bg-gray-700/50 rounded-lg p-4">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            <div className="mt-6 bg-gray-100/80 dark:bg-gray-700/50 rounded-lg p-4">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                 Certifications & Memberships
               </h4>
-              <ul className="list-disc list-inside space-y-2">
+              <ul className="list-disc list-inside space-y-2 text-left">
                 {AUTHOR_INFO.certifications.map((cert, index) => (
                   <li key={index} className="text-gray-800 dark:text-gray-300">
                     {cert.title}
@@ -100,7 +102,7 @@ export default function AuthorSection() {
 
             <Link
               href="/about-sanjana-m-shenoy"
-              className="inline-flex items-center text-teal-800 dark:text-teal-400 hover:text-teal-900 dark:hover:text-teal-300 mt-4"
+              className="inline-flex items-center text-teal-800 dark:text-teal-400 hover:text-teal-900 dark:hover:text-teal-300 mt-6 text-lg"
             >
               Learn more about Sanjana
               <span className="ml-2">→</span>
