@@ -18,7 +18,7 @@ import PostNavigation from '@/components/blog/PostNavigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Disclaimer from '@/components/blog/Disclaimer'
 import FontSizeSlider from '@/components/blog/FontSizeSlider'
-import ScrollToTop from '@/components/blog/ScrollToTop' 
+// import ScrollToTop from '@/components/blog/ScrollToTop' 
 
 // This tells Next.js to pre-render all blog posts at build time
 export async function generateStaticParams() {
@@ -246,7 +246,7 @@ export default async function BlogPost({ params }) {
     }
   )
 
-  // 7. (Optional) Structured data for SEO
+  // 7. (Optional) Structured data 
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -262,15 +262,29 @@ export default async function BlogPost({ params }) {
       "name": AUTHOR_INFO.name,
       "jobTitle": AUTHOR_INFO.jobTitle,
       "image": `https://sanjanashenoy.in${AUTHOR_INFO.image}`,
-      "url": "https://sanjanashenoy.in/about-sanjana-m-shenoy"
+      "url": "https://sanjanashenoy.in/about-sanjana-m-shenoy",
+      "description": AUTHOR_INFO.accreditations,
+      "sameAs": [
+        "https://www.linkedin.com/in/sanjana-m-shenoy-21211125/",
+        "https://x.com/dietitian_sanjana",
+        "https://www.facebook.com/dietsanjana/",
+        "https://www.instagram.com/dietsanjana/",
+        "https://www.youtube.com/@dietsanjana"
+        // Add other social media profiles
+      ],
+      "knowsAbout": ["Nutrition", "Dietetics", "Health", "Wellness"]
     },
     "publisher": {
-      "@type": "Organization",
+      "@type": "Person",
       "name": "Sanjana Shenoy",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://sanjanashenoy.in/images/logo.png"
-      }
+        "url": "https://sanjanashenoy.in/images/sanjana_shenoy.png",
+        "width": "600",
+        "height": "60"
+      },
+      "url": "https://sanjanashenoy.in",
+      "@id": "https://sanjanashenoy.in/about-sanjana-m-shenoy"
     },
     "datePublished": new Date(post.date).toISOString(),
     "dateModified": post.lastUpdated 
@@ -279,7 +293,36 @@ export default async function BlogPost({ params }) {
     "keywords": post.tags ? post.tags.join(", ") : "",
     "wordCount": wordCount,
     "articleBody": post.contentHtml.replace(/<[^>]*>/g, ''),
-    "inLanguage": "en-US"
+    "inLanguage": "en-US",
+    "timeRequired": `PT${readingTime}M`,
+    "isAccessibleForFree": "true",
+    "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "citation": post.references ? post.references.map(ref => ({
+      "@type": "CreativeWork",
+      "name": ref
+    })) : [],
+    "about": {
+      "@type": "NutritionInformation",
+      "name": post.title,
+      "description": post.description
+    },
+    "articleSection": headings.map(h => h.text),
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".article-body"]
+    }
+  }
+
+  // If the post has video content, add videoObject
+  if (post.video) {
+    structuredData.video = {
+      "@type": "VideoObject",
+      "name": post.title,
+      "description": post.description,
+      "thumbnailUrl": post.image ? [`https://sanjanashenoy.in${post.image}`] : [],
+      "uploadDate": new Date(post.date).toISOString(),
+      "embedUrl": post.video
+    }
   }
 
   // Add this line before the return statement
@@ -467,6 +510,7 @@ export default async function BlogPost({ params }) {
               <div className="mt-8 space-y-8">
                 <References references={post.references} />
                 <Disclaimer />
+
                 <PostNavigation previousPost={previousPost} nextPost={nextPost} />
               </div>
             </div>
@@ -485,7 +529,7 @@ export default async function BlogPost({ params }) {
           <FontSizeSlider variant="mobile" />
         </div>
       </div>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Footer />
     </>
   )

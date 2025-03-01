@@ -71,13 +71,12 @@ export default async function About() {
       height: "800",
     },
     address: {
-      "@type": "PostalAddress",
-      streetAddress: "Ballalbagh",
-      addressLocality: "Ballalbagh",
-      addressRegion: "Mangalore",
-      addressCountry: "India",
-      postalCode: "575003",
-    },
+              "@type": "PostalAddress",
+              "streetAddress": "2nd floor, Lalbagh Towers, Ballalbagh Junction",
+              "addressLocality": "Mangalore",
+              "postalCode": "575003",
+              "addressCountry": "IN"
+            },
     telephone: "+91 98802 68082",
     alumniOf: [
       {

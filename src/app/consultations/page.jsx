@@ -18,6 +18,59 @@ import {
 // If using public directory:
 // No import needed, use direct path in img tag
 
+// Add this new structured data component
+function ConsultationsStructuredData() {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          "@id": "https://sanjanashenoy.in/consultations",
+          "name": "Sanjana M Shenoy - Dietitian & Nutritionist",
+          "url": "https://sanjanashenoy.in/consultations",
+          "description": "Comprehensive diet and  nutrition care tailored to your specific health needs and goals. Evidence-based approach ensuring personalized dietary solutions for various health conditions and lifestyle requirements.",
+          "medicalSpecialty": "Dietetics",
+          "availableService": [
+            {
+              "@type": "DietNutrition",
+              "name": "Weight Management",
+              "description": "Personalized meal planning for weight management, including obesity and underweight conditions"
+            },
+            {
+              "@type": "DietNutrition",
+              "name": "Diabetes Management",
+              "description": "Blood sugar control and dietary management for diabetes and pre-diabetes"
+            },
+            {
+              "@type": "DietNutrition",
+              "name": "Sports Nutrition",
+              "description": "Specialized nutrition planning for athletes including pre and post training fueling strategies"
+            },
+            {
+              "@type": "DietNutrition",
+              "name": "Nutrition in Pregnancy",
+              "description": "Ideal weight gain in pregnancy and gestational diabetes management"
+            },
+            {
+              "@type": "DietNutrition",
+              "name": "Corporate Wellness",
+              "description": "Nutritional guidance and meal planning for busy corporate professionals"
+            },
+            {
+              "@type": "DietNutrition",
+              "name": "Medical Nutrition Therapy",
+              "description": "Nutritional management for cancer, pre and post surgery nutrition, modified diets (Clear fluid, Full fluid and Tube feeding)"
+            }
+            // Additional services can be added here
+          ]
+        })
+      }}
+    />
+  )
+}
+
 export async function generateMetadata() {
   return {
     title: 'Consultations | Sanjana Shenoy - Dietitian & Nutritionist',
@@ -130,6 +183,7 @@ export default function Consultations() {
 
     return (
         <div className="min-h-screen bg-white dark:bg-gray-900">
+            <ConsultationsStructuredData />
             <Header />
             <main className="container mx-auto px-4 sm:px-6 py-8 pt-20">
                 <Breadcrumbs
