@@ -63,9 +63,8 @@ export const generateJsonLd = () => {
         "@context": "https://schema.org",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Lalbagh towers", // Update with actual address
-          addressLocality: "Ballalbagh",
-          addressRegion: "Mangalore",
+          streetAddress: "2nd floor, Lalbagh Towers, Ballalbagh Junction",
+          addressLocality: "Mangalore",
           postalCode: "575003",
           addressCountry: "IN",
         },
