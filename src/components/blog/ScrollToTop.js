@@ -13,7 +13,6 @@ const ScrollToTop = () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
         const shouldBeVisible = window.pageYOffset > 250; // Reduced from 300 to 100
-        console.log('Scroll position:', window.pageYOffset, 'Should be visible:', shouldBeVisible);
         setIsVisible(shouldBeVisible);
       }, 100);
     }

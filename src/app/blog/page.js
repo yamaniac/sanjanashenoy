@@ -112,14 +112,8 @@ export default async function BlogPage({ searchParams }) {
     // Sort posts by date in descending order (latest first)
     posts.sort((a, b) => {
       try {
-        // Log dates to debug
-        console.log('Sorting dates:', {
-          aDate: a.date,
-          bDate: b.date
-        });
         
-        // Ensure we have valid dates before comparing
-        if (!a.date || !b.date) return 0;
+          if (!a.date || !b.date) return 0;
         
         const dateA = new Date(a.date);
         const dateB = new Date(b.date);

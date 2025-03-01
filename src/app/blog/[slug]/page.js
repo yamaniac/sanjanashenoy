@@ -18,6 +18,7 @@ import PostNavigation from '@/components/blog/PostNavigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Disclaimer from '@/components/blog/Disclaimer'
 import FontSizeSlider from '@/components/blog/FontSizeSlider'
+import ThemeToggle from '@/components/blog/ThemeToggle'
 // import ScrollToTop from '@/components/blog/ScrollToTop' 
 
 // This tells Next.js to pre-render all blog posts at build time
@@ -43,14 +44,14 @@ export const viewport = {
 
 export async function generateMetadata({ params }) {
   try {
-    // We can safely use params.slug directly because we're using force-static
+    // In Next.js 15, params is a Promise that must be awaited
+    const { slug } = await params;
+    
     const postsDirectory = path.join(process.cwd(), 'posts')
-    const fullPath = path.join(postsDirectory, `${params.slug}.md`)
+    const fullPath = path.join(postsDirectory, `${slug}.md`)
     const fileContents = fs.readFileSync(fullPath, 'utf-8')
     const { data } = matter(fileContents)
     
-
-
     // 5. Extract headings for the Table of Contents
     function getHeadings(html) {
       const regex = /<h([2-3])[^>]*>(.*?)<\/h[2-3]>/g
@@ -95,7 +96,7 @@ export async function generateMetadata({ params }) {
         attribution: `Image by ${data.imageCredit} from ${data.imageSource}. ${data.imageLicense}`,
         usage_terms: 'This image is used under license. Redistribution not permitted.'
       },
-      canonical: `https://sanjanashenoy.in/blog/${params.slug}`,
+      canonical: `https://sanjanashenoy.in/blog/${slug}`,
     }
   } catch (error) {
     console.error('Error reading post:', error)
@@ -164,9 +165,12 @@ const SocialShare = ({ url, title }) => {
 
 // The server component
 export default async function BlogPost({ params }) {
-  // We can safely use params.slug directly because we're using force-static
+  // Await params
+  const { slug } = await params;
+  
+  // We can now use slug directly
   const postsDirectory = path.join(process.cwd(), 'posts')
-  const fullPath = path.join(postsDirectory, `${params.slug}.md`)
+  const fullPath = path.join(postsDirectory, `${slug}.md`)
 
   let post = null
   try {
@@ -200,7 +204,7 @@ export default async function BlogPost({ params }) {
     // 3. Construct our "post" object
     post = {
       ...data,
-      slug: params.slug,
+      slug: slug, // Use the awaited slug
       contentHtml,
     }
   } catch (error) {
@@ -253,7 +257,7 @@ export default async function BlogPost({ params }) {
     "@type": "BlogPosting",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://sanjanashenoy.in/blog/${params.slug}`
+      "@id": `https://sanjanashenoy.in/blog/${slug}`
     },
     "headline": post.title,
     "description": post.description || "",
@@ -327,8 +331,8 @@ export default async function BlogPost({ params }) {
   }
 
   // Add this line before the return statement
-  const latestPosts = await getLatestPosts(params.slug)
-  const { previousPost, nextPost } = await getAdjacentPosts(params.slug)
+  const latestPosts = await getLatestPosts(slug)
+  const { previousPost, nextPost } = await getAdjacentPosts(slug)
 
   // 8. Return the complete page UI
   return (
@@ -350,7 +354,7 @@ export default async function BlogPost({ params }) {
             items={[
               { href: '/', label: 'Home' },
               { href: '/blog', label: 'Blog' },
-              { href: `/blog/${params.slug}`, label: post.title },
+              { href: `/blog/${slug}`, label: post.title },
             ]}
           />
 
@@ -527,7 +531,14 @@ export default async function BlogPost({ params }) {
 
         {/* Add sticky FontSizeSlider for mobile */}
         <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pb-4">
-          <FontSizeSlider variant="mobile" />
+          <div className="flex items-center">
+            <div className="flex-1">
+              <FontSizeSlider variant="mobile" />
+            </div>
+            <div className="flex-shrink-0 ml-2">
+              <ThemeToggle />
+            </div>
+          </div>
         </div>
       </div>
       {/* <ScrollToTop /> */}
