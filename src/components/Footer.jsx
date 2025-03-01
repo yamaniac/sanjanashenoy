@@ -54,26 +54,47 @@ const navigation = {
   
   export default function Footer() {
     return (
-      <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+      <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800" role="contentinfo" aria-label="Site footer">
         <div className="container mx-auto px-6 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <nav className="grid grid-cols-1 md:grid-cols-4 gap-8" aria-label="Footer navigation">
             {/* Quick Links */}
             <div>
-              <h3 className="text-gray-900 dark:text-white font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
+              <h2 className="text-gray-900 dark:text-white font-semibold mb-4">Quick Links</h2>
+              <ul className="space-y-2" role="list">
                 <li>
-                  <Link href="/about-sanjana-m-shenoy" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
+                  <Link 
+                    href="/about-sanjana-m-shenoy" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm"
+                    title="About Sanjana M Shenoy - Professional Dietitian"
+                  >
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
+                  <Link 
+                    href="/blog" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm"
+                    title="Nutrition and Diet Blog Articles"
+                  >
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
+                  <Link 
+                    href="/contact" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm"
+                    title="Contact Sanjana Shenoy"
+                  >
                     Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/disclaimer" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm"
+                    title="Website Disclaimer"
+                  >
+                    Disclaimer
                   </Link>
                 </li>
               </ul>
@@ -81,15 +102,23 @@ const navigation = {
 
             {/* Calculators */}
             <div>
-              <h3 className="text-gray-900 dark:text-white font-semibold mb-4">Health Calculators</h3>
-              <ul className="space-y-2">
+              <h2 className="text-gray-900 dark:text-white font-semibold mb-4">Health Calculators</h2>
+              <ul className="space-y-2" role="list">
                 <li>
-                  <Link href="/bmi-calculator" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
+                  <Link 
+                    href="/bmi-calculator" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm"
+                    title="Calculate your Body Mass Index (BMI)"
+                  >
                     BMI Calculator
                   </Link>
                 </li>
                 <li>
-                  <Link href="/bmr-calculator" className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm">
+                  <Link 
+                    href="/bmr-calculator" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm"
+                    title="Calculate your Basal Metabolic Rate (BMR)"
+                  >
                     BMR Calculator
                   </Link>
                 </li>
@@ -98,20 +127,26 @@ const navigation = {
 
             {/* Contact Info */}
             <div>
-              <h3 className="text-gray-900 dark:text-white font-semibold mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li className="text-gray-600 dark:text-gray-300 text-sm">
-                  Email: diet@sanjanashenoy.in
-                </li>
-                <li className="text-gray-600 dark:text-gray-300 text-sm">
-                  Phone: +91 9880268082
-                </li>
-              </ul>
+              <h2 className="text-gray-900 dark:text-white font-semibold mb-4">Contact Information</h2>
+              <address className="not-italic">
+                <ul className="space-y-2" role="list">
+                  <li className="text-gray-600 dark:text-gray-300 text-sm">
+                    <a href="mailto:diet@sanjanashenoy.in" className="hover:text-teal-600 dark:hover:text-teal-400">
+                      Email: diet@sanjanashenoy.in
+                    </a>
+                  </li>
+                  <li className="text-gray-600 dark:text-gray-300 text-sm">
+                    <a href="tel:+919880268082" className="hover:text-teal-600 dark:hover:text-teal-400">
+                      Phone: +91 9880268082
+                    </a>
+                  </li>
+                </ul>
+              </address>
             </div>
 
             {/* Social Media */}
             <div>
-              <h3 className="text-gray-900 dark:text-white font-semibold mb-4">Social Media</h3>
+              <h2 className="text-gray-900 dark:text-white font-semibold mb-4">Connect With Us</h2>
               <div className="flex space-x-4">
                 {navigation.social.map((item) => (
                   <a
@@ -120,6 +155,8 @@ const navigation = {
                     className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Visit our ${item.name} page`}
+                    title={`Follow us on ${item.name}`}
                   >
                     <span className="sr-only">{item.name}</span>
                     <item.icon className="h-6 w-6" aria-hidden="true" />
@@ -127,7 +164,7 @@ const navigation = {
                 ))}
               </div>
             </div>
-          </div>
+          </nav>
 
           {/* Copyright */}
           <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center">

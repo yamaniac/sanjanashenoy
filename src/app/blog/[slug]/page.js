@@ -16,6 +16,8 @@ import { getAllPosts } from '@/lib/posts'
 import AuthorSection from '@/components/blog/AuthorSection'
 import PostNavigation from '@/components/blog/PostNavigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import Disclaimer from '@/components/blog/Disclaimer'
+import FontSizeSlider from '@/components/blog/FontSizeSlider'
 
 // This tells Next.js to pre-render all blog posts at build time
 export async function generateStaticParams() {
@@ -37,15 +39,36 @@ export async function generateMetadata({ params }) {
     const fileContents = fs.readFileSync(fullPath, 'utf-8')
     const { data } = matter(fileContents)
     
+    // 5. Extract headings for the Table of Contents
+    function getHeadings(html) {
+      const regex = /<h([2-3])[^>]*>(.*?)<\/h[2-3]>/g
+      const headings = []
+      let match
+
+      while ((match = regex.exec(html)) !== null) {
+        headings.push({
+          level: Number(match[1]),
+          text: match[2].replace(/<[^>]*>/g, ''),
+          id: match[2].toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        })
+      }
+      return headings
+    }
+    const headings = getHeadings(data.content)
+
     return {
       title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
-      description: data.description || "Sanjana Shenoy",
+      description: `${data.description}. Article sections include: ${headings.map(h => h.text).join(', ')}`,
       metadataBase: new URL('https://sanjanashenoy.in'),
       openGraph: {
         title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
         description: data.description,
         images: data.image ? [data.image] : [],
       },
+      accessibility: {
+        features: ['adjustableTextSize'],
+        description: 'This blog post includes an adjustable text size feature, allowing readers to customize font size from 16px to 32px for better readability.'
+      }
     }
   } catch (error) {
     console.error('Error reading post:', error)
@@ -355,9 +378,11 @@ export default async function BlogPost({ params }) {
                            prose-img:rounded-xl prose-headings:font-bold
                            prose-p:text-lg prose-p:leading-relaxed
                            prose-a:text-teal-700 dark:prose-a:text-teal-400
-                           prose-img:shadow-lg"
+                           prose-img:shadow-lg [&_*]:!scale-[var(--scale-factor,100%)]"
                 dangerouslySetInnerHTML={{ __html: contentWithIds }}
               />
+              
+             
               
               {/* About the Author Section */}
               <AuthorSection />
@@ -367,6 +392,8 @@ export default async function BlogPost({ params }) {
               {/* References and Share button */}
               <div className="mt-8 space-y-8">
                 <References references={post.references} />
+                 {/* Add Disclaimer here */}
+              <Disclaimer />
                 <PostNavigation previousPost={previousPost} nextPost={nextPost} />
 
               </div>
@@ -374,12 +401,17 @@ export default async function BlogPost({ params }) {
 
             {/* Sidebar: Table of Contents + Author Card */}
             <div className="hidden lg:block w-80 sticky top-24 self-start space-y-8">
+              <FontSizeSlider />
               <TableOfContents headings={headings} />
-              {/* <AuthorCard /> */}
               <LatestPosts posts={latestPosts} />
             </div>
           </div>
         </main>
+
+        {/* Add sticky FontSizeSlider for mobile */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pb-4">
+          <FontSizeSlider variant="mobile" />
+        </div>
       </div>
       <Footer />
     </>

@@ -12,12 +12,12 @@ import Featured from "@/components/home/Featured";
 
 // Add metadata export
 export const metadata = {
-  title: 'Sanjana M Shenoy - Dietitian & Nutrition Expert',
-  description: 'Expert nutrition and diet consultation services by Dt. Sanjana Shenoy from Mangalore, India. Specializing in personalized diet plans, weight management, and holistic wellness since 2007.',
-  keywords: 'nutrition expert, diet consultation, weight management, holistic wellness, Indian dietitian',
+  title: 'Sanjana M Shenoy - Consultant Dietitian & Nutritionist, Mangalore',
+    description: 'Dt. Sanjana Shenoy is a Consultant Dietitian & Nutritionist, Mangalore',
+    keywords: 'nutrition expert, diet consultation, weight management, clinical dietitian, mangalore dietitian',
   openGraph: {
-    title: 'Sanjana M Shenoy - Dietitian & Nutrition Expert',
-    description: 'Expert nutrition and diet consultation services by Dt. Sanjana Shenoy from Mangalore, India. Specializing in personalized diet plans, weight management, and holistic wellness.',
+    title: 'Sanjana M Shenoy -Consultant Dietitian & Nutritionist, Mangalore',
+    description: 'Dt. Sanjana Shenoy is a Consultant Dietitian & Nutritionist, Mangalore',
     type: 'website',
     locale: 'en_IN',
     siteName: 'sanjanashenoy.in',

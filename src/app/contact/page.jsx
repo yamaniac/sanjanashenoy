@@ -139,7 +139,7 @@ export default function Contact() {
                   Online Diet Consultation
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                  Can't visit in person? No problem! Get personalized nutrition advice from the comfort of your home.
+                  Can't visit in person? No problem! Get personalized diet consultation from the comfort of your home.
                 </p>
                 <div className="mt-8 max-w-xl">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Online consultation includes:</h3>
