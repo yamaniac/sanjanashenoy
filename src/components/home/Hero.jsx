@@ -17,7 +17,7 @@ export default function Hero() {
             </h1>
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
               <p className="text-lg leading-8 text-gray-600 dark:text-gray-300">
-                A consultant dietitian and nutrition expert from Mangalore, India. Dedicated to helping you achieve your health goals through personalized nutrition guidance and evidence-based strategies.
+                A consultant dietitian and nutritionist from Mangalore, India. Dedicated to helping you achieve your health goals through personalized nutrition guidance and evidence-based strategies.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <Link

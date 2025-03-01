@@ -5,8 +5,8 @@ export default function Experience() {
     const stats = [
         { id: 1, name: "Success Stories", value: "2,000+" },
         { id: 2, name: "Years of Experience", value: "20" },
-        { id: 3, name: "Corporate Clients", value: "20+" },
-        { id: 4, name: "Weight Loss Programs", value: "50+" },
+        { id: 3, name: "Corporate Clients", value: "30+" },
+
     ];
     return (
         <div className="relative bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">

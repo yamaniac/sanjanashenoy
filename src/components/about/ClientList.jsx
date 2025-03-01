@@ -1,90 +1,159 @@
-import { BuildingOfficeIcon, AcademicCapIcon, TvIcon, UsersIcon } from '@heroicons/react/24/outline'
+import {
+  BuildingOfficeIcon,
+  AcademicCapIcon,
+  TvIcon,
+  UsersIcon,
+} from "@heroicons/react/24/outline";
+
+const clients = [
+  "Infosys",
+  "Emphasis",
+  "Amway",
+  "MOM and Me (Mahindra Retail)",
+  "MCF",
+  "MRPL",
+  "BPCL",
+  "HPCL",
+  "ICICI",
+  "Max Life Insurance",
+  "IOCL",
+  "HDFC",
+];
+
+const organizations = [
+  "Family Doctors Associations",
+  "Lions Clubs",
+  "Mahila Sabha",
+  "Indian Medical Association",
+  "Family Physicians Association",
+  "Mangalore Senior Citizens Association",
+  "GSB Premier League",
+  "Mrs Mangalore Beauty Pageant",
+  "Mrs India Karnataka Beauty Pageant",
+  "We One Aqua Centre",
+  "Mangalore Badminton Association",
+];
+
+const mediaPresence = [
+  'Radio Mirchi 98.3 FM',
+  'All India Radio',
+  'Daijiworld',
+  'Namma TV',
+  'V4 Channel'
+];
+
+const educationalInstitutions = [
+  'St. Joseph\'s Engineering College',
+  'SDM PG Centre',
+  'MV Shetty Memorial College',
+  'Milagres College',
+  'Besant Women\'s College',
+  'St. Aloysius College',
+  'Mangalore Academy of Professional Studies',
+  'CRC, Davanagere',
+  'Nitte Usha Institute of Nursing Sciences'
+];
 
 export default function ClientList() {
-    return (
-        <div className="mt-24 container mx-auto px-6 lg:px-2">
-            <h2 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white text-center mb-16">
-                Trusted by Leading Organizations
-            </h2>
+  return (
+    <div className="mt-24 container mx-auto px-6 lg:px-2">
+      <h2 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white text-center mb-16">
+        <span>
+          Trusted by Leading Organizations
+        </span>
+      </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {/* Corporates Section */}
-                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
-                    <div className="flex items-center mb-4">
-                        <BuildingOfficeIcon className="h-6 w-6 text-indigo-600 dark:text-teal-400 mr-2" />
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Corporates</h3>
-                    </div>
-                    <ul className="space-y-2 text-gray-800 dark:text-gray-300">
-                        <li>Infosys</li>
-                        <li>Emphasis</li>
-                        <li>Amway</li>
-                        <li>MOM and Me (Mahindra Retail)</li>
-                        <li>MCF</li>
-                        <li>MRPL</li>
-                        <li>BPCL</li>
-                        <li>HPCL</li>
-                        <li>ICICI</li>
-                        <li>Max Life Insurance</li>
-                        <li>IOCL</li>
-                        <li>HDFC</li>
-                    </ul>
-                </div>
-
-                {/* Organizations Section */}
-                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
-                    <div className="flex items-center mb-4">
-                        <UsersIcon className="h-6 w-6 text-teal-600 dark:text-teal-400 mr-2" />
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Organizations</h3>
-                    </div>
-                    <ul className="space-y-2 text-gray-800 dark:text-gray-300">
-                        <li>Family Doctors Associations</li>
-                        <li>Lions Clubs</li>
-                        <li>Mahila Sabha</li>
-                        <li>Indian Medical Association</li>
-                        <li>Family Physicians Association</li>
-                        <li>Mangalore Senior Citizens Association</li>
-                        <li>GSB Premier League</li>
-                        <li>Mrs Mangalore Beauty Pageant</li>
-                        <li>Mrs India Karnataka Beauty Pageant</li>
-                        <li>We One Aqua Centre</li>
-                        <li>Mangalore Badminton Association</li>
-                    </ul>
-                </div>
-
-                {/* Media Engagements Section */}
-                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
-                    <div className="flex items-center mb-4">
-                        <TvIcon className="h-6 w-6 text-teal-600 dark:text-teal-400 mr-2" />
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Media Presence</h3>
-                    </div>
-                    <ul className="space-y-2 text-gray-800 dark:text-gray-300">
-                        <li>Radio Mirchi 98.3 FM</li>
-                        <li>All India Radio</li>
-                        <li>Daijiworld</li>
-                        <li>Namma TV</li>
-                        <li>V4 Channel</li>
-                    </ul>
-                </div>
-
-                {/* Educational Institutions Section */}
-                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
-                    <div className="flex items-center mb-4">
-                        <AcademicCapIcon className="h-6 w-6 text-teal-600 dark:text-teal-400 mr-2" />
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Guest Speaker</h3>
-                    </div>
-                    <ul className="space-y-2 text-gray-800 dark:text-gray-300">
-                        <li>St. Joseph's Engineering College</li>
-                        <li>SDM PG Centre</li>
-                        <li>MV Shetty Memorial College</li>
-                        <li>Milagres College</li>
-                        <li>Besant Women's College</li>
-                        <li>St. Aloysius College</li>
-                        <li>Mangalore Academy of Professional Studies</li>
-                        <li>CRC, Davanagere</li>
-                        <li>Nitte Usha Institute of Nursing Sciences</li>
-                    </ul>
-                </div>
-            </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Corporates Section */}
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+          <div className="flex items-center mb-6">
+            <BuildingOfficeIcon className="h-8 w-8 text-indigo-600 dark:text-teal-400 mr-3" />
+            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-400 dark:from-teal-400 dark:to-teal-200">
+              Corporates
+            </h3>
+          </div>
+          <ul className="space-y-3 text-gray-800 dark:text-gray-300">
+            {clients.map((client, index) => (
+              <li
+                key={index}
+                className="flex items-center p-3 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg cursor-default group"
+              >
+                <span className="group-hover:text-indigo-600 dark:group-hover:text-teal-400 transition-colors duration-200">
+                  {client}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
-    )
-} 
+
+        {/* Organizations Section */}
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+          <div className="flex items-center mb-6">
+            <UsersIcon className="h-8 w-8 text-teal-600 dark:text-teal-400 mr-3" />
+            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-400 dark:from-teal-400 dark:to-teal-200">
+              Organizations
+            </h3>
+          </div>
+          <ul className="space-y-3 text-gray-800 dark:text-gray-300">
+            {organizations.map((org, index) => (
+              <li
+                key={index}
+                className="flex items-center p-3 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg cursor-default group"
+              >
+                <span className="group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-200">
+                  {org}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Media Engagements Section */}
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+          <div className="flex items-center mb-6">
+            <TvIcon className="h-8 w-8 text-teal-600 dark:text-teal-400 mr-3" />
+            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-400 dark:from-teal-400 dark:to-teal-200">
+              Media Presence
+            </h3>
+          </div>
+          <ul className="space-y-3 text-gray-800 dark:text-gray-300">
+            {mediaPresence.map((media, index) => (
+              <li 
+                key={index}
+                className="flex items-center p-3 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg cursor-default group"
+              >
+               
+                <span className="group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-200">
+                  {media}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Educational Institutions Section */}
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+          <div className="flex items-center mb-6">
+            <AcademicCapIcon className="h-8 w-8 text-teal-600 dark:text-teal-400 mr-3" />
+            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-400 dark:from-teal-400 dark:to-teal-200">
+              Educator
+            </h3>
+          </div>
+          <ul className="space-y-3 text-gray-800 dark:text-gray-300">
+            {educationalInstitutions.map((institution, index) => (
+              <li 
+                key={index}
+                className="flex items-center p-3 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg cursor-default group"
+              >
+               
+                <span className="group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-200">
+                  {institution}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -182,7 +182,7 @@ export default function Experience() {
             <div className="flex items-center gap-x-3">
               <AcademicCapIcon className="h-6 w-6 text-teal-600 dark:text-teal-400" />
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                Education
+                Education & Certifications
               </h3>
             </div>
 
