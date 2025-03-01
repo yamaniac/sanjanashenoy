@@ -71,12 +71,11 @@ function ConsultationsStructuredData() {
   )
 }
 
-export async function generateMetadata() {
-  return {
-    title: 'Consultations | Sanjana Shenoy - Dietitian & Nutritionist',
-    description: 'Comprehensive nutrition care tailored to your specific health needs and goals. My evidence-based approach ensures personalized dietary solutions for various health conditions and lifestyle requirements.',
-  }
-}
+export const metadata = {
+  title: "Nutrition Consultation Services - Dt. Sanjana M Shenoy",
+  description: 'Comprehensive nutrition care tailored to your specific health needs and goals. My evidence-based approach ensures personalized dietary solutions for various health conditions and lifestyle requirements.',
+  canonical: "https://sanjanashenoy.in/consultations",
+};
 
 export default function Consultations() {
     const services = [

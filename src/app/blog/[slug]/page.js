@@ -94,7 +94,8 @@ export async function generateMetadata({ params }) {
         source: data.imageSource,
         attribution: `Image by ${data.imageCredit} from ${data.imageSource}. ${data.imageLicense}`,
         usage_terms: 'This image is used under license. Redistribution not permitted.'
-      }
+      },
+      canonical: `https://sanjanashenoy.in/blog/${params.slug}`,
     }
   } catch (error) {
     console.error('Error reading post:', error)
