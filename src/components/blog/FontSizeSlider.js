@@ -51,6 +51,13 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
     }
   }, [variant])
 
+  const adjustFontSize = (increment) => {
+    setFontSize(prevSize => {
+      const newSize = prevSize + increment
+      return Math.min(Math.max(newSize, 16), 32) // Clamp between 16 and 32
+    })
+  }
+
   if (variant === 'mobile') {
     return (
       <div className="relative" ref={sliderRef}>
@@ -89,7 +96,13 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
             aria-label="Text size adjustment"
             onClick={(e) => e.stopPropagation()}
           >
-            <span className="text-sm text-gray-600 dark:text-gray-300 select-none" aria-hidden="true">Aa</span>
+            <button
+              onClick={() => adjustFontSize(-1)}
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              aria-label="Decrease text size"
+            >
+              <span className="text-xl font-medium">−</span>
+            </button>
             <input
               type="range"
               min="16"
@@ -102,7 +115,13 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
               aria-valuenow={fontSize}
               aria-label="Adjust text size from 16px to 32px"
             />
-            <span className="text-base text-gray-600 dark:text-gray-300 select-none" aria-hidden="true">Aa</span>
+            <button
+              onClick={() => adjustFontSize(1)}
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              aria-label="Increase text size"
+            >
+              <span className="text-xl font-medium">+</span>
+            </button>
           </div>
         )}
       </div>
@@ -145,7 +164,13 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
         >
           Adjust text size
         </label>
-        <span className="text-sm text-gray-600 dark:text-gray-300 select-none" aria-hidden="true">Aa</span>
+        <button
+          onClick={() => adjustFontSize(-1)}
+          className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+          aria-label="Decrease text size"
+        >
+          <span className="text-xl font-medium">−</span>
+        </button>
         <input
           id="font-size-slider"
           type="range"
@@ -159,7 +184,13 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
           aria-valuenow={fontSize}
           aria-label="Adjust text size from 16px to 32px"
         />
-        <span className="text-base text-gray-600 dark:text-gray-300 select-none" aria-hidden="true">Aa</span>
+        <button
+          onClick={() => adjustFontSize(1)}
+          className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+          aria-label="Increase text size"
+        >
+          <span className="text-xl font-medium">+</span>
+        </button>
       </div>
 
       <meta itemProp="interactionType" content="https://schema.org/AdjustAction" />
