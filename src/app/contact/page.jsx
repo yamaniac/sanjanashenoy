@@ -4,21 +4,19 @@ import Header from '@/components/Header'
 import Script from 'next/script'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
-export async function generateMetadata() {
-  return {
+export const metadata = {
+  title: 'Contact Sanjana Shenoy | Book Diet Consultation in Mangalore',
+  description: 'Schedule a diet consultation with Sanjana Shenoy in Mangalore. Available for both in-person visits at Lalbagh Towers and online consultations via WhatsApp & Google Meet.',
+  alternates: {
+    canonical: 'https://sanjanashenoy.in/contact'
+  },
+  openGraph: {
     title: 'Contact Sanjana Shenoy | Book Diet Consultation in Mangalore',
-    description: 'Schedule a diet consultation with Sanjana Shenoy in Mangalore. Available for both in-person visits at Lalbagh Towers and online consultations via WhatsApp & Google Meet.',
-    alternates: {
-      canonical: 'https://sanjanashenoy.in/contact'
-    },
-    openGraph: {
-      title: 'Contact Sanjana Shenoy | Book Diet Consultation in Mangalore',
-      description: 'Schedule a diet consultation with Sanjana Shenoy in Mangalore. Available for both in-person visits at Lalbagh Towers and online consultations.',
-      url: 'https://sanjanashenoy.in/contact',
-      siteName: 'Sanjana Shenoy',
-      locale: 'en_US',
-      type: 'website',
-    }
+    description: 'Schedule a diet consultation with Sanjana Shenoy in Mangalore. Available for both in-person visits at Lalbagh Towers and online consultations.',
+    url: 'https://sanjanashenoy.in/contact',
+    siteName: 'Sanjana Shenoy',
+    locale: 'en_US',
+    type: 'website',
   }
 }
 

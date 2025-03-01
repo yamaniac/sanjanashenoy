@@ -13,45 +13,48 @@ import Script from "next/script";
 import ClientList from "@/components/about/ClientList";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export async function generateMetadata() {
-  return {
-    metadataBase: new URL('https://www.sanjanashenoy.in'),
-    title: "Dt. Sanjana M Shenoy - Expert Dietitian & Nutritionist in Mangalore | 15+ Years Experience",
-    description: "Meet Dt. Sanjana M Shenoy, Mangalore's leading dietitian with 15+ years of expertise in clinical nutrition, weight management & diabetes care. PhD researcher, certified bariatric nutritionist & diabetes educator. Book your consultation today!",
-    openGraph: {
-      title: "Dt. Sanjana M Shenoy - Expert Dietitian & Nutritionist in Mangalore | 15+ Years Experience",
-      description: "Meet Dt. Sanjana M Shenoy, Mangalore's leading dietitian with 15+ years of expertise in clinical nutrition, weight management & diabetes care. PhD researcher, certified bariatric nutritionist & diabetes educator.",
-      images: [
-        {
-          url: "/images/sanjana_shenoy.png",
-          width: 800,
-          height: 800,
-          alt: "Dt. Sanjana M Shenoy - Dietitian & Nutritionist in Mangalore"
-        }
-      ],
-      type: "website",
-      locale: "en_IN",
-      siteName: "Dt. Sanjana M Shenoy"
-    },
-    alternates: {
-      canonical: "https://www.sanjanashenoy.in/about-sanjana-m-shenoy",
-    },
-    robots: {
+export const metadata = {
+  title: "About Sanjana M Shenoy - Professional Journey & Expertise",
+  metadataBase: new URL("https://www.sanjanashenoy.in"),
+  description:
+    "Meet Dt. Sanjana M Shenoy, Mangalore's leading dietitian with 15+ years of expertise in clinical nutrition, weight management & diabetes care. PhD researcher, certified bariatric nutritionist & diabetes educator. Book your consultation today!",
+  openGraph: {
+    title:
+      "Dt. Sanjana M Shenoy - Expert Dietitian & Nutritionist in Mangalore | 15+ Years Experience",
+    description:
+      "Meet Dt. Sanjana M Shenoy, Mangalore's leading dietitian with 15+ years of expertise in clinical nutrition, weight management & diabetes care. PhD researcher, certified bariatric nutritionist & diabetes educator.",
+    images: [
+      {
+        url: "/images/sanjana_shenoy.png",
+        width: 800,
+        height: 800,
+        alt: "Dt. Sanjana M Shenoy - Dietitian & Nutritionist in Mangalore",
+      },
+    ],
+    type: "website",
+    locale: "en_IN",
+    siteName: "Dt. Sanjana M Shenoy",
+  },
+  alternates: {
+    canonical: "https://sanjanashenoy.in/about-sanjana-m-shenoy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
       index: true,
       follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-      },
     },
-    twitter: {
-      card: "summary_large_image",
-      title: "Dt. Sanjana M Shenoy - Expert Dietitian & Nutritionist in Mangalore",
-      description: "Meet t. Sanjana M Shenoy, Mangalore's leading dietitian with 15+ years of expertise in clinical nutrition, weight management & diabetes care.",
-      images: ["/images/sanjana_shenoy.png"],
-    }
-  };
-}
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Dt. Sanjana M Shenoy - Expert Dietitian & Nutritionist in Mangalore",
+    description:
+      "Meet t. Sanjana M Shenoy, Mangalore's leading dietitian with 15+ years of expertise in clinical nutrition, weight management & diabetes care.",
+    images: ["/images/sanjana_shenoy.png"],
+  },
+};
 
 export default async function About() {
   const posts = await getSortedPosts();
@@ -71,12 +74,12 @@ export default async function About() {
       height: "800",
     },
     address: {
-              "@type": "PostalAddress",
-              "streetAddress": "2nd floor, Lalbagh Towers, Ballalbagh Junction",
-              "addressLocality": "Mangalore",
-              "postalCode": "575003",
-              "addressCountry": "IN"
-            },
+      "@type": "PostalAddress",
+      streetAddress: "2nd floor, Lalbagh Towers, Ballalbagh Junction",
+      addressLocality: "Mangalore",
+      postalCode: "575003",
+      addressCountry: "IN",
+    },
     telephone: "+91 98802 68082",
     alumniOf: [
       {
@@ -165,7 +168,11 @@ export default async function About() {
                 Expert Consultant Dietitian & Nutritionist in Mangalore
               </h2>
               <p className="mt-6 text-xl/8 text-gray-800 dark:text-gray-300">
-                A leading dietitian, nutritionist, and educator in Mangalore with over 15 years of experience in clinical nutrition, weight management, and diabetes care. Helping patients achieve their health goals through personalized nutrition plans and evidence-based guidance.
+                A leading dietitian, nutritionist, and educator in Mangalore
+                with over 15 years of experience in clinical nutrition, weight
+                management, and diabetes care. Helping patients achieve their
+                health goals through personalized nutrition plans and
+                evidence-based guidance.
               </p>
 
               {/* Qualifications */}
@@ -176,15 +183,9 @@ export default async function About() {
                 <li>PGD in Dietetics from Manipal University</li>
                 <li>MSc in Dietetics and Food Service Management</li>
                 <li>Bsc in allied sciences</li>
-                <li>
-                  Member of Indian Dietetic Association since 2010
-                </li>
-                <li>
-                  Certified Bariatric Nutritionist
-                </li>
-                <li>
-                  Certified Diabetes Educator
-                </li>
+                <li>Member of Indian Dietetic Association since 2010</li>
+                <li>Certified Bariatric Nutritionist</li>
+                <li>Certified Diabetes Educator</li>
                 <li>
                   Currently pursuing a PhD at Mangalore University, focusing on
                   advanced nutrition research to better serve my patients.
@@ -304,7 +305,6 @@ export default async function About() {
           </div>
 
           {/* Add FAQ Section for SEO */}
-          
         </main>
 
         <Latestblogs posts={posts} />

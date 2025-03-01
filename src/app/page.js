@@ -29,6 +29,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  canonical: "https://sanjanashenoy.in",
 };
 
 // Add JSON-LD structured data
