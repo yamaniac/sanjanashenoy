@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "Organization",
+                  "@type": "Person",
                   "@id": "https://sanjanashenoy.in/about-sanjana-m-shenoy",
                   "name": "Sanjana M Shenoy - Dietitian & Nutritionist",
                   "url": "https://sanjanashenoy.in",

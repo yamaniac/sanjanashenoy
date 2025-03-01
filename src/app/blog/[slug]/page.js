@@ -18,6 +18,7 @@ import PostNavigation from '@/components/blog/PostNavigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Disclaimer from '@/components/blog/Disclaimer'
 import FontSizeSlider from '@/components/blog/FontSizeSlider'
+import ThemeToggle from '@/components/blog/ThemeToggle'
 // import ScrollToTop from '@/components/blog/ScrollToTop' 
 
 // This tells Next.js to pre-render all blog posts at build time
@@ -530,7 +531,14 @@ export default async function BlogPost({ params }) {
 
         {/* Add sticky FontSizeSlider for mobile */}
         <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pb-4">
-          <FontSizeSlider variant="mobile" />
+          <div className="flex items-center">
+            <div className="flex-1">
+              <FontSizeSlider variant="mobile" />
+            </div>
+            <div className="flex-shrink-0 ml-2">
+              <ThemeToggle />
+            </div>
+          </div>
         </div>
       </div>
       {/* <ScrollToTop /> */}
