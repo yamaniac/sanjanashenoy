@@ -466,15 +466,7 @@ export default async function BlogPost({ params }) {
               {/* References and Share button */}
               <div className="mt-8 space-y-8">
                 <References references={post.references} />
-                {/* Add Disclaimer here */}
-                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Article Authenticity</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    This article was written entirely by a human expert (<Link href="/about-sanjana-m-shenoy" className="text-teal-700 dark:text-teal-400 hover:text-teal-800 dark:hover:text-teal-500">Sanjana M Shenoy</Link>) and has undergone thorough review to ensure accuracy. 
-                    No AI language models were used in the creation of this content. All information is based on professional expertise, 
-                    scientific research, and clinical experience.
-                  </p>
-                </div>
+                <Disclaimer />
                 <PostNavigation previousPost={previousPost} nextPost={nextPost} />
               </div>
             </div>
