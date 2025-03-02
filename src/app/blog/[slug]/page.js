@@ -6,20 +6,25 @@ import path from 'path'
 import matter from 'gray-matter'
 import markdownIt from 'markdown-it'
 import BlogImage from '@/components/blog/BlogImage'
-import TableOfContents from '@/components/blog/TableOfContents'
+import dynamicImport from 'next/dynamic'
 import Script from 'next/script'
 import ClientReadingProgress from '@/components/blog/ClientReadingProgress'
 import Footer from '@/components/Footer'
-import LatestPosts from '@/components/blog/LatestPosts'
-import References from '@/components/blog/References'
-import { getAllPosts } from '@/lib/posts'
-import AuthorSection from '@/components/blog/AuthorSection'
-import PostNavigation from '@/components/blog/PostNavigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import Disclaimer from '@/components/blog/Disclaimer'
-import FontSizeSlider from '@/components/blog/FontSizeSlider'
-import ThemeToggle from '@/components/blog/ThemeToggle'
-// import ScrollToTop from '@/components/blog/ScrollToTop' 
+import { getAllPosts } from '@/lib/posts'
+import Image from 'next/image'
+import { Suspense } from 'react'
+import { TableOfContents, FontSizeSlider, ThemeToggle } from '@/components/blog/DynamicComponents'
+
+// Replace regular imports with dynamic imports for non-critical components
+const LatestPosts = dynamicImport(() => import('@/components/blog/LatestPosts'), {
+  loading: () => <div className="animate-pulse h-48 bg-gray-100 dark:bg-gray-800 rounded-lg"></div>
+})
+
+const References = dynamicImport(() => import('@/components/blog/References'))
+const Disclaimer = dynamicImport(() => import('@/components/blog/Disclaimer'))
+const AuthorSection = dynamicImport(() => import('@/components/blog/AuthorSection'))
+const PostNavigation = dynamicImport(() => import('@/components/blog/PostNavigation'))
 
 // This tells Next.js to pre-render all blog posts at build time
 export async function generateStaticParams() {
@@ -73,6 +78,15 @@ export async function generateMetadata({ params }) {
       title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
       description: `${data.description}. Article sections include: ${headings.map(h => h.text).join(', ')}`,
       metadataBase: new URL('https://sanjanashenoy.in'),
+      other: {
+        'preload': [
+          { 'as': 'image', 'href': '/images/author.png' },
+        ],
+        'preconnect': [
+          'https://fonts.googleapis.com',
+          'https://fonts.gstatic.com'
+        ]
+      },
       openGraph: {
         title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
         description: data.description,
@@ -162,6 +176,18 @@ const SocialShare = ({ url, title }) => {
     </div>
   )
 }
+
+// Add this component at the top of the file
+const LoadingSkeleton = () => (
+  <div className="animate-pulse space-y-4">
+    <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
+    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
+    <div className="space-y-2">
+      <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded"></div>
+      <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-5/6"></div>
+    </div>
+  </div>
+)
 
 // The server component
 export default async function BlogPost({ params }) {
@@ -403,8 +429,10 @@ export default async function BlogPost({ params }) {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 1100px"
-                    priority
-                    quality={80}
+                    priority={true}
+                    placeholder="blur"
+                    blurDataURL={`data:image/svg+xml;base64,...`}
+                    quality={75}
                   />
                 </div>
               ) : null}
@@ -418,10 +446,13 @@ export default async function BlogPost({ params }) {
                 {/* Author info */}
                 {post.author && (
                   <div className="flex items-center mb-4">
-                    <img
+                    <Image
                       src={AUTHOR_INFO.image}
                       alt={AUTHOR_INFO.name}
-                      className="w-12 h-12 rounded-full mr-3 object-cover"
+                      width={48}
+                      height={48}
+                      className="rounded-full mr-3 object-cover"
+                      loading="lazy"
                     />
                     <div className="flex flex-col">
                       <Link 
@@ -527,7 +558,9 @@ export default async function BlogPost({ params }) {
             <div className="hidden lg:block w-80 sticky top-24 self-start space-y-8">
               <FontSizeSlider />
               <TableOfContents headings={headings} />
-              <LatestPosts posts={latestPosts} />
+              <Suspense fallback={<LoadingSkeleton />}>
+                <LatestPosts posts={latestPosts} />
+              </Suspense>
             </div>
           </div>
         </main>
