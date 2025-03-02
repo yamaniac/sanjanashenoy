@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
 const navigation = {
     main: [
@@ -56,8 +57,8 @@ const navigation = {
     return (
       <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800" role="contentinfo" aria-label="Site footer">
         <div className="container mx-auto px-6 py-8">
-          <nav className="grid grid-cols-1 md:grid-cols-4 gap-8" aria-label="Footer navigation">
-            {/* Quick Links */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {/* Column 1: Quick Links */}
             <div>
               <h2 className="text-gray-900 dark:text-white font-semibold mb-4">Quick Links</h2>
               <ul className="space-y-2" role="list">
@@ -100,7 +101,7 @@ const navigation = {
               </ul>
             </div>
 
-            {/* Calculators */}
+            {/* Column 2: Health Calculators */}
             <div>
               <h2 className="text-gray-900 dark:text-white font-semibold mb-4">Health Calculators</h2>
               <ul className="space-y-2" role="list">
@@ -125,49 +126,67 @@ const navigation = {
               </ul>
             </div>
 
-            {/* Contact Info */}
+            {/* Column 3: Contact & Social */}
             <div>
-              <h2 className="text-gray-900 dark:text-white font-semibold mb-4">Contact Information</h2>
-              <address className="not-italic">
-                <ul className="space-y-2" role="list">
-                  <li className="text-gray-600 dark:text-gray-300 text-sm">
-                    <a href="mailto:diet@sanjanashenoy.in" className="hover:text-teal-600 dark:hover:text-teal-400">
-                      Email: diet@sanjanashenoy.in
-                    </a>
-                  </li>
-                  <li className="text-gray-600 dark:text-gray-300 text-sm">
-                    <a href="tel:+919880268082" className="hover:text-teal-600 dark:hover:text-teal-400">
-                      Phone: +91 9880268082
-                    </a>
-                  </li>
-                </ul>
-              </address>
-            </div>
-
-            {/* Social Media */}
-            <div>
-              <h2 className="text-gray-900 dark:text-white font-semibold mb-4">Connect With Us</h2>
-              <div className="flex space-x-4">
-                {navigation.social.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Visit our ${item.name} page`}
-                    title={`Follow us on ${item.name}`}
-                  >
-                    <span className="sr-only">{item.name}</span>
-                    <item.icon className="h-6 w-6" aria-hidden="true" />
-                  </a>
-                ))}
+              <h2 className="text-gray-900 dark:text-white font-semibold mb-4">Contact & Connect</h2>
+              <div className="flex flex-col md:flex-row gap-x-8 gap-y-6">
+                {/* Contact Info */}
+                <address className="not-italic md:w-2/3">
+                  <ul className="space-y-2" role="list">
+                    <li className="text-gray-600 dark:text-gray-300 text-sm flex gap-x-2 items-center">
+                      <EnvelopeIcon className="h-5 w-5 text-gray-500 dark:text-gray-400 flex-shrink-0" aria-hidden="true" />
+                      <a href="mailto:diet@sanjanashenoy.in" className="hover:text-teal-600 dark:hover:text-teal-400">
+                        Email: diet@sanjanashenoy.in
+                      </a>
+                    </li>
+                    <li className="text-gray-600 dark:text-gray-300 text-sm flex gap-x-2 items-center">
+                      <PhoneIcon className="h-5 w-5 text-gray-500 dark:text-gray-400 flex-shrink-0" aria-hidden="true" />
+                      <a href="tel:+919880268082" className="hover:text-teal-600 dark:hover:text-teal-400">
+                        Phone: +91 9880268082
+                      </a>
+                    </li>
+                    <li className="text-gray-600 dark:text-gray-300 text-sm flex gap-x-2">
+                      <BuildingOffice2Icon className="h-5 w-5 text-gray-500 dark:text-gray-400 flex-shrink-0 mt-1" aria-hidden="true" />
+                      <span>
+                        Sanjana's Diet and nutrition clinic,<br />
+                        2nd floor, Lalbagh Towers<br />
+                        Ballalbagh Junction<br />
+                        Mangalore - 575003<br />
+                        Karnataka, India
+                      </span>
+                    </li>
+                  </ul>
+                </address>
+                
+                {/* Social Media */}
+                <div className="md:w-1/3">
+                  <h3 className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-3">Social media</h3>
+                  <div className="flex space-x-4">
+                    {navigation.social.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit our ${item.name} page`}
+                        title={`Follow us on ${item.name}`}
+                      >
+                        <span className="sr-only">{item.name}</span>
+                        <item.icon className="h-6 w-6" aria-hidden="true" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-          </nav>
+          </div>
+          
+          {/* Map Section - Above Copyright */}
+        
 
           {/* Copyright */}
-          <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center">
+          <div className="border-t border-gray-200 dark:border-gray-800 pt-8 text-center">
             <p className="text-gray-600 dark:text-gray-300 text-sm">
               © {new Date().getFullYear()} Sanjana Shenoy. All rights reserved.
             </p>

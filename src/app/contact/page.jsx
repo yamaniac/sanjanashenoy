@@ -90,7 +90,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 md:p-12">
               <div className="order-1 lg:order-1">
                 <h2 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-2xl">
-                  Address & Contact Details
+                  Sanjana's Diet and nutrition clinic
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
                   Visit us at our clinic in Ballalbagh, Mangalore or get in touch to schedule your diet consultation.
@@ -102,6 +102,8 @@ export default function Contact() {
                       <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-gray-500 dark:text-gray-400" />
                     </dt>
                     <dd className="text-lg">
+                      Sanjana's Diet and nutrition clinic,
+                      <br />
                       2nd floor, Lalbagh Towers,
                       <br />
                       Ballalbagh Junction, Mangalore, 675003
@@ -134,12 +136,38 @@ export default function Contact() {
 
               <div className="order-2 lg:order-2 lg:pl-8 lg:border-l lg:border-gray-200 dark:lg:border-gray-700">
                 <h2 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-2xl">
-                  Online Diet Consultation
+                  Diet Clinic Location in Mangalore
+                </h2>
+                <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+                  Find us easily at Lalbagh Towers, Ballalbagh Junction in Mangalore.
+                </p>
+                <div className="mt-6 h-[300px] w-full rounded-xl overflow-hidden shadow-md">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.4361457917473!2d74.83730091482233!3d12.882701590915392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35bae39041101%3A0x3df5ed7e4a91c1d1!2sLalbagh+Towers!5e0!3m2!1sen!2sin!4v1647887424051!5m2!1sen!2sin&markers=color:green%7Csize:large%7Clabel:D%7C12.8827016,74.8394863"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Sanjana's Diet Clinic Location"
+                    aria-label="Google Maps showing location of Sanjana's Diet Clinic"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <section className="mt-12 bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 md:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div>
+                <h2 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-2xl">
+                  Online Diet Consultation 
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
                   Can't visit in person? No problem! Get personalized diet consultation from the comfort of your home.
                 </p>
-                <div className="mt-8 max-w-xl">
+                <div className="mt-8">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Online consultation includes:</h3>
                   <ul className="mt-4 space-y-4 text-base text-gray-600 dark:text-gray-300">
                     <li className="flex gap-x-3 items-center">
@@ -187,29 +215,27 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
 
-          <section aria-label="Patient Testimonial" className="py-20">
-            <div className="mx-auto max-w-2xl text-center">
-              <figure>
-                <blockquote className="text-lg/8 font-semibold text-gray-900 dark:text-white">
-                  <p>
-                    "Sanjana's personalized approach to nutrition has transformed my relationship with food. Her evidence-based recommendations and supportive guidance helped me achieve my health goals while maintaining a balanced lifestyle."
-                  </p>
-                </blockquote>
-                <figcaption className="mt-10 flex items-center justify-center gap-x-6">
-                  <img
-                    alt="Patient testimonial"
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=96&h=96&q=80"
-                    className="size-12 flex-none rounded-full bg-gray-50"
-                  />
-                  <div className="text-left">
-                    <div className="text-base font-semibold text-gray-900 dark:text-white">Shilpa Kamath</div>
-                    <div className="text-sm/6 text-gray-600 dark:text-gray-400">Weight Management Patient</div>
-                  </div>
-                </figcaption>
-              </figure>
+              <div className="lg:pl-8 lg:border-l lg:border-gray-200 dark:lg:border-gray-700 flex items-center">
+                <figure>
+                  <blockquote className="text-lg/8 font-semibold text-gray-900 dark:text-white">
+                    <p>
+                      "Sanjana's personalized approach to nutrition has transformed my relationship with food. Her evidence-based recommendations and supportive guidance helped me achieve my health goals while maintaining a balanced lifestyle."
+                    </p>
+                  </blockquote>
+                  <figcaption className="mt-8 flex items-center gap-x-6">
+                    <img
+                      alt="Patient testimonial"
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=96&h=96&q=80"
+                      className="size-12 flex-none rounded-full bg-gray-50"
+                    />
+                    <div className="text-left">
+                      <div className="text-base font-semibold text-gray-900 dark:text-white">Shilpa Kamath</div>
+                      <div className="text-sm/6 text-gray-600 dark:text-gray-400">Weight Management Patient</div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
             </div>
           </section>
         </main>
