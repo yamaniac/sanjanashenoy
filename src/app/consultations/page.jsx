@@ -24,48 +24,69 @@ function ConsultationsStructuredData() {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "MedicalBusiness",
-          "@id": "https://sanjanashenoy.in/consultations",
-          "name": "Sanjana M Shenoy - Dietitian & Nutritionist",
-          "url": "https://sanjanashenoy.in/consultations",
-          "description": "Comprehensive diet and  nutrition care tailored to your specific health needs and goals. Evidence-based approach ensuring personalized dietary solutions for various health conditions and lifestyle requirements.",
-          "medicalSpecialty": "Dietetics",
-          "availableService": [
-            {
-              "@type": "DietNutrition",
-              "name": "Weight Management",
-              "description": "Personalized meal planning for weight management, including obesity and underweight conditions"
+        __html: JSON.stringify([
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": "https://sanjanashenoy.in/about-sanjana-m-shenoy",
+            "name": "Sanjana M Shenoy",
+            "url": "https://sanjanashenoy.in/",
+            "jobTitle": "Dietitian & Nutritionist",
+            "sameAs": [
+              "https://www.linkedin.com/in/sanjana-m-shenoy-2121125/",
+              "https://www.instagram.com/dietsanjana/",
+              "https://www.facebook.com/dietsanjana/",
+              "https://www.youtube.com/@dietsanjana",
+              "https://twitter.com/dietsanjana"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalBusiness",
+            "@id": "https://sanjanashenoy.in/consultations",
+            "name": "Sanjana M Shenoy - Dietitian & Nutritionist",
+            "url": "https://sanjanashenoy.in/consultations",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://sanjanashenoy.in/logo.png" // Make sure this path is correct
             },
-            {
-              "@type": "DietNutrition",
-              "name": "Diabetes Management",
-              "description": "Blood sugar control and dietary management for diabetes and pre-diabetes"
-            },
-            {
-              "@type": "DietNutrition",
-              "name": "Sports Nutrition",
-              "description": "Specialized nutrition planning for athletes including pre and post training fueling strategies"
-            },
-            {
-              "@type": "DietNutrition",
-              "name": "Nutrition in Pregnancy",
-              "description": "Ideal weight gain in pregnancy and gestational diabetes management"
-            },
-            {
-              "@type": "DietNutrition",
-              "name": "Corporate Wellness",
-              "description": "Nutritional guidance and meal planning for busy corporate professionals"
-            },
-            {
-              "@type": "DietNutrition",
-              "name": "Medical Nutrition Therapy",
-              "description": "Nutritional management for cancer, pre and post surgery nutrition, modified diets (Clear fluid, Full fluid and Tube feeding)"
-            }
-            // Additional services can be added here
-          ]
-        })
+            "description": "Comprehensive diet and nutrition care tailored to your specific health needs and goals. Evidence-based approach ensuring personalized dietary solutions for various health conditions and lifestyle requirements.",
+            "medicalSpecialty": "Dietetics",
+            "availableService": [
+              {
+                "@type": "DietNutrition",
+                "name": "Weight Management",
+                "description": "Personalized meal planning for weight management, including obesity and underweight conditions"
+              },
+              {
+                "@type": "DietNutrition",
+                "name": "Diabetes Management",
+                "description": "Blood sugar control and dietary management for diabetes and pre-diabetes"
+              },
+              {
+                "@type": "DietNutrition",
+                "name": "Sports Nutrition",
+                "description": "Specialized nutrition planning for athletes including pre and post training fueling strategies"
+              },
+              {
+                "@type": "DietNutrition",
+                "name": "Nutrition in Pregnancy",
+                "description": "Ideal weight gain in pregnancy and gestational diabetes management"
+              },
+              {
+                "@type": "DietNutrition",
+                "name": "Corporate Wellness",
+                "description": "Nutritional guidance and meal planning for busy corporate professionals"
+              },
+              {
+                "@type": "DietNutrition",
+                "name": "Medical Nutrition Therapy",
+                "description": "Nutritional management for cancer, pre and post surgery nutrition, modified diets (Clear fluid, Full fluid and Tube feeding)"
+              }
+              // Additional services can be added here
+            ]
+          }
+        ])
       }}
     />
   )

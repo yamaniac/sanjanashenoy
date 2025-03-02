@@ -271,25 +271,22 @@ export default async function BlogPost({ params }) {
       "description": AUTHOR_INFO.accreditations,
       "sameAs": [
         "https://www.linkedin.com/in/sanjana-m-shenoy-21211125/",
-        "https://x.com/dietitian_sanjana",
-        "https://www.facebook.com/dietsanjana/",
         "https://www.instagram.com/dietsanjana/",
-        "https://www.youtube.com/@dietsanjana"
-        // Add other social media profiles
+        "https://www.facebook.com/dietsanjana/",
+        "https://www.youtube.com/@dietsanjana",
+        "https://twitter.com/dietsanjana"
       ],
       "knowsAbout": ["Nutrition", "Dietetics", "Health", "Wellness"]
     },
     "publisher": {
-      "@type": "Person",
-      "name": "Sanjana Shenoy",
+      "@type": "Organization",
+      "name": "Sanjana Shenoy Nutrition",
       "logo": {
         "@type": "ImageObject",
         "url": "https://sanjanashenoy.in/images/sanjana_shenoy.png",
-        "width": "600",
-        "height": "60"
-      },
-      "url": "https://sanjanashenoy.in",
-      "@id": "https://sanjanashenoy.in/about-sanjana-m-shenoy"
+        "width": "800",
+        "height": "800"
+      }
     },
     "datePublished": new Date(post.date).toISOString(),
     "dateModified": post.lastUpdated 
@@ -304,7 +301,12 @@ export default async function BlogPost({ params }) {
     "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
     "citation": post.references ? post.references.map(ref => ({
       "@type": "CreativeWork",
-      "name": ref
+      "@id": ref.url || "",
+      "headline": ref.title,
+      "author": ref.authors,
+      "datePublished": ref.year,
+      "publisher": ref.journal,
+      "url": ref.url || ""
     })) : [],
     "about": {
       "@type": "NutritionInformation",
@@ -314,7 +316,7 @@ export default async function BlogPost({ params }) {
     "articleSection": headings.map(h => h.text),
     "speakable": {
       "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", ".article-body"]
+      "cssSelector": [".article-title", ".article-content"]
     }
   }
 
@@ -409,7 +411,7 @@ export default async function BlogPost({ params }) {
 
               {/* Article header */}
               <header className="mb-8 md:mb-12">
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6 leading-tight">
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6 leading-tight article-title">
                   {post.title}
                 </h1>
                 
@@ -500,7 +502,8 @@ export default async function BlogPost({ params }) {
                            prose-img:rounded-xl prose-headings:font-bold
                            prose-p:text-lg prose-p:leading-relaxed
                            prose-a:text-teal-700 dark:prose-a:text-teal-400
-                           prose-img:shadow-lg [&_*]:!scale-[var(--scale-factor,100%)]"
+                           prose-img:shadow-lg [&_*]:!scale-[var(--scale-factor,100%)]
+                           article-content"
                 dangerouslySetInnerHTML={{ __html: contentWithIds }}
               />
               

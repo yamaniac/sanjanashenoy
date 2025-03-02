@@ -59,7 +59,7 @@ export const metadata = {
 export default async function About() {
   const posts = await getSortedPosts();
 
-  const structuredData = {
+  const personData = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Sanjana M Shenoy",
@@ -137,13 +137,20 @@ export default async function About() {
     ],
   };
 
-  structuredData.datePublished = new Date().toISOString();
-  structuredData.dateModified = new Date().toISOString();
+  const webPageData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "About Sanjana M Shenoy - Professional Journey & Expertise",
+    description: "Meet Dt. Sanjana M Shenoy, Mangalore's leading dietitian with 15+ years of expertise in clinical nutrition, weight management & diabetes care.",
+    datePublished: new Date().toISOString(),
+    dateModified: new Date().toISOString(),
+    about: personData
+  };
 
   return (
     <>
       <Script id="structured-data" type="application/ld+json">
-        {JSON.stringify(structuredData)}
+        {JSON.stringify([personData, webPageData])}
       </Script>
       <div className="min-h-screen bg-white dark:bg-gray-900">
         <Header />
