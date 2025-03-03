@@ -1,42 +1,72 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import {
+    ScaleIcon,
+    BeakerIcon,
+    HeartIcon,
+    UserGroupIcon,
+    ClockIcon,
+    BoltIcon,
+    UserIcon,
+    TrophyIcon,
+    UserCircleIcon,
+    FireIcon,
+} from '@heroicons/react/24/outline'
 
 export default function Specializations() {
     const specializations = [
         {
           title: 'Weight Management',
           description: 'Personalized plans to help you achieve and maintain a healthy weight through sustainable lifestyle changes.',
-          icon: '/images/icons/weighing-machine.svg',
+          icon: ScaleIcon,
           href: '/consultations'
         },
         {
           title: 'Diabetes Management',
           description: 'Comprehensive dietary guidance to control blood sugar levels and manage diabetes effectively.',
-          icon: '/images/icons/diabetes.svg',
+          icon: BeakerIcon,
           href: '/consultations'
         },
         {
           title: 'Heart Health',
           description: 'Specialized nutrition plans to promote cardiovascular health and manage heart conditions.',
-          icon: '/images/icons/heart-health.svg',
+          icon: HeartIcon,
           href: '/consultations'
         },
         {
           title: 'Sports Nutrition',
           description: 'Tailored nutrition strategies to enhance athletic performance and support recovery.',
-          icon: '/images/icons/runningrun.svg',
+          icon: TrophyIcon,
           href: '/consultations'
         },
         {
           title: 'Pregnancy Nutrition',
           description: 'Expert guidance for optimal nutrition during pregnancy and postpartum recovery.',
-          icon: '/images/icons/womb.svg',
+          icon: UserCircleIcon,
           href: '/consultations'
         },
         {
           title: 'Child Nutrition',
           description: 'Age-appropriate nutrition plans to support healthy growth and development in children.',
-          icon: '/images/icons/child.svg',
+          icon: UserIcon,
+          href: '/consultations'
+        },
+        {
+          title: 'Hormonal Health',
+          description: 'Specialized dietary plans to help manage PCOS symptoms and improve hormonal balance.',
+          icon: BoltIcon,
+          href: '/consultations'
+        },
+        {
+          title: 'Medical Nutrition',
+          description: 'Customized nutrition guidance for various medical conditions and recovery.',
+          icon: UserGroupIcon,
+          href: '/consultations'
+        },
+        {
+          title: 'Corporate Wellness',
+          description: 'Nutrition and wellness programs designed for busy professionals.',
+          icon: ClockIcon,
           href: '/consultations'
         }
       ];
@@ -52,15 +82,11 @@ export default function Specializations() {
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:max-w-none lg:grid-cols-3">
             {specializations.map((spec, index) => (
-              <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm">
+              <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
                 <div className="mb-6">
-                  <Image
-                    src={spec.icon}
-                    alt={spec.title}
-                    width={64}
-                    height={64}
-                    className="w-16 h-16"
-                  />
+                  <div className="p-3 bg-indigo-100 dark:bg-indigo-900 rounded-lg inline-block">
+                    <spec.icon className="h-8 w-8 text-teal-600 dark:text-indigo-400" />
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">{spec.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">{spec.description}</p>
