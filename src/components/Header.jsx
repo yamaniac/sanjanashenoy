@@ -104,6 +104,13 @@ export default function Header() {
                   Consultations
                 </Link>
                 <Link 
+                  href="/news-events"
+                  className={`${isActive('/news-events')} transition-colors`}
+                  title="News & Events"
+                >
+                  News & Events
+                </Link>
+                <Link 
                   href="/blog"
                   className={`${isActive('/blog')} transition-colors`}
                   title="Blog"
