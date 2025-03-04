@@ -6,4 +6,4 @@ Allow: /
 Host: https://sanjanashenoy.in
 
 # Sitemaps
-Sitemap: https://sanjanashenoy.in/sitemap-0.xml
+Sitemap: https://sanjanashenoy.in/sitemap.xml
