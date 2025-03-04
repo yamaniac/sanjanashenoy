@@ -126,7 +126,7 @@ export default function NewsEvents() {
     },
     {
       id: 13,
-      src: '/images/events/Nutrition_for_woman_speaker_sanjana_shenoy.jpg',
+      src: '/images/events/Nutrition_for_woman_speaker_sanjana_shenoy.JPG',
       alt: 'Nutrition for Woman Speaker',
       title: 'Nutrition for Woman Speaker',
       date: 'September 05, 2012',
@@ -144,7 +144,7 @@ export default function NewsEvents() {
     },
     {
       id: 15,
-      src: '/images/events/Radio_mirchi_guest_speaker_sanjana_shenoy.jpg',
+      src: '/images/events/Radio_mirchi_guest_speaker_sanjana_shenoy.JPG',
       alt: 'Radio Mirchi Guest Speaker',
       title: 'Radio Mirchi Guest Speaker',
       date: 'September 05, 2012',
