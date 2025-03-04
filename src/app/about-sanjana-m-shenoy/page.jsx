@@ -12,7 +12,7 @@ import Clients from "@/components/home/Clients";
 import Script from "next/script";
 import ClientList from "@/components/about/ClientList";
 import Breadcrumbs from "@/components/Breadcrumbs";
-
+import LatestNews from "@/components/home/LatestNews";
 export const metadata = {
   title: "About Sanjana M Shenoy - Professional Journey & Expertise",
   metadataBase: new URL("https://www.sanjanashenoy.in"),
@@ -172,11 +172,11 @@ export default async function About() {
                 Dt. Sanjana M Shenoy
               </h1>
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-                Expert Consultant Dietitian & Nutritionist in Mangalore
+                Consultant Dietitian & Nutritionist in Mangalore
               </h2>
               <p className="mt-6 text-xl/8 text-gray-800 dark:text-gray-300">
-                A leading dietitian, nutritionist, and educator in Mangalore
-                with over 15 years of experience in clinical nutrition, weight
+                A leading consultant dietitian, nutritionist, and educator in Mangalore
+                with over 20 years of experience in clinical nutrition, weight
                 management, and diabetes care. Helping patients achieve their
                 health goals through personalized nutrition plans and
                 evidence-based guidance.
@@ -313,6 +313,7 @@ export default async function About() {
 
           {/* Add FAQ Section for SEO */}
         </main>
+        <LatestNews />
 
         <Latestblogs posts={posts} />
         <Footer />
