@@ -9,10 +9,11 @@ import Experience from "@/components/home/Experience";
 import Clients from "@/components/home/Clients";
 import Latestblogs from "@/components/home/Latestblogs";
 import Featured from "@/components/home/Featured";
+import LatestNews from "@/components/home/LatestNews";
 
 // Add metadata export
 export const metadata = {
-  title: "Sanjana M Shenoy - Consultant Dietitian & Nutritionist, Mangalore",
+  title: "Consultant Dietitian & Nutritionist | Mangalore | Sanjana M Shenoy",
   description:
     "Expert nutrition consultation in Mangalore by Dt. Sanjana Shenoy. Specializing in weight management, clinical nutrition, diabetes care, and personalized diet plans. Book your consultation today for a healthier lifestyle.",
   keywords:
@@ -133,6 +134,11 @@ export default async function Home() {
         </div>
         {/* Testimonials Section */}
         {/* <Testimonials /> */}
+
+        {/* Latest News & Events Section */}
+        <div className="mt-8 sm:mt-16">
+          <LatestNews />
+        </div>
 
         {/* Latest Blog Posts */}
         <div className="mt-8 sm:mt-16">

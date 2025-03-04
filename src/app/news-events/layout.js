@@ -29,10 +29,10 @@ export const metadata = {
         alt: 'Sanjana Shenoy as Resource Person at Milagres PU College',
       },
       {
-        url: 'https://sanjanashenoy.in/images/events/Max_life_insurance_chief_guest_sanjana_shenoy.webp',
+        url: 'https://sanjanashenoy.in/images/events/daiji_world_sanjana_shenoy.png',
         width: 1200,
         height: 630,
-        alt: 'Sanjana Shenoy as Chief Guest at Max Life Insurance Event',
+        alt: 'Sanjana Shenoy featured in DaijiWorld',
       },
     ],
   },

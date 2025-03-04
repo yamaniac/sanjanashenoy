@@ -221,7 +221,7 @@ export default function Consultations() {
                                 Diet Consultations & Nutrition Coaching By - Sanjana M Shenoy
                             </h1>
                             <p className="mt-6 text-xl/8">
-                                Comprehensive nutrition care tailored to your specific health needs and goals. My evidence-based approach ensures personalized dietary solutions for various health conditions and lifestyle requirements.
+                                Comprehensive nutrition care tailored to your specific health needs and goals. Evidence-based approach ensures personalized dietary solutions for various health conditions and lifestyle requirements.
                             </p>
                         </div>
 

@@ -6,6 +6,7 @@ import Header from '@/components/Header'
 import Image from 'next/image';
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Script from 'next/script';
+import { getEventData } from '@/utils/eventData';
 
 export default function NewsEvents() {
   // State to manage which image is selected and if modal is open
@@ -14,144 +15,8 @@ export default function NewsEvents() {
   const [filter, setFilter] = useState('all');
   const [loading, setLoading] = useState(true);
 
-  // More detailed gallery images with additional metadata
-  const galleryImages = [
-    { 
-      id: 1, 
-      src: '/images/events/lions_club.webp', 
-      alt: 'Lions Club Event', 
-      title: 'Lions Club Mangalore', 
-      date: 'March 10, 2021',
-      category: 'community',
-      description: 'Sanjana Shenoy led an impactful discussion on Healthy diet for a Healthy Lifestyle at Lions Club Mangalore.'
-    },
-    { 
-      id: 2, 
-      src: '/images/events/Lions_club_international_district_diabetes_care.webp', 
-      alt: 'Diabetes Care Event', 
-      title: 'Lions Club International District Diabetes Care Workshop', 
-      date: 'April 22, 2023',
-      category: 'health',
-      description: 'A specialized workshop focusing on diabetes care and prevention strategies for the community.'
-    },
-    { 
-      id: 3, 
-      src: '/images/events/diabetes_awareness_camp_mangalore.webp', 
-      alt: 'Diabetes Awareness Camp', 
-      title: 'Diabetes Awareness Camp in Mangalore', 
-      date: 'May 10, 2023',
-      category: 'health',
-      description: 'An educational camp organized to spread awareness about diabetes prevention and management.'
-    },
-    { 
-      id: 4, 
-      src: '/images/events/Max_life_insurance_chief_guest_sanjana_shenoy.webp', 
-      alt: 'Max Life Insurance Event', 
-      title: 'Max Life Insurance Conference with Chief Guest Sanjana Shenoy', 
-      date: 'June 5, 2023',
-      category: 'corporate',
-      description: 'Sanjana Shenoy was invited as the chief guest to speak about financial wellness and health planning.'
-    },
-    { 
-      id: 5, 
-      src: '/images/events/Milagres_pu_college_resource_person.webp', 
-      alt: 'Milagres PU College Event', 
-      title: 'Resource Person at Milagres PU College', 
-      date: 'July 18, 2023',
-      category: 'education',
-      description: 'An interactive session with students about career opportunities in Dietetics in healthcare and wellness sectors.'
-    },
-    { 
-      id: 6, 
-      src: '/images/events/Mangalore_senior_citizens_chief_guest_speaker_sanjana_shenoy.webp', 
-      alt: 'Senior Citizens Event', 
-      title: 'Mangalore Senior Citizens Association Talk', 
-      date: 'August 30, 2023',
-      category: 'community',
-      description: 'Sanjana Shenoy addressed senior citizens on healthy aging and maintaining wellness in later years.'
-    },
-    { 
-      id: 7, 
-      src: '/images/events/JCI_mrs_mangalore_Chief_guest_sanjana_shenoy.webp', 
-      alt: 'JCI Event', 
-      title: 'JCI Mrs. Mangalore Event with Chief Guest Sanjana Shenoy', 
-      date: 'September 12, 2023',
-      category: 'corporate',
-      description: 'A keynote address on women\'s empowerment and health consciousness at this prestigious city event.'
-    },
-    {
-      id: 8,
-      src: '/images/events/SDM_college_Chief_guest_sanjana_shenoy.webp',
-      alt: 'JCI Event',
-      title: 'SDM College Event with Chief Guest Sanjana Shenoy',
-      date: 'October 15, 2023',
-      category: 'education',
-      description: 'A keynote address on women\'s empowerment and health consciousness at this prestigious city event.'
-    },
-    {
-      id: 9,
-      src: '/images/events/Rotary_club_mangalore_sanjana_shenoy_speaker.webp',
-      alt: 'JCI Event',
-      title: 'Rotary Club Mangalore Event with Sanjana Shenoy',
-      date: 'November 20, 2023',
-      category: 'community',
-      description: 'A keynote address on women\'s empowerment and health consciousness at this prestigious city event.'
-    },
-    {
-      id: 10,
-      src: '/images/events/GPL_mangaore_speaker_sanjana_shenoy.webp',
-      alt: 'GPL, Mangalore Speaker',
-      title: 'GPL-Mangalore Speaker',
-      date: 'November 20, 2023',
-      category: 'community',
-      description: 'A keynote address on women\'s empowerment and health consciousness at this prestigious city event.'
-    },
-    {
-      id: 11,
-      src: '/images/events/St_josephs_college_speaker_sanjana_shenoy.webp',
-      alt: 'GPL, Mangalore Speaker',
-      title: 'GPL-Mangalore Speaker',
-      date: 'November 20, 2023',
-      category: 'education',
-      description: 'A keynote address on women\'s empowerment and health consciousness at this prestigious city event.'
-    },
-    {
-      id: 12,
-      src: '/images/events/daiji_world_sanjana_shenoy.png',
-      alt: 'DaijiWorld website',
-      title: 'DaijiWorld.com',
-      date: 'September 05, 2012',
-      category: 'corporate',
-      description: 'Featured in DaijiWorld.com and an article on Healthy Diet awareness and Lifestyle'
-    },
-    {
-      id: 13,
-      src: '/images/events/Nutrition_for_woman_speaker_sanjana_shenoy.JPG',
-      alt: 'Nutrition for Woman Speaker',
-      title: 'Nutrition for Woman Speaker',
-      date: 'September 05, 2012',
-      category: 'corporate',
-      description: 'Featured in DaijiWorld.com and an article on Healthy Diet awareness and Lifestyle'
-    },
-    {
-      id: 14,
-      src: '/images/events/nutrition_during_covid_sanjana.JPG',
-      alt: 'Nutrition during Covid',
-      title: 'Nutrition during Covid',
-      date: 'September 05, 2012',
-      category: 'corporate',
-      description: 'Featured in DaijiWorld.com and an article on Healthy Diet awareness and Lifestyle'
-    },
-    {
-      id: 15,
-      src: '/images/events/Radio_mirchi_guest_speaker_sanjana_shenoy.JPG',
-      alt: 'Radio Mirchi Guest Speaker',
-      title: 'Radio Mirchi Guest Speaker',
-      date: 'September 05, 2012',
-      category: 'corporate',
-      description: 'Featured in DaijiWorld.com and an article on Healthy Diet awareness and Lifestyle'
-    }
-  ];
+  // Get event data from shared utility
+  const galleryImages = getEventData();
   
   // Simulating loading
   useEffect(() => {
@@ -211,12 +76,12 @@ export default function NewsEvents() {
           "startDate": event.date,
           "performer": {
             "@type": "Person",
-            "@id": "https://sanjanashenoy.in/#person",
+            "@id": "https://sanjanashenoy.in/about-sanjana-m-shenoy",
             "name": "Sanjana M Shenoy"
           },
           "organizer": {
             "@type": "Person",
-            "@id": "https://sanjanashenoy.in/#person"
+            "@id": "https://sanjanashenoy.in/about-sanjana-m-shenoy"
           },
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "eventStatus": "https://schema.org/EventScheduled"
@@ -227,7 +92,7 @@ export default function NewsEvents() {
     "description": "Browse through a collection of Diet & nutrition workshops and health education programs where Sanjana M Shenoy shares evidence-based dietary guidance and practical wellness strategies.",
     "author": {
       "@type": "Person",
-      "@id": "https://sanjanashenoy.in/#person"
+      "@id": "https://sanjanashenoy.in/about-sanjana-m-shenoy"
     },
     "publisher": {
       "@id": "https://sanjanashenoy.in/about-sanjana-m-shenoy"
@@ -255,13 +120,12 @@ export default function NewsEvents() {
             <div className="text-base/7 text-gray-700 dark:text-gray-300">
               <p className="text-base/7 font-semibold text-indigo-600 dark:text-teal-400">News & Events</p>
               <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-5xl">
-                Community Health Initiatives: A Dietitian's Journey
+              Community Health Initiatives: By Sanjana M. Shenoy, Consultant Dietitian & Nutritionist in Mangalore
               </h1>
               <p className="mt-6 text-xl/8">
-                I'm excited to share highlights from my Diet &  nutrition workshops and 
-                health education programs. Here you'll find a collection of events where I've shared evidence-based 
+               Sanjana M. Shenoy, Consultant Dietitian from Mangalore, has conducted various workshops and health education programs. Here you'll find a collection of events where she've shared evidence-based 
                 dietary guidance and practical wellness strategies. Browse through these programs to see how 
-                we've been transforming community health through proper Diet, nutrition and lifestyle education.
+                she've been transforming community health through proper Diet, nutrition and lifestyle education.
               </p>
             </div>
           </div>
