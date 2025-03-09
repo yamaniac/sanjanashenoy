@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'fs/promises'
 import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
@@ -6,28 +6,33 @@ import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
-export function getSortedPosts() {
-  // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = fileNames.map(fileName => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '')
-
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
-
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents)
-
-    // Combine the data with the id
-    return {
-      id,
-      ...matterResult.data
+export async function getSortedPosts() {
+  const files = await fs.readdir(postsDirectory)
+  
+  // First, filter out directories
+  const markdownFiles = []
+  for (const fileName of files) {
+    const stat = await fs.stat(path.join(postsDirectory, fileName))
+    if (!stat.isDirectory() && fileName.endsWith('.md')) {
+      markdownFiles.push(fileName)
     }
-  })
+  }
 
-  // Sort posts by date
+  // Then process the markdown files
+  const allPostsData = await Promise.all(
+    markdownFiles.map(async (fileName) => {
+      const id = fileName.replace(/\.md$/, '')
+      const fullPath = path.join(postsDirectory, fileName)
+      const fileContents = await fs.readFile(fullPath, 'utf8')
+      const matterResult = matter(fileContents)
+
+      return {
+        id,
+        ...matterResult.data
+      }
+    })
+  )
+
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
       return 1
@@ -38,28 +43,32 @@ export function getSortedPosts() {
 }
 
 export async function getPostsData(page = 1, limit = 10) {
-  // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = fileNames.map(fileName => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '')
-
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
-
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents)
-
-    // Combine the data with the id and map image to featuredImage
-    return {
-      id,
-      ...matterResult.data,
-      featuredImage: matterResult.data.image // Map image to featuredImage
+  const files = await fs.readdir(postsDirectory)
+  
+  // First, filter out directories
+  const markdownFiles = []
+  for (const fileName of files) {
+    const stat = await fs.stat(path.join(postsDirectory, fileName))
+    if (!stat.isDirectory() && fileName.endsWith('.md')) {
+      markdownFiles.push(fileName)
     }
-  })
+  }
 
-  // Sort posts by date
+  const allPostsData = await Promise.all(
+    markdownFiles.map(async (fileName) => {
+      const id = fileName.replace(/\.md$/, '')
+      const fullPath = path.join(postsDirectory, fileName)
+      const fileContents = await fs.readFile(fullPath, 'utf8')
+      const matterResult = matter(fileContents)
+
+      return {
+        id,
+        ...matterResult.data,
+        featuredImage: matterResult.data.image
+      }
+    })
+  )
+
   const sortedPosts = allPostsData.sort((a, b) => {
     if (a.date < b.date) {
       return 1
@@ -68,7 +77,6 @@ export async function getPostsData(page = 1, limit = 10) {
     }
   })
 
-  // Calculate pagination
   const totalPosts = sortedPosts.length
   const totalPages = Math.ceil(totalPosts / limit)
   const offset = (page - 1) * limit
@@ -86,18 +94,14 @@ export async function getPostsData(page = 1, limit = 10) {
 
 export async function getPostData(id) {
   const fullPath = path.join(postsDirectory, `${id}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
-
-  // Use gray-matter to parse the post metadata section
+  const fileContents = await fs.readFile(fullPath, 'utf8')
   const matterResult = matter(fileContents)
 
-  // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
 
-  // Combine the data with the id and contentHtml
   return {
     id,
     contentHtml,
@@ -106,50 +110,71 @@ export async function getPostData(id) {
 }
 
 export async function getAllPosts() {
-  // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory)
+  const files = await fs.readdir(postsDirectory)
   
-  const allPostsData = fileNames
-    .filter(fileName => fileName.endsWith('.md'))
-    .map(fileName => {
-      // Remove ".md" from file name to get slug
-      const slug = fileName.replace(/\.md$/, '')
+  // First, filter out directories
+  const markdownFiles = []
+  for (const fileName of files) {
+    const stat = await fs.stat(path.join(postsDirectory, fileName))
+    if (!stat.isDirectory() && fileName.endsWith('.md')) {
+      markdownFiles.push(fileName)
+    }
+  }
 
-      // Read markdown file as string
-      const fullPath = path.join(postsDirectory, fileName)
-      const fileContents = fs.readFileSync(fullPath, 'utf8')
-
-      // Use gray-matter to parse the post metadata section
+  const posts = await Promise.all(
+    markdownFiles.map(async (file) => {
+      const slug = file.replace(/\.md$/, '')
+      const fullPath = path.join(postsDirectory, file)
+      const fileContents = await fs.readFile(fullPath, 'utf8')
       const { data } = matter(fileContents)
 
-      // Combine the data with the slug
       return {
         slug,
-        ...data,
-        date: data.date ? new Date(data.date).toISOString() : null
+        title: data.title,
+        date: data.date,
+        excerpt: data.excerpt,
       }
     })
+  )
 
-  // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
+  return posts.sort((a, b) => {
+    if (a.date && b.date) {
+      return new Date(b.date).getTime() - new Date(a.date).getTime()
     }
+    return 0
   })
+}
+
+export async function getPostBySlug(slug) {
+  const fullPath = path.join(postsDirectory, `${slug}.md`)
+  const fileContents = await fs.readFile(fullPath, 'utf8')
+  const { data, content } = matter(fileContents)
+
+  return {
+    slug,
+    title: data.title,
+    date: data.date,
+    content,
+  }
 }
 
 export async function getBlogPosts(page = 1, postsPerPage = 9) {
   try {
-    const postsDirectory = path.join(process.cwd(), 'posts')
-    const files = fs.readdirSync(postsDirectory)
+    const files = await fs.readdir(postsDirectory)
     
-    const allPosts = files
-      .filter(file => file.endsWith('.md'))
-      .map(file => {
+    // First, filter out directories
+    const markdownFiles = []
+    for (const fileName of files) {
+      const stat = await fs.stat(path.join(postsDirectory, fileName))
+      if (!stat.isDirectory() && fileName.endsWith('.md')) {
+        markdownFiles.push(fileName)
+      }
+    }
+
+    const allPosts = await Promise.all(
+      markdownFiles.map(async (file) => {
         const filePath = path.join(postsDirectory, file)
-        const fileContent = fs.readFileSync(filePath, 'utf8')
+        const fileContent = await fs.readFile(filePath, 'utf8')
         const { data } = matter(fileContent)
         
         return {
@@ -157,12 +182,13 @@ export async function getBlogPosts(page = 1, postsPerPage = 9) {
           slug: file.replace('.md', ''),
         }
       })
-      .sort((a, b) => new Date(b.date) - new Date(a.date))
+    )
 
-    const totalPosts = allPosts.length
+    const sortedPosts = allPosts.sort((a, b) => new Date(b.date) - new Date(a.date))
+    const totalPosts = sortedPosts.length
     const totalPages = Math.ceil(totalPosts / postsPerPage)
     const startIndex = (page - 1) * postsPerPage
-    const paginatedPosts = allPosts.slice(startIndex, startIndex + postsPerPage)
+    const paginatedPosts = sortedPosts.slice(startIndex, startIndex + postsPerPage)
 
     return { 
       posts: paginatedPosts,

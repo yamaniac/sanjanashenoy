@@ -118,6 +118,13 @@ export default function Header() {
                   Videos
                 </Link>
                 <Link 
+                  href="/case-files"
+                  className={`${isActive('/case-files')} transition-colors`}
+                  title="Case Files"
+                >
+                  Case Files
+                </Link>
+                <Link 
                   href="/blog"
                   className={`${isActive('/blog')} transition-colors`}
                   title="Blog"

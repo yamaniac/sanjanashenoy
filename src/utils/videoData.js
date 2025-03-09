@@ -9,7 +9,7 @@ export function getVideoData() {
       date: "Aug 5, 2024",
       category: "Food Products",
       description: "Are cornflakes actually healthy? Debunked myths about cornflakes and their health risks. Find out the hidden dangers in popular breakfast options like cornflakes in this eye-opening video. ",
-      articleLink: null, // Optional link to related article
+      articleLink: "http://sanjanashenoy.in/blog/are_breakfast_cereals_healthy", // Optional link to related article
       type: "long" // Long-form content
     },
     {
