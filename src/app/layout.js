@@ -1,8 +1,6 @@
 import { Inter } from 'next/font/google'
 import "./globals.css";
 import { Providers } from "./providers";
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from 'next/script'
 
 // Configure font to load only required subsets
@@ -33,6 +31,20 @@ export default function RootLayout({ children }) {
         {/* Add preconnect for external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DPXMYJ2Z47"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DPXMYJ2Z47');
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         {/* Common Organization Schema */}
@@ -113,8 +125,6 @@ export default function RootLayout({ children }) {
           `}
         </Script>
         <Providers>{children}</Providers>
-        <Analytics />
-        <SpeedInsights />
         <Script id="register-sw" strategy="afterInteractive">
           {`
             if ('serviceWorker' in navigator) {
