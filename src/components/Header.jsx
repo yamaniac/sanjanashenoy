@@ -71,7 +71,7 @@ export default function Header() {
                 className="dark:invert"
               />*/}
               <span className="font-bold text-xl text-gray-900 dark:text-white">
-                Sanjana Shenoy
+                Dt.Sanjana Shenoy
               </span>
             </Link>
 
@@ -109,6 +109,13 @@ export default function Header() {
                   title="News & Events"
                 >
                   News & Events
+                </Link>
+                <Link 
+                  href="/videos"
+                  className={`${isActive('/videos')} transition-colors`}
+                  title="Videos"
+                >
+                  Videos
                 </Link>
                 <Link 
                   href="/blog"
@@ -210,6 +217,20 @@ export default function Header() {
               onClick={handleMobileMenuClick}
             >
               Consultations
+            </Link>
+            <Link 
+              href="/news-events"
+              className={`block py-2 ${isActive('/news-events')}`}
+              onClick={handleMobileMenuClick}
+            >
+              News & Events
+            </Link>
+            <Link 
+              href="/videos"
+              className={`block py-2 ${isActive('/videos')}`}
+              onClick={handleMobileMenuClick}
+            >
+              Videos
             </Link>
             <Link 
               href="/blog"
