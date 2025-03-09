@@ -88,7 +88,7 @@ export default function NewsEvents() {
         }
       }))
     },
-    "headline": "Community Health Initiatives: A Dietitian's Journey",
+    "headline": "Sanjana M. Shenoy: Mangalore's Leading Dietitian and Nutritionist",
     "description": "Browse through a collection of Diet & nutrition workshops and health education programs where Sanjana M Shenoy shares evidence-based dietary guidance and practical wellness strategies.",
     "author": {
       "@type": "Person",
@@ -120,7 +120,7 @@ export default function NewsEvents() {
             <div className="text-base/7 text-gray-700 dark:text-gray-300">
               <p className="text-base/7 font-semibold text-indigo-600 dark:text-teal-400">News & Events</p>
               <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-5xl">
-              Community Health Initiatives: By Sanjana M. Shenoy, Consultant Dietitian & Nutritionist in Mangalore
+              Sanjana M. Shenoy: Mangalore's Leading Dietitian and Nutritionist
               </h1>
               <p className="mt-6 text-xl/8">
                Sanjana M. Shenoy, Consultant Dietitian from Mangalore, has conducted various workshops and health education programs. Here you'll find a collection of events where she've shared evidence-based 
@@ -166,7 +166,7 @@ export default function NewsEvents() {
           
           {/* Category Filters */}
           <section aria-labelledby="gallery-heading">
-            <h2 id="gallery-heading" className="text-3xl font-bold mb-6 text-center dark:text-white">Event Gallery</h2>
+            <h2 id="gallery-heading" className="text-3xl font-bold mb-6 text-center dark:text-white">Community Health Initiatives</h2>
             <div className="flex flex-wrap justify-center gap-2 mb-6" role="tablist" aria-label="Event categories">
               <button 
                 onClick={() => setFilter('all')}

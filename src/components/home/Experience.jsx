@@ -21,7 +21,7 @@ export default function Experience() {
           <div className="px-6 pt-16 pb-24 sm:pt-20 sm:pb-32 lg:col-start-2 lg:px-8 lg:pt-32">
             <div className="mx-auto max-w-2xl lg:mr-0 lg:max-w-lg">
               <h2 className="text-base/8 font-semibold text-indigo-600 dark:text-indigo-400">
-                Two decades of experience
+              15+ Years of Experience              
               </h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-5xl">
                 Trusted by thousands of Patients and families Worldwide

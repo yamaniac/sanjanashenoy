@@ -12,8 +12,9 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 
 export async function generateMetadata() {
   return {
-    title: 'Blog | Sanjana Shenoy - Dietitian & Nutritionist',
-    description: 'Read the latest articles and insights from Sanjana Shenoy, a registered dietitian based in Mangalore, India.',
+    title: 'Sanjana M Shenoy - Dietitian & Nutritionist | Blog',
+    description: 'Explore the latest articles and insights from Sanjana M Shenoy, an expereinced dietitian and nutritionist',
+    keywords:'dietitian, nutritionist, mangalore, health articles, nutrition blog, healthy eating'
   }
 }
 
@@ -148,8 +149,7 @@ export default async function BlogPage({ searchParams }) {
           ]}
         />
         <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-8">
-          Blog Posts
-        </h1>
+        Sanjana M Shenoy's Nutrition Blog        </h1>
         
         <Suspense fallback={
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

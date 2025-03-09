@@ -5,14 +5,15 @@ import Script from 'next/script'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata = {
-  title: 'Contact Sanjana Shenoy | Book Diet Consultation in Mangalore',
-  description: 'Schedule a diet consultation with Sanjana Shenoy in Mangalore. Available for both in-person visits at Lalbagh Towers and online consultations via WhatsApp & Google Meet.',
+  title: 'Contact Sanjana Shenoy | Book Diet & Nutrition Consultation with Sanjana Shenoy in Mangalore',
+  keywords: 'nutrition consultation mangalore, diet consultation sanjana shenoy, book online diet consultation',
+  description: 'Schedule an in-person or online diet and nutrition consultation with certified nutritionist Sanjana Shenoy in Mangalore. Get personalized dietary guidance for better health.',
   alternates: {
     canonical: 'https://sanjanashenoy.in/contact'
   },
   openGraph: {
-    title: 'Contact Sanjana Shenoy | Book Diet Consultation in Mangalore',
-    description: 'Schedule a diet consultation with Sanjana Shenoy in Mangalore. Available for both in-person visits at Lalbagh Towers and online consultations.',
+    title: 'Contact Sanjana Shenoy | Book Diet & Nutrition Consultation with Sanjana Shenoy in Mangalore',
+    description: 'Schedule an in-person or online diet and nutrition consultation with certified nutritionist Sanjana Shenoy in Mangalore. Get personalized dietary guidance for better health.',
     url: 'https://sanjanashenoy.in/contact',
     siteName: 'Sanjana Shenoy',
     locale: 'en_US',
