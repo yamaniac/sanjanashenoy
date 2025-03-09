@@ -7,6 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'News & Events | Sanjana M Shenoy - Dietitian and Nutritionist',
     description: 'Explore nutrition workshops, health education programs, and community events led by Sanjana M Shenoy.',
+    keywords: 'sanjana m shenoy, mangalore dietitian, mangalore nutritionist, nutrition workshops, health education programs, community health initiatives',
     url: 'https://sanjanashenoy.in/news-events',
     type: 'website',
     images: [

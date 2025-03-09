@@ -94,7 +94,8 @@ function ConsultationsStructuredData() {
 
 export const metadata = {
   title: "Nutrition Consultation Services - Dt. Sanjana M Shenoy",
-  description: 'Comprehensive nutrition care tailored to your specific health needs and goals. My evidence-based approach ensures personalized dietary solutions for various health conditions and lifestyle requirements.',
+  description: 'Comprehensive nutrition care tailored to your specific health needs and goals. Personalized dietary solutions for weight management, diabetes, kidney disorders, GI issues, heart disease, and more.',
+  keywords: "nutrition consultation, personalized diet, weight management, diabetes, kidney disorders, gastrointestinal diseases, heart disease, child nutrition, hormonal disorders, sports nutrition, pregnancy nutrition, corporate wellness",
   canonical: "https://sanjanashenoy.in/consultations",
 };
 
@@ -218,7 +219,7 @@ export default function Consultations() {
                         <div className="text-base/7 text-gray-700 dark:text-gray-300">
                             <p className="text-base/7 font-semibold text-indigo-600 dark:text-teal-400">Consultations</p>
                             <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-5xl">
-                                Diet Consultations & Nutrition Coaching By - Sanjana M Shenoy
+                            Personalized Diet and Nutrition Consultations By - Dt.Sanjana M Shenoy
                             </h1>
                             <p className="mt-6 text-xl/8">
                                 Comprehensive nutrition care tailored to your specific health needs and goals. Evidence-based approach ensures personalized dietary solutions for various health conditions and lifestyle requirements.

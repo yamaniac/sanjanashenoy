@@ -17,7 +17,7 @@ export const metadata = {
   title: "About Sanjana M Shenoy - Professional Journey & Expertise",
   metadataBase: new URL("https://www.sanjanashenoy.in"),
   description:
-    "Meet Dt. Sanjana M Shenoy, Mangalore's leading dietitian with 15+ years of expertise in clinical nutrition, weight management & diabetes care. PhD researcher, certified bariatric nutritionist & diabetes educator. Book your consultation today!",
+    "Dt. Sanjana M Shenoy, Mangalore's leading dietitian with 20 years of expertise in clinical nutrition, weight management & diabetes care. PhD researcher, certified bariatric nutritionist & diabetes educator. Book your consultation today!",
   openGraph: {
     title:
       "Dt. Sanjana M Shenoy - Expert Dietitian & Nutritionist in Mangalore | 15+ Years Experience",
