@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Add base styles for markdown tables */
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+  }
+
+  .prose table th,
+  .prose table td {
+    padding: 0.75rem;
+    border: 1px solid;
+  }
+
+  .prose table th {
+    font-weight: 600;
+    text-align: left;
+  }
+
+  /* Dark mode styles */
+  .dark .prose table th {
+    background-color: rgb(31, 41, 55);
+  }
+
+  .dark .prose table td,
+  .dark .prose table th {
+    border-color: rgb(55, 65, 81);
+  }
+}
+
 body {
   font-family: var(--font-geist-sans), Arial, sans-serif;
 }
