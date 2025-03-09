@@ -4,6 +4,7 @@ import { Providers } from "./providers";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from 'next/script'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 // Configure font to load only required subsets
 const inter = Inter({ 
@@ -35,6 +36,9 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={inter.className}>
+        {/* Google Analytics */}
+        <GoogleAnalytics gaId="G-DPXMYJ2Z47" />
+        
         {/* Common Organization Schema */}
         <Script id="common-schema" type="application/ld+json">
           {`

@@ -13,8 +13,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/typography": "^0.5.16",
-    "@vercel/analytics": "^1.1.1",
-    "@vercel/speed-insights": "^1.2.0",
+    "analytics": "^0.8.16",
     "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
     "markdown-it": "^14.1.0",
