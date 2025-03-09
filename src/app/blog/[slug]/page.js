@@ -514,7 +514,7 @@ export default async function BlogPost({ params }) {
                 {/* Tags */}
                 {post.tags && (
                   <div className="flex flex-wrap gap-2">
-                    {post.tags.map((tag) => (
+                    {post.tags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
                         className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium"
@@ -522,6 +522,13 @@ export default async function BlogPost({ params }) {
                         {tag}
                       </span>
                     ))}
+                    {post.tags.length > 3 && (
+                      <span
+                        className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium"
+                      >
+                        +{post.tags.length - 3}
+                      </span>
+                    )}
                   </div>
                 )}
               </header>
