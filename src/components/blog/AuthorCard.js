@@ -17,6 +17,7 @@ const AuthorCard = () => {
             src="/images/author.png"
             fill
             alt="Sanjana Shenoy - Registered Dietitian & Nutritionist"
+            title="Sanjana M Shenoy - Dietitian & Nutritionist"
             className="rounded-full object-cover shadow-md border-2 border-gray-200 dark:border-gray-700"
             sizes="128px"
             priority

@@ -74,10 +74,21 @@ export async function generateMetadata({ params }) {
     }
     const headings = getHeadings(data.content)
 
+    // Define the canonical URL
+    const canonicalUrl = `https://sanjanashenoy.in/blog/${slug}`
+
     return {
-      title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
-      description: `${data.description}. Article sections include: ${headings.map(h => h.text).join(', ')}`,
+      title: `${data.title} | Sanjana Shenoy`,
+      description: data.description.length > 155 ? `${data.description.substring(0, 155)}...` : data.description,
       metadataBase: new URL('https://sanjanashenoy.in'),
+      alternates: {
+        canonical: canonicalUrl,
+        languages: {
+          'en-IN': canonicalUrl,
+          'en-US': canonicalUrl,
+          'x-default': canonicalUrl
+        },
+      },
       other: {
         'preload': [
           { 'as': 'image', 'href': '/images/author.png' },
@@ -90,6 +101,8 @@ export async function generateMetadata({ params }) {
       openGraph: {
         title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
         description: data.description,
+        type: 'article',
+        url: canonicalUrl,
         images: data.image ? [{
           url: data.image,
           license: data.imageLicense || 'Licensed Content',
@@ -98,6 +111,7 @@ export async function generateMetadata({ params }) {
           attribution: `Image by ${data.imageCredit} from ${data.imageSource}. ${data.imageLicense}`,
           usage_terms: 'This image is used under license. Redistribution not permitted.'
         }] : [],
+        siteName: 'Sanjana M Shenoy - Dietitian & Nutritionist',
       },
       accessibility: {
         features: ['adjustableTextSize'],
@@ -110,7 +124,19 @@ export async function generateMetadata({ params }) {
         attribution: `Image by ${data.imageCredit} from ${data.imageSource}. ${data.imageLicense}`,
         usage_terms: 'This image is used under license. Redistribution not permitted.'
       },
-      canonical: `https://sanjanashenoy.in/blog/${slug}`,
+      robots: {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+        },
+      },
+      canonical: canonicalUrl,
     }
   } catch (error) {
     console.error('Error reading post:', error)
@@ -426,6 +452,7 @@ export default async function BlogPost({ params }) {
                   <BlogImage
                     src={post.image}
                     alt={post.image_alt}
+                    title={post.title}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 1100px"

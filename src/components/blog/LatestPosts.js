@@ -18,6 +18,7 @@ export default function LatestPosts({ posts }) {
                   <Image
                     src={post.thumbnail}
                     alt={post.image_alt}
+                    title={post.title}
                     width={60}
                     height={60}
                     className="rounded-md object-cover"

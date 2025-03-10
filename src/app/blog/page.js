@@ -11,14 +11,48 @@ import { getBlogPosts } from '@/lib/posts'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export async function generateMetadata() {
+  const canonicalUrl = 'https://sanjanashenoy.in/blog'
   return {
     title: 'Sanjana M Shenoy - Dietitian & Nutritionist | Blog',
     description: 'Explore the latest articles and insights from Sanjana M Shenoy, an expereinced dietitian and nutritionist',
     keywords:'dietitian, nutritionist, mangalore, health articles, nutrition blog, healthy eating',
-    canonical: 'https://sanjanashenoy.in/blog',
+    metadataBase: new URL('https://sanjanashenoy.in'),
     alternates: {
-      canonical: 'https://sanjanashenoy.in/blog'
-    }
+      canonical: canonicalUrl,
+      languages: {
+        'en-IN': canonicalUrl,
+        'en-US': canonicalUrl,
+        'x-default': canonicalUrl
+      },
+    },
+    openGraph: {
+      title: 'Sanjana M Shenoy - Dietitian & Nutritionist | Blog',
+      description: 'Explore the latest articles and insights from Sanjana M Shenoy, an expereinced dietitian and nutritionist',
+      type: 'website',
+      url: canonicalUrl,
+      siteName: 'Sanjana M Shenoy - Dietitian & Nutritionist',
+      images: [
+        {
+          url: 'https://sanjanashenoy.in/images/sanjana_shenoy.png',
+          width: 800,
+          height: 800,
+          alt: 'Sanjana M Shenoy - Dietitian & Nutritionist'
+        }
+      ]
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    canonical: canonicalUrl
   }
 }
 
@@ -44,6 +78,7 @@ function BlogCard({ post }) {
           <BlogImage
             src={post.image || '/images/blog/default-blog-image.jpg'}
             alt={post.title}
+            title={post.title}
             fill
             className="object-cover"
             priority={false}
