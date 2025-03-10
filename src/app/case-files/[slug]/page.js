@@ -73,15 +73,36 @@ export default async function CaseFile({ params }) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MedicalScholarlyArticle",
-    headline: caseFile.title,
-    datePublished: caseFile.date,
-    author: {
+    "headline": caseFile.title,
+    "name": caseFile.title,
+    "datePublished": caseFile.date,
+    "dateModified": caseFile.date,
+    "author": [{
       "@type": "Person",
-      name: caseFile.author,
+      "name": "Sanjana M Shenoy",
+      "jobTitle": "Dietitian & Nutrition expert",
+      "url": "https://sanjanashenoy.in/about-sanjana-m-shenoy"
+    }],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sanjana Shenoy Nutrition",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sanjanashenoy.in/images/author.png",
+        "width": "800",
+        "height": "800"
+      }
     },
-    description: caseFile.description,
-    keywords: [caseFile.category, ...caseFile.symptoms],
-    articleBody: caseFile.content,
+    "description": caseFile.description,
+    "image": [
+      caseFile.image || "https://sanjanashenoy.in/images/default-case-study.jpg"
+    ],
+    "keywords": [caseFile.category, ...caseFile.symptoms],
+    "articleBody": caseFile.content,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://sanjanashenoy.in/case-files/${params.slug}`
+    }
   };
 
   return (
