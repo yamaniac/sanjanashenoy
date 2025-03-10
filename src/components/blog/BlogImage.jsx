@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-export default function BlogImage({ src, alt, ...props }) {
+export default function BlogImage({ src, alt, title, ...props }) {
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -15,11 +15,16 @@ export default function BlogImage({ src, alt, ...props }) {
     );
   }
 
+  // Set default alt and title if not provided
+  const imageAlt = alt || 'Blog post image';
+  const imageTitle = title || imageAlt;
+
   return (
     <div className="relative w-full h-full">
       <Image
         src={src}
-        alt={alt || 'Blog post image'}
+        alt={imageAlt}
+        title={imageTitle}
         {...props}
         onError={() => setError(true)}
         onLoad={() => setIsLoading(false)}

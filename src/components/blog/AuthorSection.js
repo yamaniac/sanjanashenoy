@@ -107,6 +107,7 @@ export default function AuthorSection() {
                 <Image
                   src={AUTHOR_INFO.image}
                   alt={`Dr. ${AUTHOR_INFO.name}, ${AUTHOR_INFO.jobTitle}`}
+                  title={`${AUTHOR_INFO.name} - ${AUTHOR_INFO.jobTitle}`}
                   className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover"
                   width={192}
                   height={192}

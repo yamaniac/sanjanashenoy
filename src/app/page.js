@@ -18,17 +18,38 @@ export const metadata = {
     "Expert nutrition consultation in Mangalore by Dt. Sanjana Shenoy. Specializing in weight management, clinical nutrition, diabetes care, and personalized diet plans. Book your consultation today for a healthier lifestyle.",
   keywords:
   "nutrition expert mangalore, diet consultation mangalore, weight management mangalore, clinical dietitian mangalore, personalized diet plans",
-    openGraph: {
+  metadataBase: new URL('https://sanjanashenoy.in'),
+  alternates: {
+    canonical: 'https://sanjanashenoy.in',
+  },
+  openGraph: {
     title: "Sanjana M Shenoy -Consultant Dietitian & Nutritionist, Mangalore",
     description:
       "Expert nutrition consultation in Mangalore by Dt. Sanjana Shenoy. Specializing in weight management, clinical nutrition, diabetes care, and personalized diet plans. Book your consultation today for a healthier lifestyle.",
     type: "website",
+    url: "https://sanjanashenoy.in",
     locale: "en_IN",
     siteName: "sanjanashenoy.in",
+    images: [
+      {
+        url: "https://sanjanashenoy.in/images/sanjana_shenoy.png",
+        width: 800,
+        height: 800,
+        alt: "Sanjana M Shenoy - Dietitian & Nutritionist"
+      }
+    ],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   canonical: "https://sanjanashenoy.in",
 };

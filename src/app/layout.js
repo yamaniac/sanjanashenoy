@@ -13,6 +13,30 @@ const inter = Inter({
 export const metadata = {
   title: 'Sanjana M Shenoy - Dietitian and Nutritionist',
   description: 'Sanjana M Shenoy is a Dietitian and a Nutritionist based in Mangalore, India. She specializes in weight loss, sports nutrition, and general nutrition.',
+  metadataBase: new URL('https://sanjanashenoy.in'),
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Replace with your actual verification code
+  },
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-IN': 'https://sanjanashenoy.in',
+      'en-US': 'https://sanjanashenoy.in',
+      'x-default': 'https://sanjanashenoy.in'
+    },
+  },
 }
 
 // Add viewport export for color scheme and theme color

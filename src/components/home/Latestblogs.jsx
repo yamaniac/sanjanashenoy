@@ -20,6 +20,7 @@ export default function Latestblogs({ posts = [] }) {
                   <Image
                     src={post.image || "/images/blog-placeholder.jpg"}
                     alt={post.title}
+                    title={post.title}
                     width={400}
                     height={300}
                     className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
