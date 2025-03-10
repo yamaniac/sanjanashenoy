@@ -6,7 +6,7 @@ export default function Featured() {
         {
           name: "Personalized Nutrition Plans",
           description:
-            "Expert-crafted meal plans tailored specifically to your metabolic needs, dietary preferences, and health objectives. My evidence-based nutrition strategies optimize yMy energy levels, support immune function, and help achieve sustainable weight management.",
+            "Expert-crafted meal plans tailored specifically to your metabolic needs, dietary preferences, and health objectives. My evidence-based nutrition strategies optimize your energy levels, support immune function, and help achieve sustainable weight management.",
           benefits: ["Custom macronutrient ratios", "Allergen-free options", "Seasonal meal variations"],
           href: "/consultation",
           icon: ClipboardIcon,
@@ -14,7 +14,7 @@ export default function Featured() {
         {
           name: "One-on-One Health Coaching",
           description:
-            "Transformative coaching sessions that empower you to overcome health challenges and build sustainable wellness habits. My certified nutritionists provide accountability, motivation, and practical strategies for lasting lifestyle changes.",
+            "Transformative coaching sessions that empower you to overcome health challenges and build sustainable wellness habits. I provide accountability, motivation, and practical strategies for lasting lifestyle changes.",
           benefits: ["Weekly progress tracking", "Behavioral change techniques", "Personalized goal setting"],
           href: "/consultation",
           icon: UserGroupIcon,
