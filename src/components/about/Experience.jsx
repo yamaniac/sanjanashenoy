@@ -125,14 +125,17 @@ export default function Experience() {
   ]
 
   return (
-    <div className="py-24 sm:py-32 bg-gray-50 dark:bg-gray-950">
+    <section id="professional-experience" className="py-24 sm:py-32 bg-gray-50 dark:bg-gray-950">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-base font-semibold leading-7 text-teal-600 dark:text-teal-400">
             Professional Journey
           </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+          <h3 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
             Experience & Education
+          </h3>
+          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+            Academic leadership and clinical dietetics expertise spanning over 15 years
           </p>
         </div>
 
@@ -141,7 +144,7 @@ export default function Experience() {
           {experiences.filter(cat => cat.type === 'Academic').map((category) => (
             <div key={category.type} className="flex flex-col items-center">
               <div className="flex items-center gap-x-3">
-                <category.icon className="h-6 w-6 text-teal-600 dark:text-teal-400" />
+                <category.icon className="h-6 w-6 text-teal-600 dark:text-teal-400" aria-hidden="true" />
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                   {category.type} Experience
                 </h3>
@@ -149,15 +152,15 @@ export default function Experience() {
 
               <div className="mt-6 w-full border-l-2 border-teal-600 dark:border-teal-400">
                 {category.positions.map((position, index) => (
-                  <div
+                  <article 
                     key={index}
                     className="relative pl-6 pb-6 last:pb-0"
                   >
                     <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full bg-teal-600 dark:bg-teal-400" />
                     <div className="flex flex-col gap-y-1">
                       <div className="flex items-center gap-x-2 text-sm text-gray-500 dark:text-gray-400">
-                        <CalendarIcon className="h-4 w-4" />
-                        <span>{position.period}</span>
+                        <CalendarIcon className="h-4 w-4" aria-hidden="true" />
+                        <time dateTime={position.period.replace(' - ', '–')}>{position.period}</time>
                       </div>
                       <h4 className="font-semibold text-gray-900 dark:text-white">
                         {position.title}
@@ -171,7 +174,7 @@ export default function Experience() {
                         </p>
                       )}
                     </div>
-                  </div>
+                  </article>
                 ))}
               </div>
             </div>
@@ -180,7 +183,7 @@ export default function Experience() {
           {/* Education Timeline */}
           <div className="flex flex-col items-center">
             <div className="flex items-center gap-x-3">
-              <AcademicCapIcon className="h-6 w-6 text-teal-600 dark:text-teal-400" />
+              <AcademicCapIcon className="h-6 w-6 text-teal-600 dark:text-teal-400" aria-hidden="true" />
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                 Education & Certifications
               </h3>
@@ -188,15 +191,15 @@ export default function Experience() {
 
             <div className="mt-6 w-full border-l-2 border-teal-600 dark:border-teal-400">
               {education.map((edu, index) => (
-                <div
+                <article
                   key={index}
                   className="relative pl-6 pb-6 last:pb-0"
                 >
                   <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full bg-teal-600 dark:bg-teal-400" />
                   <div className="flex flex-col gap-y-1">
                     <div className="flex items-center gap-x-2 text-sm text-gray-500 dark:text-gray-400">
-                      <CalendarIcon className="h-4 w-4" />
-                      <span>{edu.year}</span>
+                      <CalendarIcon className="h-4 w-4" aria-hidden="true" />
+                      <time dateTime={edu.year}>{edu.year}</time>
                     </div>
                     <h4 className="font-semibold text-gray-900 dark:text-white">
                       {edu.title}
@@ -208,7 +211,7 @@ export default function Experience() {
                       {edu.details}
                     </p>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
@@ -217,7 +220,7 @@ export default function Experience() {
           {experiences.filter(cat => cat.type === 'Clinical').map((category) => (
             <div key={category.type} className="flex flex-col items-center">
               <div className="flex items-center gap-x-3">
-                <category.icon className="h-6 w-6 text-teal-600 dark:text-teal-400" />
+                <category.icon className="h-6 w-6 text-teal-600 dark:text-teal-400" aria-hidden="true" />
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                   {category.type} Experience
                 </h3>
@@ -225,15 +228,15 @@ export default function Experience() {
 
               <div className="mt-6 w-full border-l-2 border-teal-600 dark:border-teal-400">
                 {category.positions.map((position, index) => (
-                  <div
+                  <article
                     key={index}
                     className="relative pl-6 pb-6 last:pb-0"
                   >
                     <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full bg-teal-600 dark:bg-teal-400" />
                     <div className="flex flex-col gap-y-1">
                       <div className="flex items-center gap-x-2 text-sm text-gray-500 dark:text-gray-400">
-                        <CalendarIcon className="h-4 w-4" />
-                        <span>{position.period}</span>
+                        <CalendarIcon className="h-4 w-4" aria-hidden="true" />
+                        <time dateTime={position.period.replace(' - ', '–')}>{position.period}</time>
                       </div>
                       <h4 className="font-semibold text-gray-900 dark:text-white">
                         {position.title}
@@ -242,13 +245,13 @@ export default function Experience() {
                         {position.institution}
                       </p>
                     </div>
-                  </div>
+                  </article>
                 ))}
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }

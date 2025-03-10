@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 
 export default function FontSizeSlider({ variant = 'desktop' }) {
-  const [fontSize, setFontSize] = useState(16)
+  const [fontSize, setFontSize] = useState(20)
   const [isExpanded, setIsExpanded] = useState(false)
   const sliderRef = useRef(null)
 
