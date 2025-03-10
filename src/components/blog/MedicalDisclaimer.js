@@ -1,16 +1,85 @@
-import React from 'react'
+"use client"
 
-export default function MedicalDisclaimer() {
+import React, { useState, useEffect } from 'react'
+import { AlertTriangle } from 'lucide-react'; // You may need to install lucide-react or use another icon library
+
+export default function MedicalDisclaimer({ className = "" }) {
+  // State to track if user has seen the disclaimer before
+  const [isExpanded, setIsExpanded] = useState(true);
+
+  // Check localStorage on component mount (client-side only)
+  useEffect(() => {
+    const hasSeenDisclaimer = localStorage.getItem('hasSeenMedicalDisclaimer');
+    if (hasSeenDisclaimer) {
+      setIsExpanded(false);
+    }
+  }, []);
+
+  // Mark disclaimer as seen when collapsed
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+    if (isExpanded) {
+      localStorage.setItem('hasSeenMedicalDisclaimer', 'true');
+    }
+  };
+
+  // Get current date for the disclaimer
+  const currentDate = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
   return (
-    <aside aria-label="Medical disclaimer" className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700 mt-4">
-      <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Medical Disclaimer</h2>
-      <div className="text-gray-700 dark:text-gray-300">
-        <p>
-          The content provided is for informational and educational purposes only. It is not intended to be a substitute 
-          for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other 
-          qualified health provider with any questions you may have regarding a medical condition. Never disregard 
-          professional medical advice or delay in seeking it because of something you have read on this website.
-        </p>
+    <aside 
+      aria-label="Medical disclaimer" 
+      className={`border-l-4 border-red-500 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md ${className} my-6 transition-all duration-300 animate-pulse-once`}
+    >
+      <div className="p-4 md:p-6">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <AlertTriangle className="h-6 w-6 text-red-500" />
+            <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
+              Medical Disclaimer & Legal Notice
+            </h2>
+          </div>
+          <button 
+            onClick={handleToggle}
+            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+            aria-expanded={isExpanded}
+            aria-controls="disclaimer-content"
+          >
+            {isExpanded ? '−' : '+'}
+          </button>
+        </div>
+        
+        {isExpanded && (
+          <div 
+            id="disclaimer-content" 
+            className="mt-4 text-gray-700 dark:text-gray-300 space-y-3"
+          >
+            <p>
+              The articles, case studies and medical information (if any) presented are derived from real medical scenarios but have been 
+              modified to protect patient privacy and confidentiality in accordance with HIPAA guidelines.
+            </p>
+            <p>
+              This content is provided solely for educational and informational purposes and does not establish a 
+              physician-patient relationship. It is <span className="font-semibold">not intended to replace professional 
+              medical advice, diagnosis, or treatment</span>.
+            </p>
+            <p>
+              The standard of care may have changed since these cases were documented. Always consult with a qualified 
+              healthcare provider regarding any medical condition or treatment options. Never disregard professional 
+              medical advice or delay seeking it because of something you have read on this website.
+            </p>
+            <p>
+              The author and publisher disclaim any liability arising directly or indirectly from the use of this information.
+            </p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+              Last updated: {currentDate}
+            </p>
+          </div>
+        )}
       </div>
     </aside>
   )

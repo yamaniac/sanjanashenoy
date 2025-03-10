@@ -545,14 +545,12 @@ export default async function BlogPost({ params }) {
                 dangerouslySetInnerHTML={{ __html: contentWithIds }}
               />
               
-             
-              
               {/* About the Author Section */}
               <AuthorSection />
               
               {/* Post Navigation */}
               
-              {/* References and Share button */}
+              {/* References and Disclaimer at the bottom only for better SEO */}
               <div className="mt-8 space-y-8">
                 <References references={post.references} />
                 <Disclaimer />

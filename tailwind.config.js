@@ -20,11 +20,16 @@ module.exports = {
     extend: {
       animation: {
         scroll: 'scroll 30s linear infinite',
+        'pulse-once': 'pulse-once 2s ease-in-out 1',
       },
       keyframes: {
         scroll: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        'pulse-once': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.85' },
         },
       },
     },

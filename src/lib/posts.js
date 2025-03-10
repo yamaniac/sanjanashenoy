@@ -133,6 +133,7 @@ export async function getAllPosts() {
         title: data.title,
         date: data.date,
         excerpt: data.excerpt,
+        image: data.image,
       }
     })
   )
