@@ -17,8 +17,8 @@ export const metadata = {
   description:
     "Expert nutrition consultation in Mangalore by Dt. Sanjana Shenoy. Specializing in weight management, clinical nutrition, diabetes care, and personalized diet plans. Book your consultation today for a healthier lifestyle.",
   keywords:
-    "nutrition expert, diet consultation, weight management, clinical dietitian, mangalore dietitian",
-  openGraph: {
+  "nutrition expert mangalore, diet consultation mangalore, weight management mangalore, clinical dietitian mangalore, personalized diet plans",
+    openGraph: {
     title: "Sanjana M Shenoy -Consultant Dietitian & Nutritionist, Mangalore",
     description:
       "Expert nutrition consultation in Mangalore by Dt. Sanjana Shenoy. Specializing in weight management, clinical nutrition, diabetes care, and personalized diet plans. Book your consultation today for a healthier lifestyle.",
@@ -44,17 +44,23 @@ export const generateJsonLd = () => {
         name: "Sanjana M Shenoy",
         jobTitle: "Consultant Dietitian & Nutritionist",
         description:
-          "Dt. Sanjana Shenoy is a Consultant Dietitian & Nutritionist in Mangalore with over 13 years of experience",
-        image: "https://sanjanashenoy.in/images/sanjana-shenoy.jpg", // Update with actual image path
+          "Dt. Sanjana Shenoy is a Consultant Dietitian & Nutritionist in Mangalore with 20 years of experience",
+        image: "https://sanjanashenoy.in/images/sanjana-shenoy.png", // Update with actual image path
         url: "https://sanjanashenoy.in",
         sameAs: [
           "https://www.linkedin.com/in/sanjana-shenoy", // Update with actual social links
           "https://www.instagram.com/dt.sanjanashenoy",
+          "https://www.youtube.com/@dietsanjana",
         ],
         memberOf: {
           "@type": "Organization",
           name: "Indian Dietetics Association",
           url: "https://idaindia.com",
+        },
+        memberOf: {
+          "@type": "Organization",
+          name: "Nutrition Society of India",
+          url: "https://nutritionsocietyindia.com/",
         },
       },
       {
@@ -120,7 +126,7 @@ export default async function Home() {
         </div>
 
         {/* Specializations Section */}
-        <div className="mt-8 sm:mt-16">
+        <div>
           <Specializations />
         </div>
         {/* Clients Section */}
@@ -144,6 +150,7 @@ export default async function Home() {
         <div className="mt-8 sm:mt-16">
           <Latestblogs posts={posts} />
         </div>
+        
 
         <Footer />
       </main>
