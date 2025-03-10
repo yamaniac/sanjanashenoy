@@ -171,8 +171,10 @@ export default function Header() {
           <div className="flex items-center justify-between h-16">
             <Link 
               href="/" 
+              title="Logo of Sanjana Shenoy"
               className="flex items-center space-x-2"
               aria-label="Sanjana Shenoy homepage"
+              alt="Logo of Sanjana Shenoy"
             >
               {/* Remove or comment out the Image component */}
               {/*<Image
