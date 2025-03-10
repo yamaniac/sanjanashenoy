@@ -6,7 +6,7 @@ export default function Experience() {
     const stats = [
         { id: 1, name: "Success Stories", value: "2,000+", description: "Transformed lives through personalized nutrition plans" },
         { id: 2, name: "Years of Experience", value: "20+", description: "Decades of evidence-based nutritional expertise" },
-        { id: 3, name: "Corporate Clients", value: "30+", description: "Trusted by leading organizations worldwide" },
+        { id: 3, name: "Corporate Clients", value: "12+", description: "Trusted by leading organizations worldwide" },
         { id: 4, name: "Diet Plans Created", value: "5,000+", description: "Custom nutrition solutions for diverse needs" }
     ];
     return (
