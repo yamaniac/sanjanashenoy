@@ -14,7 +14,11 @@ export async function generateMetadata() {
   return {
     title: 'Sanjana M Shenoy - Dietitian & Nutritionist | Blog',
     description: 'Explore the latest articles and insights from Sanjana M Shenoy, an expereinced dietitian and nutritionist',
-    keywords:'dietitian, nutritionist, mangalore, health articles, nutrition blog, healthy eating'
+    keywords:'dietitian, nutritionist, mangalore, health articles, nutrition blog, healthy eating',
+    canonical: 'https://sanjanashenoy.in/blog',
+    alternates: {
+      canonical: 'https://sanjanashenoy.in/blog'
+    }
   }
 }
 
