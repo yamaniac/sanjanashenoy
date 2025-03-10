@@ -8,8 +8,18 @@ import remarkGfm from "remark-gfm";
 import Script from "next/script";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import AuthorSection from "@/components/blog/AuthorSection";
-import MedicalDisclaimer from "@/components/blog/MedicalDisclaimer";
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
+// Dynamic imports for client components
+const MedicalDisclaimer = dynamic(() => import("@/components/blog/MedicalDisclaimer"), {
+  loading: () => <div className="animate-pulse h-24 bg-gray-100 dark:bg-gray-800 rounded-lg"></div>
+});
+
+const AuthorSection = dynamic(() => import("@/components/blog/AuthorSection"), {
+  loading: () => <div className="animate-pulse h-64 bg-gray-100 dark:bg-gray-800 rounded-lg"></div>
+});
+
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
   const caseFile = await getCaseFileBySlug(params.slug);
@@ -352,9 +362,21 @@ export default async function CaseFile({ params }) {
               </div>
             </div>
           </div>
-          <MedicalDisclaimer />
-          {/* Author Section */}
-          <AuthorSection />
+          
+          {/* Article Content */}
+          {/* <article className="prose prose-teal lg:prose-lg dark:prose-invert mx-auto mb-10 text-gray-800 dark:text-gray-200">
+            <MDXRemote source={caseFile.content} />
+          </article> */}
+          
+          {/* Author Section with Enhanced Medical Credentials */}
+          <Suspense fallback={<div className="animate-pulse h-64 bg-gray-100 dark:bg-gray-800 rounded-lg mb-8"></div>}>
+            <AuthorSection />
+          </Suspense>
+          
+          {/* Medical Disclaimer at Bottom Only for Better SEO */}
+          <Suspense fallback={<div className="animate-pulse h-24 bg-gray-100 dark:bg-gray-800 rounded-lg mb-8"></div>}>
+            <MedicalDisclaimer className="mb-8" />
+          </Suspense>
         </main>
         <Footer />
       </div>
