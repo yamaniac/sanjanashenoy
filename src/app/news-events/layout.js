@@ -37,6 +37,10 @@ export const metadata = {
       },
     ],
   },
+  canonical: 'https://sanjanashenoy.in/news-events',
+  alternates: {
+    canonical: 'https://sanjanashenoy.in/news-events',
+  }
 }
 
 export default function NewsEventsLayout({ children }) {

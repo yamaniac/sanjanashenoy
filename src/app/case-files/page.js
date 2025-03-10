@@ -10,7 +10,11 @@ export async function generateMetadata() {
   return {
     title: 'Medical Case Files - Sanjana M Shenoy',
     description: 'Explore medical case studies and patient outcomes by Sanjana M Shenoy, experienced dietitian and nutritionist',
-    keywords: 'medical case studies, patient outcomes, clinical nutrition, dietitian cases, nutrition therapy'
+    keywords: 'medical case studies, patient outcomes, clinical nutrition, dietitian cases, nutrition therapy',
+    canonical: 'https://sanjanashenoy.in/case-files',
+    alternates: {
+      canonical: 'https://sanjanashenoy.in/case-files'
+    }
   }
 }
 

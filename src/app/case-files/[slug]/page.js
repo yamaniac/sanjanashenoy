@@ -13,6 +13,7 @@ import MedicalDisclaimer from "@/components/blog/MedicalDisclaimer";
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
   const caseFile = await getCaseFileBySlug(params.slug);
+  const slug = params.slug;
 
   return {
     title: `${caseFile.title} - Medical Case Study, Sanjana M Shenoy`,
@@ -27,7 +28,12 @@ export async function generateMetadata({ params }) {
       publishedTime: caseFile.date,
       authors: [caseFile.author],
       tags: ["medical case study", caseFile.category, ...caseFile.symptoms],
+      url: `https://sanjanashenoy.in/case-files/${slug}`,
     },
+    canonical: `https://sanjanashenoy.in/case-files/${slug}`,
+    alternates: {
+      canonical: `https://sanjanashenoy.in/case-files/${slug}`
+    }
   };
 }
 

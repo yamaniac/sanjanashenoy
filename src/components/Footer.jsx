@@ -6,7 +6,10 @@ const navigation = {
       { name: 'Home', href: '/' },
       { name: 'About', href: '/about' },
       { name: 'Consultations', href: '/consultations' },
+      { name: 'News & Events', href: '/news-events' },
+      { name: 'Videos', href: '/videos' },
       { name: 'Blog', href: '/blog' },
+      { name: 'Case Files', href: '/case-files' },
       { name: 'Contact', href: '/contact' },
     ],
     social: [
@@ -73,11 +76,39 @@ const navigation = {
                 </li>
                 <li>
                   <Link 
-                    href="/blog" 
+                    href="/consultations" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm"
+                    title="Consultations"
+                  >
+                    Consultations
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/news-events" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm"
+                    title="News and Events"
+                  >
+                    News & Events
+                  </Link>
+                </li>
+                
+                <li>
+                  <Link 
+                    href="/videos" 
                     className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm"
                     title="Nutrition and Diet Blog Articles"
                   >
                     Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/case-files" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm"
+                    title="Case Files"
+                  >
+                    Case Files
                   </Link>
                 </li>
                 <li>

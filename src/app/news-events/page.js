@@ -8,6 +8,19 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import Script from 'next/script';
 import { getEventData } from '@/utils/eventData';
 
+// Note: This metadata won't be used in client components
+// It's defined in layout.js for this section, but added here as documentation
+/*
+export const metadata = {
+  title: 'News & Events | Sanjana M Shenoy - Dietitian and Nutritionist',
+  description: 'Explore nutrition workshops, health education programs, and community events led by Sanjana M Shenoy, a leading dietitian in Mangalore.',
+  canonical: 'https://sanjanashenoy.in/news-events',
+  alternates: {
+    canonical: 'https://sanjanashenoy.in/news-events'
+  }
+}
+*/
+
 export default function NewsEvents() {
   // State to manage which image is selected and if modal is open
   const [selectedImage, setSelectedImage] = useState(null);
