@@ -2,7 +2,7 @@
 title: 'Are Breads Available in India Safe for Consumption?'
 date: '2025-03-01'
 lastUpdated: ""
-category: 'Health'
+category: 'Food Products'
 excerpt: 'There has been an ongoing debate on the safety of bread consumption in India. With the increasing demand for bread, many multinational companies have started mass producing bread. With the rising use of additives and preservatives, testing has revealed that many bread samples in metropolitan cities have tested positive for banned additives.'
 description: 'This article discusses the safety of bread in India and the various additives and preservatives used in bread.'
 author: 'Sanjana Shenoy'

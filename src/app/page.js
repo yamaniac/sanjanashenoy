@@ -13,7 +13,7 @@ import LatestNews from "@/components/home/LatestNews";
 
 // Add metadata export
 export const metadata = {
-  title: "Consultant Dietitian & Nutritionist | Mangalore | Sanjana M Shenoy",
+  title: "Dietitian & Nutritionist | Mangalore | Sanjana M Shenoy",
   description:
     "Expert nutrition consultation in Mangalore by Dt. Sanjana Shenoy. Specializing in weight management, clinical nutrition, diabetes care, and personalized diet plans. Book your consultation today for a healthier lifestyle.",
   keywords:
