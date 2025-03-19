@@ -1,6 +1,6 @@
 ---
 title: 'Are instant noodles bad for you?'
-date: '2025-03-19'
+date: '2023-03-19'
 lastUpdated: ""
 category: 'Food Products'
 excerpt: 'The basic ingredients of instant noodles are refined flour or wheat flour known as maida, palm oil, sugar, salt along with preservatives such as MSG or monosodium glutamate also called ajinomoto.'

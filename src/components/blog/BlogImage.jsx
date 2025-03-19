@@ -1,11 +1,33 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function BlogImage({ src, alt, title, ...props }) {
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [validatedSrc, setValidatedSrc] = useState('/default-blog-image.jpg');
+
+  useEffect(() => {
+    // Validate image source
+    if (!src || src === 'test' || typeof src !== 'string') {
+      setError(true);
+      return;
+    }
+
+    // Check if it's a valid URL or a valid path starting with /
+    if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('/')) {
+      setValidatedSrc(src);
+      setError(false);
+    } else {
+      // Attempt to fix relative paths by adding leading slash
+      if (!src.startsWith('/')) {
+        setValidatedSrc(`/${src}`);
+      } else {
+        setError(true);
+      }
+    }
+  }, [src]);
 
   if (error || !src) {
     return (
@@ -22,7 +44,7 @@ export default function BlogImage({ src, alt, title, ...props }) {
   return (
     <div className="relative w-full h-full">
       <Image
-        src={src}
+        src={validatedSrc}
         alt={imageAlt}
         title={imageTitle}
         {...props}
