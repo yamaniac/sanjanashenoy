@@ -87,3 +87,5 @@ There was a considerable difference in his energy levels; he has been better tha
 
 ## Conclusion
 It would be very important for him to stick to a healthy diet as many of these cases are prone to diabetes due to the strain on the pancreas, which is the main organ for blood sugar metabolism. Encourage healthy eating habits from a younger age and reap the benefits later.
+
+You can also read my article on [are instant noodles bad for you?](https://sanjanashenoy.in/blog/are_instant_noodles_bad_for_you). To understand the severe health consequences of instant noodles on your body.
