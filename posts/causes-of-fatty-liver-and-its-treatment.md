@@ -264,3 +264,27 @@ It is said that nearly 25% of adults worldwide are living with fatty liver disea
 
 <Image src="/images/blog/fatty-liver-piechart.jpg" alt="A chart showing the prevalence of fatty liver in different regions" width="800" height="500" />
 *Fatty liver prevalence in different regions.*
+
+## Frequently asked Questions
+
+### Can fatty liver be cured?
+
+Yes if diagnosed in the early stages it can be successfully reversed. The more advanced the stage, the more difficult it is to resolve. So if you have the risk factors such as being overweight with poor eating habits, it is better to get tested to detect it as early as possible. Fatty liver is a silent disease and does not have any symptoms.
+
+### Are fatty liver and liver cirrhosis the same?
+
+No, liver cirrhosis is an advanced stage of liver disease while the initial stage of liver disease  is fatty liver. Liver cirrhosis is not reversible but can be managed by medical intervention, while fatty liver can be reversed with diet and lifestyle changes. Untreated fatty liver condition can progress into liver cirrhosis which is life threatening.
+
+### How long does it take to cure fatty liver?
+
+This will vary between individuals depending on the stage, age, existing medical issues and life styles. It may take weeks to months to resolve with the right interventions of diet and lifestyle changes.
+
+### I occasionally consume small amounts of alcohol. Will I still get fatty liver?
+
+Yes, you can still develop fatty liver depending on your eating habits along with the alcohol intake. No amount of alcohol is safe for the liver.
+
+### My weight is normal, yet I have been diagnosed with fatty liver. What could be the reason?
+
+Although weight is a major factor for fatty liver, there are many other causative factors such as smoking, alcohol intake, dietary habits such as high sugar intake, visceral fat, insulin resistance, gut imbalances, low estrogen levels in women, genetics, malnutrition which can predispose even a person with normal weight to get fatty liver.
+
+
