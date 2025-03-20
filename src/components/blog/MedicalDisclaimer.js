@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { AlertTriangle } from 'lucide-react'; // You may need to install lucide-react or use another icon library
 
-export default function MedicalDisclaimer({ className = "" }) {
+export default function MedicalDisclaimer({ className = "", type = "blog" }) {
   // State to track if user has seen the disclaimer before
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -30,6 +30,29 @@ export default function MedicalDisclaimer({ className = "" }) {
     day: 'numeric'
   });
 
+  const disclaimerContent = {
+    case: {
+      title: "Medical Case Disclaimer & Legal Notice",
+      content: [
+        "This case study is derived from real medical scenarios but has been modified to protect patient privacy and confidentiality in accordance with HIPAA guidelines.",
+        "This content is thoroughly researched and written with reference to peer-reviewed medical journals, clinical guidelines, and professional medical networks. It is provided solely for educational and informational purposes and does not establish a physician-patient relationship.",
+        "The standard of care may have changed since this case was documented. Always consult with a qualified healthcare provider regarding any medical condition or treatment options. Never disregard professional medical advice or delay seeking it because of something you have read on this website.",
+        "The author and publisher disclaim any liability arising directly or indirectly from the use of this information."
+      ]
+    },
+    blog: {
+      title: "Medical Blog Disclaimer & Legal Notice",
+      content: [
+        "This article contains general medical information and opinions, thoroughly researched with reference to peer-reviewed medical journals, clinical guidelines, and professional medical networks. It is provided for educational and informational purposes only and is not medical advice.",
+        "This content does not establish a physician-patient relationship and is not intended to replace professional medical advice, diagnosis, or treatment.",
+        "Always seek the advice of your physician or other qualified healthcare provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay seeking it because of something you have read on this website.",
+        "The author and publisher disclaim any liability arising directly or indirectly from the use of this information."
+      ]
+    }
+  };
+
+  const currentDisclaimer = disclaimerContent[type] || disclaimerContent.blog;
+
   return (
     <aside 
       aria-label="Medical disclaimer" 
@@ -40,7 +63,7 @@ export default function MedicalDisclaimer({ className = "" }) {
           <div className="flex items-center space-x-3">
             <AlertTriangle className="h-6 w-6 text-red-500" />
             <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
-              Medical Disclaimer & Legal Notice
+              {currentDisclaimer.title}
             </h2>
           </div>
           <button 
@@ -58,23 +81,11 @@ export default function MedicalDisclaimer({ className = "" }) {
             id="disclaimer-content" 
             className="mt-4 text-gray-700 dark:text-gray-300 space-y-3"
           >
-            <p>
-              The articles, case studies and medical information (if any) presented are derived from real medical scenarios but have been 
-              modified to protect patient privacy and confidentiality in accordance with HIPAA guidelines.
-            </p>
-            <p>
-              This content is provided solely for educational and informational purposes and does not establish a 
-              physician-patient relationship. It is <span className="font-semibold">not intended to replace professional 
-              medical advice, diagnosis, or treatment</span>.
-            </p>
-            <p>
-              The standard of care may have changed since these cases were documented. Always consult with a qualified 
-              healthcare provider regarding any medical condition or treatment options. Never disregard professional 
-              medical advice or delay seeking it because of something you have read on this website.
-            </p>
-            <p>
-              The author and publisher disclaim any liability arising directly or indirectly from the use of this information.
-            </p>
+            {currentDisclaimer.content.map((paragraph, index) => (
+              <p key={index}>
+                {paragraph}
+              </p>
+            ))}
             <p className="text-sm text-gray-500 dark:text-gray-400 italic">
               Last updated: {currentDate}
             </p>
