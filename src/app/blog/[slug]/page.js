@@ -550,11 +550,26 @@ export default async function BlogPost({ params }) {
                       </span>
                     ))}
                     {post.tags.length > 3 && (
-                      <span
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium"
-                      >
-                        +{post.tags.length - 3}
-                      </span>
+                      <div className="relative group">
+                        <span
+                          className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium cursor-help"
+                        >
+                          +{post.tags.length - 3} more
+                        </span>
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-gray-900 text-white text-sm rounded-lg p-3 shadow-lg z-10">
+                          <div className="flex flex-wrap gap-2">
+                            {post.tags.slice(3).map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-3 py-1 bg-gray-800 text-gray-200 rounded-full text-sm font-medium"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-900"></div>
+                        </div>
+                      </div>
                     )}
                   </div>
                 )}

@@ -396,7 +396,7 @@ export default async function CaseFile({ params }) {
           
           {/* Medical Disclaimer at Bottom Only for Better SEO */}
           <Suspense fallback={<div className="animate-pulse h-24 bg-gray-100 dark:bg-gray-800 rounded-lg mb-8"></div>}>
-            <MedicalDisclaimer className="mb-8" />
+            <MedicalDisclaimer className="mb-8" type="case" />
           </Suspense>
         </main>
         <Footer />
