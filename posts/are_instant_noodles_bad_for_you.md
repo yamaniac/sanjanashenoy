@@ -151,3 +151,32 @@ These can be leached into the food on exposure to heat and is said to be a hormo
 - There is a dire need for long term testing for contaminants and additives in instant noodles.
 
 You can refer to one of my case files - [Maggi Noodles and Acute Pancreatitis](https://sanjanashenoy.in/case-files/maggi-noodles-pancreatitis-case) where a patient was addicted to instant noodles and suffered from Stomach Infection and pancreatitis.
+
+## Frequently asked Questions
+
+### Does instant noodles increase belly fat?
+
+It may cause weight gain if you exceed more than your daily calorie intake. Refined carbohydrates in instant noodles can cause spikes in insulin level and increase abdominal fat. 
+
+### I love instant noodles but I need to watch my salt intake. How do I manage it?
+
+Use half of the tastemaker powder which is in the packaging. You may skip it completely and add your own seasonings and control the sodium intake.
+
+### I stay in a hostel and would like to eat instant noodles? How can I make it more nutritious?
+
+Stock up some basic vegetables such as onions, carrots which can stay fresh at room temperature. For protein add eggs or grilled chicken if you are a non vegetarian. If you are vegetarian, you can buy small packets of sprouts and cooked along with the noodles.
+ 
+Most importantly use whole grain instant noodles. 
+
+### Cup noodles come in plastic containers. Are they safe?
+
+Companies may use food grade plastics, but still it is not safe to heat food in plastic because of the risk of leaching contaminants such BPA which is a known hormone disruptor. Opt for BPA free plastic containers and the labels should mention it or transfer to safer containers for cooking purposes.
+
+### Can I replace my meals with instant noodles? Will it help in weight loss?
+
+They should not replace your main meals as they do not provide nutrients such as fiber, protein and essential vitamins and minerals. But also watch your calorie intake and do not exceed your daily calorie requirements if you plan to include it as a snack, otherwise instant noodles can cause weight gain.
+
+### Can instant noodles be consumed during pregnancy?
+
+Instant noodles may not be suitable during pregnancy as it can increase the blood pressure due to its high sodium content and increase swelling of hands and feet. High blood pressure in pregnancy can cause premature deliveries. This may not be applicable to all pregnant women but it is always safer to eat wholesome foods, not processed foods such as instant noodles.
+
