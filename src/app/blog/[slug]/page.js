@@ -337,17 +337,23 @@ export default async function BlogPost({ params }) {
         "https://www.youtube.com/@dietsanjana",
         "https://twitter.com/dietsanjana"
       ],
-      "knowsAbout": ["Nutrition", "Dietetics", "Health", "Wellness"]
+      "knowsAbout": ["Nutrition", "Dietetics", "Health", "Wellness"],
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Sanjana Shenoy Nutrition",
+        "url": "https://sanjanashenoy.in"
+      }
     },
     "publisher": {
       "@type": "Organization",
       "name": "Sanjana Shenoy Nutrition",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://sanjanashenoy.in/images/sanjana_shenoy.png",
-        "width": "800",
-        "height": "800"
-      }
+      "url": "https://sanjanashenoy.in"
+    },
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sanjanashenoy.in/images/sanjana_shenoy.png",
+      "width": "800",
+      "height": "800"
     },
     "datePublished": new Date(post.date).toISOString(),
     "dateModified": post.lastUpdated 
