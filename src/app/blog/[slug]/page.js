@@ -16,6 +16,7 @@ import Image from 'next/image'
 import { Suspense } from 'react'
 import ShareButton from '@/components/blog/ShareButton'
 import { TableOfContents, FontSizeSlider, ThemeToggle } from '@/components/blog/DynamicComponents'
+import LiveRegions, { announceUpdate, announceLoadingStatus, announceNavigation, announceDynamicContent } from '@/components/blog/LiveRegions'
 
 // Replace regular imports with dynamic imports for non-critical components
 const LatestPosts = dynamicImport(() => import('@/components/blog/LatestPosts'), {
@@ -115,8 +116,24 @@ export async function generateMetadata({ params }) {
         siteName: 'Sanjana M Shenoy - Dietitian & Nutritionist',
       },
       accessibility: {
-        features: ['adjustableTextSize'],
-        description: 'This blog post includes an adjustable text size feature, allowing readers to customize font size from 16px to 32px for better readability.'
+        features: ['adjustableTextSize', 'screenReaderSupport', 'ariaLiveRegions', 'highContrastMode', 'keyboardNavigation'],
+        description: 'This blog post includes comprehensive accessibility features including adjustable text size (16px to 32px), screen reader support with ARIA live regions, high contrast mode, and keyboard navigation support.',
+        accessibilityControl: ['textSize', 'highContrast', 'keyboardOnly'],
+        accessibilityHazard: ['none'],
+        accessibilityAPI: ['ARIA', 'ATK', 'AXAPI'],
+        accessibilityFeature: [
+          'readingOrder',
+          'structuralNavigation',
+          'alternativeText',
+          'longDescription',
+          'highContrastDisplay',
+          'resizeText',
+          'screenReaderOptimization',
+          'captions',
+          'audioDescription',
+          'signLanguage'
+        ],
+        accessibilitySummary: 'This content is optimized for accessibility with features including adjustable text size, screen reader support, ARIA live regions for dynamic content, high contrast mode, keyboard navigation, and semantic HTML structure.'
       },
       rights: {
         license: data.imageLicense || 'Licensed Content',
@@ -192,7 +209,7 @@ async function getAdjacentPosts(currentSlug) {
 
 // Add this component at the top of the file
 const LoadingSkeleton = () => (
-  <div className="animate-pulse space-y-4">
+  <div className="animate-pulse space-y-4" aria-live="polite" aria-busy="true">
     <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
     <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
     <div className="space-y-2">
@@ -378,6 +395,7 @@ export default async function BlogPost({ params }) {
   // 8. Return the complete page UI
   return (
     <>
+      <LiveRegions />
       <ClientReadingProgress />
 
       {/* (Optional) Structured Data */}
@@ -389,7 +407,7 @@ export default async function BlogPost({ params }) {
 
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
         <Header />
-        <main className="container mx-auto px-4 sm:px-6 py-8 pt-20">
+        <main className="container mx-auto px-4 sm:px-6 py-8 pt-5">
           {/* Add Breadcrumbs here */}
           <Breadcrumbs
             items={[
@@ -542,6 +560,16 @@ export default async function BlogPost({ params }) {
                         <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-900"></div>
                       </div>
                     </div>
+                    <div className="relative group">
+                      <svg className="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block w-64 bg-gray-900 text-white text-sm rounded-lg p-2 text-center">
+                        Accessibility-friendly with screen reader support, adjustable text size, and ARIA live regions
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-1 border-4 border-transparent border-t-gray-900"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -590,21 +618,38 @@ export default async function BlogPost({ params }) {
                            prose-p:text-lg prose-p:leading-relaxed
                            prose-a:text-teal-700 dark:prose-a:text-teal-400
                            prose-img:shadow-lg [&_*]:!scale-[var(--scale-factor,100%)]
-                           article-content"
+                           article-content
+                           [&_p]:text-[clamp(1rem,1.5vw,1.25rem)]
+                           [&_h1]:text-[clamp(2rem,4vw,3rem)]
+                           [&_h2]:text-[clamp(1.5rem,3vw,2.25rem)]
+                           [&_h3]:text-[clamp(1.25rem,2vw,1.75rem)]
+                           [&_li]:text-[clamp(1rem,1.5vw,1.25rem)]
+                           [&_blockquote]:text-[clamp(1rem,1.5vw,1.25rem)]
+                           [&_pre]:text-[clamp(0.875rem,1.25vw,1rem)]
+                           [&_code]:text-[clamp(0.875rem,1.25vw,1rem)]
+                           [&_*]:leading-[1.6]"
                 dangerouslySetInnerHTML={{ __html: contentWithIds }}
+                aria-live="polite"
               />
               
               {/* About the Author Section */}
-              <AuthorSection />
+              <Suspense fallback={<LoadingSkeleton />}>
+                <AuthorSection />
+              </Suspense>
               
               {/* Post Navigation */}
+              <Suspense fallback={<LoadingSkeleton />}>
+                <PostNavigation previousPost={previousPost} nextPost={nextPost} />
+              </Suspense>
               
               {/* References and Disclaimer at the bottom only for better SEO */}
               <div className="mt-8 space-y-8">
-                <References references={post.references} />
-                <Disclaimer />
-
-                <PostNavigation previousPost={previousPost} nextPost={nextPost} />
+                <Suspense fallback={<LoadingSkeleton />}>
+                  <References references={post.references} />
+                </Suspense>
+                <Suspense fallback={<LoadingSkeleton />}>
+                  <Disclaimer />
+                </Suspense>
               </div>
             </div>
 
@@ -631,7 +676,6 @@ export default async function BlogPost({ params }) {
           </div>
         </div>
       </div>
-      {/* <ScrollToTop /> */}
       <Footer />
     </>
   )

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { announceUpdate } from './LiveRegions'
 
 export default function FontSizeSlider({ variant = 'desktop' }) {
   const [fontSize, setFontSize] = useState(20)
@@ -51,11 +52,17 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
     }
   }, [variant])
 
-  const adjustFontSize = (increment) => {
-    setFontSize(prevSize => {
-      const newSize = prevSize + increment
-      return Math.min(Math.max(newSize, 16), 32) // Clamp between 16 and 32
-    })
+  useEffect(() => {
+    // Announce initial text size
+    announceUpdate(`Text size set to ${fontSize} pixels`)
+  }, [])
+
+  const adjustFontSize = (delta) => {
+    const newSize = Math.max(16, Math.min(32, fontSize + delta))
+    if (newSize !== fontSize) {
+      setFontSize(newSize)
+      announceUpdate(`Text size adjusted to ${newSize} pixels`)
+    }
   }
 
   if (variant === 'mobile') {

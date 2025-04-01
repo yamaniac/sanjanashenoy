@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Script from 'next/script';
+import { announceUpdate } from './LiveRegions';
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState('light');
@@ -37,6 +38,11 @@ export default function ThemeToggle() {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
+  useEffect(() => {
+    // Announce initial theme
+    announceUpdate(`Theme set to ${theme} mode`);
+  }, []);
+
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
@@ -47,6 +53,7 @@ export default function ThemeToggle() {
     } else {
       document.documentElement.classList.remove('dark');
     }
+    announceUpdate(`Theme changed to ${newTheme} mode`);
   };
 
   // Render nothing until client-side hydration completes
