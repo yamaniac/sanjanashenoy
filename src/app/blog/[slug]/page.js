@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { format } from 'date-fns'
+import { enUS } from 'date-fns/locale'
 import Header from '@/components/Header'
 import fs from 'fs'
 import path from 'path'
@@ -17,12 +18,9 @@ import { Suspense } from 'react'
 import ShareButton from '@/components/blog/ShareButton'
 import { TableOfContents, FontSizeSlider, ThemeToggle } from '@/components/blog/DynamicComponents'
 import LiveRegions, { announceUpdate, announceLoadingStatus, announceNavigation, announceDynamicContent } from '@/components/blog/LiveRegions'
+import ClientLatestPosts from '@/components/blog/ClientLatestPosts'
 
 // Replace regular imports with dynamic imports for non-critical components
-const LatestPosts = dynamicImport(() => import('@/components/blog/LatestPosts'), {
-  loading: () => <div className="animate-pulse h-48 bg-gray-100 dark:bg-gray-800 rounded-lg"></div>
-})
-
 const References = dynamicImport(() => import('@/components/blog/References'))
 const Disclaimer = dynamicImport(() => import('@/components/blog/Disclaimer'))
 const AuthorSection = dynamicImport(() => import('@/components/blog/AuthorSection'))
@@ -51,7 +49,6 @@ export const viewport = {
 
 export async function generateMetadata({ params }) {
   try {
-    // In Next.js 15, params is a Promise that must be awaited
     const { slug } = await params;
     
     const postsDirectory = path.join(process.cwd(), 'posts')
@@ -59,6 +56,12 @@ export async function generateMetadata({ params }) {
     const fileContents = fs.readFileSync(fullPath, 'utf-8')
     const { data } = matter(fileContents)
     
+    // Ensure consistent date handling
+    const publishDate = new Date(data.date).toISOString()
+    const modifiedDate = data.lastUpdated 
+      ? new Date(data.lastUpdated).toISOString()
+      : publishDate
+
     // 5. Extract headings for the Table of Contents
     function getHeadings(html) {
       const regex = /<h([2-3])[^>]*>(.*?)<\/h[2-3]>/g
@@ -155,6 +158,8 @@ export async function generateMetadata({ params }) {
         },
       },
       canonical: canonicalUrl,
+      datePublished: publishDate,
+      dateModified: modifiedDate,
     }
   } catch (error) {
     console.error('Error reading post:', error)
@@ -346,7 +351,7 @@ export default async function BlogPost({ params }) {
     },
     "datePublished": new Date(post.date).toISOString(),
     "dateModified": post.lastUpdated 
-      ? new Date(post.lastUpdated).toISOString() 
+      ? new Date(post.lastUpdated).toISOString()
       : new Date(post.date).toISOString(),
     "keywords": post.tags ? post.tags.join(", ") : "",
     "wordCount": wordCount,
@@ -506,13 +511,13 @@ export default async function BlogPost({ params }) {
                 {/* Date and reading time */}
                 <div className="flex flex-wrap items-center text-gray-700 dark:text-gray-400 text-sm mb-6 gap-2">
                   <time dateTime={post.date} className="font-medium">
-                    Published: {format(new Date(post.date), 'MMMM d, yyyy')}
+                    Published: {format(new Date(post.date), 'MMMM d, yyyy', { locale: enUS })}
                   </time>
                   {post.lastUpdated && post.lastUpdated !== post.date && (
                     <>
                       <span className="hidden sm:inline">•</span>
                       <time dateTime={post.lastUpdated} className="font-medium">
-                        Updated: {format(new Date(post.lastUpdated), 'MMMM d, yyyy')}
+                        Updated: {format(new Date(post.lastUpdated), 'MMMM d, yyyy', { locale: enUS })}
                       </time>
                     </>
                   )}
@@ -658,7 +663,7 @@ export default async function BlogPost({ params }) {
               <FontSizeSlider />
               <TableOfContents headings={headings} />
               <Suspense fallback={<LoadingSkeleton />}>
-                <LatestPosts posts={latestPosts} />
+                <ClientLatestPosts posts={latestPosts} />
               </Suspense>
             </div>
           </div>
