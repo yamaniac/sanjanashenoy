@@ -93,13 +93,13 @@ export default function AuthorSection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema) }}
       />
       
-      <div className="bg-gradient-to-r from-teal-600 to-blue-600 px-6 py-4">
+      <div className="bg-gradient-to-r from-teal-700 to-blue-700 px-6 py-4">
         <h2 className="text-2xl font-bold text-white text-center">
           Written by Medical Professional
         </h2>
       </div>
       
-      <div className="bg-gray-50 dark:bg-gray-800 p-4 sm:p-8">
+      <div className="bg-white dark:bg-gray-900 p-4 sm:p-8">
         <div className="block md:flex md:items-start md:gap-8">
           <div className="flex flex-col items-center md:items-start mb-6 md:mb-0">
             <div className="relative rounded-full p-1 bg-gradient-to-r from-teal-400 to-blue-500">
@@ -127,7 +127,7 @@ export default function AuthorSection() {
             </h3>
             
             <div className="mt-1 mb-4">
-              <p className="inline-block text-teal-700 dark:text-teal-400 font-semibold px-3 py-1 bg-teal-50 dark:bg-teal-900/30 rounded-md text-sm">
+              <p className="inline-block text-teal-800 dark:text-teal-300 font-semibold px-3 py-1 bg-teal-100 dark:bg-teal-900/50 rounded-md text-sm">
                 {AUTHOR_INFO.jobTitle}
               </p>
             </div>
@@ -148,15 +148,15 @@ export default function AuthorSection() {
             </p>
 
             <div className="grid grid-cols-2 gap-4 mt-6 mb-6">
-              <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg text-center">
-                <p className="text-blue-800 dark:text-blue-300 text-sm font-medium">Clinical Experience</p>
-                <p className="text-blue-900 dark:text-blue-200 text-xl font-bold mt-1">{AUTHOR_INFO.clinicalExperience.split(' ')[0]}</p>
-                <p className="text-blue-700 dark:text-blue-300 text-xs">Years in Practice</p>
+              <div className="bg-blue-100 dark:bg-blue-900/50 p-4 rounded-lg text-center">
+                <p className="text-blue-900 dark:text-blue-100 text-sm font-medium">Clinical Experience</p>
+                <p className="text-blue-900 dark:text-blue-100 text-xl font-bold mt-1">{AUTHOR_INFO.clinicalExperience.split(' ')[0]}</p>
+                <p className="text-blue-800 dark:text-blue-200 text-xs">Years in Practice</p>
               </div>
-              <div className="bg-teal-50 dark:bg-teal-900/20 p-4 rounded-lg text-center">
-                <p className="text-teal-800 dark:text-teal-300 text-sm font-medium">Patients Helped</p>
-                <p className="text-teal-900 dark:text-teal-200 text-xl font-bold mt-1">{AUTHOR_INFO.patientsCounted}</p>
-                <p className="text-teal-700 dark:text-teal-300 text-xs">Patient Cases</p>
+              <div className="bg-teal-100 dark:bg-teal-900/50 p-4 rounded-lg text-center">
+                <p className="text-teal-900 dark:text-teal-100 text-sm font-medium">Patients Helped</p>
+                <p className="text-teal-900 dark:text-teal-100 text-xl font-bold mt-1">{AUTHOR_INFO.patientsCounted}</p>
+                <p className="text-teal-800 dark:text-teal-200 text-xs">Patient Cases</p>
               </div>
             </div>
 
@@ -208,14 +208,14 @@ export default function AuthorSection() {
             <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Link
                 href="/about-sanjana-m-shenoy"
-                className="inline-flex items-center justify-center px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-md transition-colors"
+                className="inline-flex items-center justify-center px-4 py-2 bg-teal-700 hover:bg-teal-800 text-white rounded-md transition-colors"
               >
                 Full Professional Profile
                 <span className="ml-2">→</span>
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-4 py-2 border border-teal-600 text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-900/20 rounded-md transition-colors"
+                className="inline-flex items-center justify-center px-4 py-2 border-2 border-teal-700 text-teal-700 hover:bg-teal-50 dark:text-teal-300 dark:border-teal-300 dark:hover:bg-teal-900/50 rounded-md transition-colors"
               >
                 Book a Consultation
               </Link>
