@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { announceNavigation } from './LiveRegions';
 
 const TableOfContents = ({ headings }) => {
   const [activeId, setActiveId] = useState('');
@@ -52,11 +53,20 @@ const TableOfContents = ({ headings }) => {
     });
   }, [headings]);
 
-  // Add keyboard navigation support
-  const handleKeyPress = (e, id) => {
+  useEffect(() => {
+    // Announce initial section
+    if (headings.length > 0) {
+      announceNavigation(`Currently at section: ${headings[0].text}`);
+    }
+  }, []);
+
+  const handleKeyPress = (e, headingId) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      const heading = headings.find(h => h.id === headingId);
+      if (heading) {
+        announceNavigation(`Navigating to section: ${heading.text}`);
+      }
     }
   };
 
