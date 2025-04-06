@@ -1,7 +1,7 @@
 ---
 title: 'Are Meal Replacement Shakes Healthy?'
 date: '2025-04-01'
-lastUpdated: ""
+lastUpdated: "2025-04-06"
 category: 'Food Products'
 excerpt: 'Discover the potential risks and benefits whether meal replacement shakes are healthy. Learn about their use, calorie content, and what to consider before incorporating them into your diet.'
 description: 'Discover the potential risks and benefits whether meal replacement shakes are healthy. Learn about their use, calorie content, and what to consider before incorporating them into your diet.'
