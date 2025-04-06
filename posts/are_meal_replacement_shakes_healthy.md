@@ -333,3 +333,68 @@ When considering weight loss options:
 - Long-term use may lead to various health complications, including potential organ damage
 - These products generally fail to produce sustainable weight loss or health improvements
 - Natural, whole-food approaches supervised by qualified professionals offer safer, more effective alternatives
+
+## Frequently asked questions on Meal Replacement Shakes
+
+### Are meal replacement shakes safe?
+Meal replacement shakes are highly processed products made of artificial sweeteners, food colours, artificial flavours and other preservatives. There have been reports of minor side effects such as tiredness, allergies, digestive issues and major side effects such as  liver damage. There have also been incidences of heavy metal and bacterial contaminations.
+
+### Are meal replacement shakes suitable for everyone?
+- Diabetics need to be careful as they contain sugar and may affect their blood sugar levels.
+- Kidneys patients will need to completely avoid such products as they are high in protein, potassium, sodium which are detrimental to the kidney
+- Unsuitable for pregnant and lactating women because of the additives, artificial sweeteners and preservatives added and they have not been tested for safety in suhc conditions.
+- Not suitable for children, as children need to learn to eat wholesome foods, not artificial liquid calories.
+
+### Do meal replacements shakes work?
+
+Meal replacement shakes work for short term weight loss but do not give you any permanent results. Most of the clients gain back all the weight, if they give up the program. Some lose weight and their weight loss become stagnant. How are they supported for the same? 
+
+For long term benefits, it is best to eat healthy and exercise consistantly according to your body requirements, age and medical needs.
+
+Meal replacements shakes do not promote healthy weight loss goals and can increase mental distress and health problems.
+
+Our body’s needs change frequently with age, gender, during pregnancy and breastfeeding, post delivery, menopause etc and each one have individual nutritional needs.
+
+### How do meal replacement shakes work?
+
+They are designed to be a part of a low calorie meal plan. Anyone on a calorie deficit diet will lose weight. Usually one is advised to replace 1-2 meals with this shake and are advised to eat low calorie meals to trigger weight loss. 
+
+### Which meal replacement shakes are recommended by doctors?
+
+No qualified professional such as doctors and dietitians will recommend such products, as they are aware of the consequences on both physical and mental health. These are usualy sold by unqualified professionals who call themselves as health coaches who do not understand nutritional needs and medical conditions. They may not be aware of any underlying medical problems and may end up doing more harm than any good.
+
+### How many meals can one replace with meal replacement shakes?
+
+Breakfast and dinner are the most commonly replaced for weight loss. Replacing main meals can interfere with a person’s food habits and family time. 
+
+### Why do meal replacement shakes taste so bad?
+
+Many brands come in various flavours catering to the specific needs of country in which they are marketed. Particularly in india they take up ice cream and dessert flavours to keep up  the demands. While this may not work in other countries who use basic flavours. 
+
+Some of them may taste bad because of the added artificial flavorings and vitamins and minerals which may leave an after taste.
+
+### How long can one consume a meal replacement shake?
+
+If you ask this question to a seller, you may get two types of responses
+
+**Response 1-** “Until you achieve your weight loss goals”.
+
+So here is the catch, how do you proceed after you have achieved your weight loss target!!! Will they provide guidance once you have stopped the buying the program? No, their work with you is done if they cannot generate sales or they recruit you to sell the products and form your own group to continue generating sales. 
+
+**Response 2-** “It is safe and you can safely consume it for life long.”
+
+This may look convincing but is it sustainable financially, medically and ethically!!!! There may be a small voice at the back of your mind, saying this may not be possible. 
+
+None of us are pleased to take any medication or supplements forever, so how can these shakes be used lifelong!!!
+
+### Will meal replacement shakes help to lose weight permanently?
+ 
+Meal replacement shakes only promote short term weight loss and there have been no studies to prove long term weight loss while using these products. This may cause constant dependency on using such products, with unhealthy weight loss and health goals. 
+
+The only permament solution is healthy weight loss with sustainable goals and an exercise routine.
+
+### Are meal replacement shakes safe for PCOS/PCOD? 
+
+Meal replacements shakes can help in short term management of PCOS/PCOD, but has not been proven for long term management. But studies have shown it is calorie restriction and carbohydrate and fat restriction that works. So for long term management of PCOS/PCOD, calorie, fat and carbohydrate restriction is more effective, than meal replacement shakes.
+
+Some of the ingredients in meal replacements shakes such as added sugars may not help in PCOD/ PCOS  management.
