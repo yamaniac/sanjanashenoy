@@ -87,6 +87,24 @@ export default function NewsEvents() {
           "description": event.description,
           "image": `https://sanjanashenoy.in${event.src}`,
           "startDate": event.date,
+          "endDate": event.endDate,
+          "location": {
+            "@type": "Place",
+            "name": event.location.name,
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": event.location.addressLocality,
+              "addressRegion": event.location.addressRegion,
+              "addressCountry": event.location.addressCountry
+            }
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/SoldOut",
+            "validFrom": event.date
+          },
           "performer": {
             "@type": "Person",
             "@id": "https://sanjanashenoy.in/about-sanjana-m-shenoy",
