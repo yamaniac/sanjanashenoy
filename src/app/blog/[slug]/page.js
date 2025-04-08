@@ -82,9 +82,18 @@ export async function generateMetadata({ params }) {
     // Define the canonical URL
     const canonicalUrl = `https://sanjanashenoy.in/blog/${slug}`
 
+    // Create a more detailed description that's at least 150 characters
+    let metaDescription = data.description || '';
+    if (metaDescription.length < 150 && data.excerpt) {
+      metaDescription = data.excerpt;
+    }
+    if (metaDescription.length > 160) {
+      metaDescription = metaDescription.substring(0, 157) + '...';
+    }
+
     return {
-      title: `${data.title} | Sanjana Shenoy`,
-      description: data.description.length > 155 ? `${data.description.substring(0, 155)}...` : data.description,
+      title: `${data.title} - Sanjana Shenoy`,
+      description: metaDescription,
       metadataBase: new URL('https://sanjanashenoy.in'),
       alternates: {
         canonical: canonicalUrl,
@@ -104,8 +113,8 @@ export async function generateMetadata({ params }) {
         ]
       },
       openGraph: {
-        title: `${data.title} | Sanjana Shenoy - Dietitian & Nutritionist`,
-        description: data.description,
+        title: `${data.title} - Sanjana Shenoy, Dietitian & Nutritionist`,
+        description: metaDescription,
         type: 'article',
         url: canonicalUrl,
         images: data.image ? [{
