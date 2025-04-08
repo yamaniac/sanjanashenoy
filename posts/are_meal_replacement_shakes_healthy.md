@@ -244,7 +244,7 @@ While no studies directly link these products to kidney failure, ingredients lik
 
 ### Paradoxical Weight Gain
 
-Counterintuitively, weight loss products can sometimes cause weight gain. Because meal replacements are liquid and low in calories, users often don't feel satisfied and may overeat at subsequent meals. This can stall weight loss or even cause weight gain, along with persistent hunger and food cravings.
+Ironically, weight loss products can sometimes cause weight gain. Because meal replacements are liquid and low in calories, users often don't feel satisfied and may overeat at subsequent meals. This can stall weight loss or even cause weight gain, along with persistent hunger and food cravings.
 
 ### Other Common Side Effects
 
