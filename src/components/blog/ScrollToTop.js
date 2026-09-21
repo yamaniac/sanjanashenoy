@@ -49,29 +49,27 @@ const ScrollToTop = () => {
       title="Return to top of page"
       tabIndex={0}
       role="button"
-      className={`
-        fixed bottom-8 right-8 
-        bg-teal-600 dark:bg-teal-500 
-        text-white 
-        p-4 md:p-3
-        rounded-full 
-        shadow-lg 
-        transition-all duration-200 
-        ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}
-        hover:bg-teal-700 dark:hover:bg-teal-600 
-        focus:outline-none 
-        focus:ring-4 
-        focus:ring-teal-500 
-        focus:ring-offset-2 
-        focus:ring-offset-white
-        dark:focus:ring-offset-gray-900
-        z-50
-        min-w-[44px]
-        min-h-[44px]
-        flex
-        items-center
-        justify-center
-      `}
+      className={`fixed bottom-8 right-8 
+ bg-teal-600 
+ text-white 
+ p-4 md:p-3
+ rounded-full 
+ shadow-lg 
+ transition-all duration-200 
+ ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}
+ hover:bg-teal-700 
+ focus:outline-none 
+ focus:ring-4 
+ focus:ring-teal-500 
+ focus:ring-offset-2 
+ focus:ring-offset-white
+ 
+ z-50
+ min-w-[44px]
+ min-h-[44px]
+ flex
+ items-center
+ justify-center`}
     >
       <svg 
         className="w-6 h-6" 

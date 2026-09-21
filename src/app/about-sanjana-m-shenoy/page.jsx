@@ -152,7 +152,7 @@ export default async function About() {
       <Script id="structured-data" type="application/ld+json">
         {JSON.stringify([personData, webPageData])}
       </Script>
-      <div className="min-h-screen bg-white dark:bg-gray-900">
+      <div className="min-h-screen bg-white">
         <Header />
         <main className="container mx-auto px-4 sm:px-6 py-8 pt-20">
           <Breadcrumbs
@@ -166,23 +166,23 @@ export default async function About() {
           />
 
           {/* Hero Section with Image */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border-b border-gray-200 dark:border-gray-700 mb-16">
-            <div className="text-base/7 text-gray-800 dark:text-gray-300 pr-12 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border-b border-gray-200 mb-16">
+            <div className="text-base/7 text-gray-800 pr-12 relative">
               {/* Decorative accent */}
-              <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-900/20 dark:to-teal-800/10 rounded-full blur-xl opacity-70"></div>
+              <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-teal-50 to-teal-100 rounded-full blur-xl opacity-70"></div>
               
               {/* Professional title banner */}
-              <div className="mb-6 inline-block px-4 py-1.5 bg-teal-50 dark:bg-teal-900/30 rounded-lg border-l-4 border-teal-500 text-teal-700 dark:text-teal-300 font-medium">
+              <div className="mb-6 inline-block px-4 py-1.5 bg-teal-50 rounded-lg border-l-4 border-teal-500 text-teal-700 font-medium">
                 MSc Food & Nutrition • 20 Years Experience
               </div>
               
-              <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-5xl">
+              <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
                 Dt. Sanjana M Shenoy
               </h1>
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mt-2">
-                <span className="text-teal-600 dark:text-teal-400">Consultant Dietitian & Nutritionist in Mangalore</span>
+              <h2 className="text-xl font-semibold text-gray-900 mt-2">
+                <span className="text-teal-600">Consultant Dietitian & Nutritionist in Mangalore</span>
               </h2>
-              <p className="mt-6 text-xl/8 text-gray-800 dark:text-gray-300">
+              <p className="mt-6 text-xl/8 text-gray-800">
                 A leading consultant dietitian, nutritionist, and educator in Mangalore
                 with over 20 years of experience in clinical nutrition, weight
                 management, and diabetes care. Helping patients achieve their
@@ -191,14 +191,14 @@ export default async function About() {
               </p>
 
               {/* Qualifications with enhanced styling */}
-              <div className="mt-8 p-5 bg-white dark:bg-gray-800/30 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center">
+              <div className="mt-8 p-5 bg-white rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md">
+                <h2 className="text-xl font-semibold text-gray-900 flex items-center">
                   <svg className="h-5 w-5 text-teal-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                   Qualifications
                 </h2>
-                <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+                <ul className="mt-4 space-y-2 text-gray-700">
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-teal-500 rounded-full mr-3 mt-2"></div>
                     <span>PGD in Dietetics from Manipal University</span>
@@ -230,25 +230,25 @@ export default async function About() {
                 </ul>
                 
                 {/* Professional memberships */}
-                <div className="mt-5 pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                <div className="mt-5 pt-4 border-t border-gray-100">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500">
                     <span>Professional Memberships:</span>
-                    <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300">Indian Dietetic Association</span>
-                    <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300">Nutrition Society of India</span>
+                    <span className="px-2 py-1 bg-gray-100 rounded-full text-gray-700">Indian Dietetic Association</span>
+                    <span className="px-2 py-1 bg-gray-100 rounded-full text-gray-700">Nutrition Society of India</span>
                   </div>
                 </div>
               </div>
               
               {/* Testimonial quote styled similarly to Hero */}
-              <div className="mt-6 italic text-gray-500 dark:text-gray-400 border-l-4 border-teal-200 dark:border-teal-800 pl-4">
+              <div className="mt-6 italic text-gray-500 border-l-4 border-teal-200 pl-4">
                 "Dt. Sanjana's evidence-based approach and personalized care has made a tremendous difference in my health journey."
-                <p className="mt-2 not-italic font-medium text-gray-700 dark:text-gray-300">— Rajesh K., Patient</p>
+                <p className="mt-2 not-italic font-medium text-gray-700">— Rajesh K., Patient</p>
               </div>
             </div>
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-gray-200 dark:ring-gray-700 transition-all duration-500 hover:shadow-2xl">
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-gray-200 transition-all duration-500 hover:shadow-2xl">
               {/* Decorative badge */}
-              <div className="absolute top-4 right-4 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg border border-gray-100 dark:border-gray-700">
-                <div className="bg-teal-50 dark:bg-teal-900/30 text-teal-800 dark:text-teal-200 text-xs font-medium px-3 py-1 rounded-full">
+              <div className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-lg border border-gray-100">
+                <div className="bg-teal-50 text-teal-800 text-xs font-medium px-3 py-1 rounded-full">
                   20+ Years Experience
                 </div>
               </div>
@@ -266,10 +266,10 @@ export default async function About() {
 
           {/* Experience Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white dark:bg-gray-800/60 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-              <div className="h-40 relative mb-4 rounded-lg overflow-hidden shadow-md ring-1 ring-gray-200 dark:ring-gray-700">
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+              <div className="h-40 relative mb-4 rounded-lg overflow-hidden shadow-md ring-1 ring-gray-200">
                 {/* Badge overlay */}
-                <div className="absolute top-2 right-2 z-10 bg-white/90 dark:bg-gray-800/90 rounded-full px-2 py-1 text-xs font-medium text-teal-700 dark:text-teal-300 shadow-sm">
+                <div className="absolute top-2 right-2 z-10 bg-white/90 rounded-full px-2 py-1 text-xs font-medium text-teal-700 shadow-sm">
                   20+ Years
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-[1]"></div>
@@ -280,18 +280,18 @@ export default async function About() {
                   className="object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center">
+              <h2 className="text-xl font-semibold text-gray-900 flex items-center">
                 <svg className="h-5 w-5 text-teal-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                 </svg>
                 Clinical Experience
               </h2>
-              <p className="mt-3 text-gray-700 dark:text-gray-300">
+              <p className="mt-3 text-gray-700">
                 Extensive experience working with leading hospitals in
                 Mangalore, providing personalized nutrition counseling.
               </p>
-              <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-700">
-                <div className="text-sm text-teal-600 dark:text-teal-400 font-medium flex items-center">
+              <div className="mt-4 pt-3 border-t border-gray-100">
+                <div className="text-sm text-teal-600 font-medium flex items-center">
                   <svg className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -300,10 +300,10 @@ export default async function About() {
               </div>
             </div>
             
-            <div className="bg-white dark:bg-gray-800/60 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-              <div className="h-40 relative mb-4 rounded-lg overflow-hidden shadow-md ring-1 ring-gray-200 dark:ring-gray-700">
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+              <div className="h-40 relative mb-4 rounded-lg overflow-hidden shadow-md ring-1 ring-gray-200">
                 {/* Badge overlay */}
-                <div className="absolute top-2 right-2 z-10 bg-white/90 dark:bg-gray-800/90 rounded-full px-2 py-1 text-xs font-medium text-teal-700 dark:text-teal-300 shadow-sm">
+                <div className="absolute top-2 right-2 z-10 bg-white/90 rounded-full px-2 py-1 text-xs font-medium text-teal-700 shadow-sm">
                   Professor
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-[1]"></div>
@@ -314,7 +314,7 @@ export default async function About() {
                   className="object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center">
+              <h2 className="text-xl font-semibold text-gray-900 flex items-center">
                 <svg className="h-5 w-5 text-teal-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M12 14l9-5-9-5-9 5 9 5z" />
                   <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -322,12 +322,12 @@ export default async function About() {
                 </svg>
                 Academic Excellence
               </h2>
-              <p className="mt-3 text-gray-700 dark:text-gray-300">
+              <p className="mt-3 text-gray-700">
                 Former Assistant Professor and Head of Department for Food,
                 Nutrition & Dietetics.
               </p>
-              <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-700">
-                <div className="text-sm text-teal-600 dark:text-teal-400 font-medium flex items-center">
+              <div className="mt-4 pt-3 border-t border-gray-100">
+                <div className="text-sm text-teal-600 font-medium flex items-center">
                   <svg className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -336,10 +336,10 @@ export default async function About() {
               </div>
             </div>
             
-            <div className="bg-white dark:bg-gray-800/60 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-              <div className="h-40 relative mb-4 rounded-lg overflow-hidden shadow-md ring-1 ring-gray-200 dark:ring-gray-700">
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+              <div className="h-40 relative mb-4 rounded-lg overflow-hidden shadow-md ring-1 ring-gray-200">
                 {/* Badge overlay */}
-                <div className="absolute top-2 right-2 z-10 bg-white/90 dark:bg-gray-800/90 rounded-full px-2 py-1 text-xs font-medium text-teal-700 dark:text-teal-300 shadow-sm">
+                <div className="absolute top-2 right-2 z-10 bg-white/90 rounded-full px-2 py-1 text-xs font-medium text-teal-700 shadow-sm">
                   Featured Expert
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-[1]"></div>
@@ -350,26 +350,26 @@ export default async function About() {
                   className="object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center">
+              <h2 className="text-xl font-semibold text-gray-900 flex items-center">
                 <svg className="h-5 w-5 text-teal-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                 </svg>
                 Media Presence
               </h2>
-              <p className="mt-3 text-gray-700 dark:text-gray-300">
+              <p className="mt-3 text-gray-700">
                 Expert speaker of "Diet Tips with Sanjana Shenoy" on{" "}
                 <a
                   href="https://www.daijiworld.com/news/newsDisplay?newsID=148614"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-teal-600 dark:text-teal-400 font-medium hover:underline"
+                  className="text-teal-600 font-medium hover:underline"
                 >
                   Daijiworld
                 </a>{" "}
                 and regular features on various channels.
               </p>
-              <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-700">
-                <div className="text-sm text-teal-600 dark:text-teal-400 font-medium flex items-center">
+              <div className="mt-4 pt-3 border-t border-gray-100">
+                <div className="text-sm text-teal-600 font-medium flex items-center">
                   <svg className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -381,10 +381,10 @@ export default async function About() {
 
           {/* Comprehensive Care Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-gray-200 dark:ring-gray-700 transition-all duration-500 hover:shadow-2xl group">
+            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-gray-200 transition-all duration-500 hover:shadow-2xl group">
               {/* Decorative badge */}
-              <div className="absolute top-4 left-4 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg border border-gray-100 dark:border-gray-700">
-                <div className="bg-teal-50 dark:bg-teal-900/30 text-teal-800 dark:text-teal-200 text-xs font-medium px-3 py-1 rounded-full">
+              <div className="absolute top-4 left-4 z-10 bg-white rounded-full p-2 shadow-lg border border-gray-100">
+                <div className="bg-teal-50 text-teal-800 text-xs font-medium px-3 py-1 rounded-full">
                   Holistic Approach
                 </div>
               </div>
@@ -405,17 +405,17 @@ export default async function About() {
             </div>
             <div className="relative">
               {/* Decorative accent */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-900/20 dark:to-teal-800/10 rounded-full blur-xl opacity-70"></div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-teal-50 to-teal-100 rounded-full blur-xl opacity-70"></div>
             
-              <div className="inline-block px-4 py-1 bg-teal-50 dark:bg-teal-900/30 rounded-lg mb-4 text-teal-700 dark:text-teal-300 font-medium">
+              <div className="inline-block px-4 py-1 bg-teal-50 rounded-lg mb-4 text-teal-700 font-medium">
                 Beyond Clinical Practice
               </div>
               
-              <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white">
-                Comprehensive <span className="text-teal-600 dark:text-teal-400">Nutrition Care</span>
+              <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900">
+                Comprehensive <span className="text-teal-600">Nutrition Care</span>
               </h2>
               
-              <p className="mt-6 text-gray-700 dark:text-gray-300">
+              <p className="mt-6 text-gray-700">
                 Beyond consulting, I actively engage with schools and parents to
                 promote healthy lifestyles for children. I also provide sports
                 nutrition support to swimming and badminton associations in
@@ -424,8 +424,8 @@ export default async function About() {
                 Ballalbagh, Mangalore, while also pursuing full-time research.
               </p>
               
-              <div className="mt-8 p-4 bg-gray-50 dark:bg-gray-800/30 rounded-xl border-l-4 border-teal-500">
-                <h3 className="font-medium text-gray-900 dark:text-white text-lg flex items-center">
+              <div className="mt-8 p-4 bg-gray-50 rounded-xl border-l-4 border-teal-500">
+                <h3 className="font-medium text-gray-900 text-lg flex items-center">
                   <svg className="h-5 w-5 text-teal-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
@@ -447,14 +447,14 @@ export default async function About() {
                 </ul>
               </div>
               
-              <figure className="mt-8 border-l-4 border-teal-500 pl-6 py-2 bg-gradient-to-r from-teal-50 to-transparent dark:from-teal-900/20 dark:to-transparent rounded-r-lg">
-                <blockquote className="font-semibold text-gray-900 dark:text-white text-lg italic">
+              <figure className="mt-8 border-l-4 border-teal-500 pl-6 py-2 bg-gradient-to-r from-teal-50 to-transparent rounded-r-lg">
+                <blockquote className="font-semibold text-gray-900 text-lg italic">
                   <p>
                     "Let's embark on a journey toward better health, one step at
                     a time!"
                   </p>
                 </blockquote>
-                <figcaption className="mt-2 text-sm text-teal-600 dark:text-teal-400">— Dt. Sanjana M Shenoy</figcaption>
+                <figcaption className="mt-2 text-sm text-teal-600">— Dt. Sanjana M Shenoy</figcaption>
               </figure>
             </div>
           </div>

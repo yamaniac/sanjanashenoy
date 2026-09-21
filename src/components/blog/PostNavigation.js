@@ -4,14 +4,14 @@ import BlogImage from './BlogImage'
 export default function PostNavigation({ previousPost, nextPost }) {
   return (
     <div className="mt-16 mb-8">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+      <h2 className="text-2xl font-bold text-gray-900 mb-8">
         Continue Reading
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {previousPost && (
           <Link 
             href={`/blog/${previousPost.slug}`}
-            className="group relative flex flex-col bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
+            className="group relative flex flex-col bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
           >
             <div className="absolute top-4 left-4 z-10 text-sm text-white bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
               ← Previous Post
@@ -44,7 +44,7 @@ export default function PostNavigation({ previousPost, nextPost }) {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+              <h3 className="text-lg font-semibold text-gray-900 group-hover:text-teal-600 transition-colors">
                 {previousPost.title}
               </h3>
             </div>
@@ -54,7 +54,7 @@ export default function PostNavigation({ previousPost, nextPost }) {
         {nextPost && (
           <Link 
             href={`/blog/${nextPost.slug}`}
-            className="group relative flex flex-col bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
+            className="group relative flex flex-col bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
           >
             <div className="absolute top-4 right-4 z-10 text-sm text-white bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
               Next Post →
@@ -87,7 +87,7 @@ export default function PostNavigation({ previousPost, nextPost }) {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+              <h3 className="text-lg font-semibold text-gray-900 group-hover:text-teal-600 transition-colors">
                 {nextPost.title}
               </h3>
             </div>

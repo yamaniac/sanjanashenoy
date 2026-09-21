@@ -33,14 +33,14 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="py-12 bg-gray-50 dark:bg-gray-800 sm:py-16 lg:py-20">
+    <section className="py-12 bg-gray-50 sm:py-16 lg:py-20">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <div className="text-center">
-            <p className="text-lg font-medium text-gray-600 dark:text-gray-400">
+            <p className="text-lg font-medium text-gray-600">
               Over 2000+ Happy Clients
             </p>
-            <h2 className="mt-4 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl xl:text-5xl">
+            <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl">
             Success Stories from Happy Clients            </h2>
           </div>
 
@@ -48,7 +48,7 @@ export default function Testimonials() {
             <div className="relative grid max-w-lg grid-cols-1 gap-6 mx-auto md:max-w-none lg:gap-10 md:grid-cols-3">
               {testimonials.map((testimonial) => (
                 <div key={testimonial.author.name} className="flex flex-col overflow-hidden shadow-xl">
-                  <div className="flex flex-col justify-between flex-1 p-6 bg-white dark:bg-gray-900 lg:py-8 lg:px-7">
+                  <div className="flex flex-col justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7">
                     <div className="flex-1">
                       <div className="flex items-center">
                         {[...Array(testimonial.author.rating)].map((_, i) => (
@@ -59,7 +59,7 @@ export default function Testimonials() {
                       </div>
 
                       <blockquote className="flex-1 mt-8">
-                        <p className="text-lg leading-relaxed text-gray-900 dark:text-white">
+                        <p className="text-lg leading-relaxed text-gray-900">
                           "{testimonial.body}"
                         </p>
                       </blockquote>
@@ -76,10 +76,10 @@ export default function Testimonials() {
                         </svg>
                       )}
                       <div className="ml-4">
-                        <p className="text-base font-bold text-gray-900 dark:text-white">
+                        <p className="text-base font-bold text-gray-900">
                           {testimonial.author.name}
                         </p>
-                        <p className="mt-0.5 text-sm text-gray-600 dark:text-gray-400">
+                        <p className="mt-0.5 text-sm text-gray-600">
                           {testimonial.author.handle}
                         </p>
                       </div>

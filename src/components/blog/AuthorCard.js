@@ -4,11 +4,11 @@ import Link from 'next/link'
 const AuthorCard = () => {
   return (
     <article 
-      className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm"
+      className="bg-gray-50 p-6 rounded-xl shadow-sm"
       itemScope
       itemType="https://schema.org/Person"
     >
-      <h2 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
+      <h2 className="text-xl font-semibold mb-6 text-gray-900">
         About the Author
       </h2>
       <div className="flex flex-col items-center text-center">
@@ -18,26 +18,26 @@ const AuthorCard = () => {
             fill
             alt="Sanjana Shenoy - Registered Dietitian & Nutritionist"
             title="Sanjana M Shenoy - Dietitian & Nutritionist"
-            className="rounded-full object-cover shadow-md border-2 border-gray-200 dark:border-gray-700"
+            className="rounded-full object-cover shadow-md border-2 border-gray-200"
             sizes="128px"
             priority
           />
         </div>
         <h3 
           itemProp="name"
-          className="text-lg font-medium text-gray-900 dark:text-white mb-4"
+          className="text-lg font-medium text-gray-900 mb-4"
         >
           Sanjana Shenoy
         </h3>
         <p 
           itemProp="description"
-          className="text-base text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
+          className="text-base text-gray-600 mb-6 leading-relaxed"
         >
           <span itemProp="jobTitle">Dietitian & Nutritionist</span> with expertise in clinical nutrition and wellness coaching.
         </p>
         <Link
           href="/about"
-          className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 font-medium"
+          className="inline-flex items-center text-teal-600 hover:text-teal-700 font-medium"
           aria-label="Read more about Sanjana Shenoy"
         >
           Read More about the Author

@@ -55,7 +55,7 @@ const ShareButton = ({ title, url }) => {
             href={option.shareUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-2.5 bg-white dark:bg-gray-800 rounded-full shadow-md hover:shadow-lg text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-200"
+            className="block p-2.5 bg-white rounded-full shadow-md hover:shadow-lg text-gray-600 hover:text-teal-600 transition-all duration-200"
             aria-label={option.ariaLabel}
           >
             <div className="w-5 h-5">
@@ -63,10 +63,10 @@ const ShareButton = ({ title, url }) => {
             </div>
           </a>
           {/* Tooltip */}
-          <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-gray-800 dark:bg-gray-700 text-white text-xs font-medium rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50">
+          <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-gray-800 text-white text-xs font-medium rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50">
             {option.title}
             {/* Triangle pointer */}
-            <div className="absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 w-0 h-0 border-4 border-transparent border-r-gray-800 dark:border-r-gray-700" />
+            <div className="absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 w-0 h-0 border-4 border-transparent border-r-gray-800" />
           </div>
         </div>
       ))}

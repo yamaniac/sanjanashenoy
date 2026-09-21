@@ -74,7 +74,7 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
             e.stopPropagation()
             setIsExpanded(!isExpanded)
           }}
-          className={`flex items-center gap-2 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg mx-auto ${isExpanded ? 'mb-3' : ''}`}
+          className={`flex items-center gap-2 p-3 bg-white rounded-full shadow-lg mx-auto ${isExpanded ? 'mb-3' : ''}`}
           aria-expanded={isExpanded}
           aria-label="Toggle text size controls"
         >
@@ -92,20 +92,20 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
               d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" 
             />
           </svg>
-          <span className="font-medium text-gray-900 dark:text-white">Aa</span>
+          <span className="font-medium text-gray-900">Aa</span>
         </button>
 
         {/* Expanded state - shows the full slider */}
         {isExpanded && (
           <div 
-            className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg animate-fade-in"
+            className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-lg animate-fade-in"
             role="region"
             aria-label="Text size adjustment"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => adjustFontSize(-1)}
-              className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
               aria-label="Decrease text size"
             >
               <span className="text-xl font-medium">−</span>
@@ -124,7 +124,7 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
             />
             <button
               onClick={() => adjustFontSize(1)}
-              className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
               aria-label="Increase text size"
             >
               <span className="text-xl font-medium">+</span>
@@ -138,7 +138,7 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
   // Desktop variant (existing layout)
   return (
     <div 
-      className="flex flex-col gap-2 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm w-full max-w-md mx-auto lg:mx-0"
+      className="flex flex-col gap-2 p-4 bg-white rounded-lg shadow-sm w-full max-w-md mx-auto lg:mx-0"
       role="region"
       aria-label="Text size adjustment"
       itemScope
@@ -160,7 +160,7 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
             d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" 
           />
         </svg>
-        <h3 className="font-medium text-gray-900 dark:text-white">Adjust Text Size</h3>
+        <h3 className="font-medium text-gray-900">Adjust Text Size</h3>
       </div>
 
       {/* Slider controls */}
@@ -173,7 +173,7 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
         </label>
         <button
           onClick={() => adjustFontSize(-1)}
-          className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+          className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
           aria-label="Decrease text size"
         >
           <span className="text-xl font-medium">−</span>
@@ -193,7 +193,7 @@ export default function FontSizeSlider({ variant = 'desktop' }) {
         />
         <button
           onClick={() => adjustFontSize(1)}
-          className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+          className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
           aria-label="Increase text size"
         >
           <span className="text-xl font-medium">+</span>

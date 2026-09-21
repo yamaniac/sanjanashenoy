@@ -9,10 +9,10 @@ export default function References({ references }) {
   
   return (
     <div className="mt-16">
-      <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 p-8">
+      <div className="rounded-xl bg-gray-50 border border-gray-100 p-8">
         <h2 
           id="references" 
-          className="text-2xl font-serif font-semibold mb-2 text-gray-800 dark:text-gray-200 flex items-center gap-3"
+          className="text-2xl font-serif font-semibold mb-2 text-gray-800 flex items-center gap-3"
         >
           <svg 
             className="w-6 h-6 text-gray-400" 
@@ -26,7 +26,7 @@ export default function References({ references }) {
           </svg>
           Research & References
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-8">
+        <p className="text-gray-600 mb-8">
           A curated list of academic sources and references cited in this article. Click on any reference to view the source, or use the copy button to get the citation in your clipboard.
         </p>
         <ol className="list-none pl-0 space-y-6">
@@ -36,10 +36,10 @@ export default function References({ references }) {
             return (
               <li 
                 key={index}
-                className="flex gap-4 text-gray-600 dark:text-gray-300 leading-relaxed group hover:bg-white dark:hover:bg-gray-800 rounded-lg transition-colors duration-200 p-3 -ml-2"
+                className="flex gap-4 text-gray-600 leading-relaxed group hover:bg-white rounded-lg transition-colors duration-200 p-3 -ml-2"
               >
                 <span 
-                  className="font-mono text-sm min-w-[2.5rem] pt-1 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-200 font-semibold"
+                  className="font-mono text-sm min-w-[2.5rem] pt-1 text-gray-400 group-hover:text-gray-600 font-semibold"
                   aria-label={`Reference number ${index + 1}`}
                 >
                   [{index + 1}]
@@ -50,7 +50,7 @@ export default function References({ references }) {
                       href={ref.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-light hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 hover:underline block"
+                      className="font-light hover:text-blue-600 transition-colors duration-200 hover:underline block"
                       aria-label={`View reference ${index + 1} (opens in new tab)`}
                     >
                       {citationText}
@@ -61,11 +61,11 @@ export default function References({ references }) {
                 </div>
                 <button
                   onClick={() => copyCitation(citationText)}
-                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
+                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 p-2 hover:bg-gray-100 rounded-md"
                   aria-label={`Copy citation for reference ${index + 1}`}
                 >
                   <svg 
-                    className="w-5 h-5 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200" 
+                    className="w-5 h-5 text-gray-400 hover:text-gray-600" 
                     fill="none" 
                     strokeWidth="1.5" 
                     stroke="currentColor" 

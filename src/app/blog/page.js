@@ -72,7 +72,7 @@ export async function generateStaticParams() {
 
 function BlogCard({ post }) {
   return (
-    <article className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <article className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
       <Link href={`/blog/${post.slug}`} className="block">
         <div className="relative w-full h-[200px]">
           <BlogImage
@@ -88,15 +88,15 @@ function BlogCard({ post }) {
           />
         </div>
         <div className="p-6">
-          <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
             {post.title}
           </h2>
-          <div className="text-gray-500 dark:text-gray-400 text-sm mb-3">
+          <div className="text-gray-500 text-sm mb-3">
             <time dateTime={post.date}>
               {format(new Date(post.date), 'MMMM d, yyyy')}
             </time>
           </div>
-          <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+          <p className="text-gray-600 mb-4 line-clamp-3">
             {post.excerpt}
           </p>
           {post.tags && post.tags.length > 0 && (
@@ -104,7 +104,7 @@ function BlogCard({ post }) {
               {post.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs"
+                  className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs"
                 >
                   {tag}
                 </span>
@@ -112,7 +112,7 @@ function BlogCard({ post }) {
               {post.tags.length > 3 && (
                 <div className="relative group">
                   <span
-                    className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs cursor-help"
+                    className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs cursor-help"
                   >
                     +{post.tags.length - 3} more
                   </span>
@@ -147,10 +147,10 @@ function Pagination({ currentPage, totalPages }) {
           key={pageNum}
           href={`/blog?page=${pageNum}`}
           className={`px-4 py-2 rounded ${
-            pageNum === currentPage
-              ? 'bg-blue-500 text-white'
-              : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
-          }`}
+ pageNum === currentPage
+ ? 'bg-blue-500 text-white'
+ : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+ }`}
         >
           {pageNum}
         </Link>
@@ -200,7 +200,7 @@ export default async function BlogPage({ searchParams }) {
 
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
+    <div className="min-h-screen bg-white transition-colors duration-200">
       <Header />
       <main className="container mx-auto px-4 sm:px-6 py-8 pt-20">
         <Breadcrumbs
@@ -209,25 +209,25 @@ export default async function BlogPage({ searchParams }) {
             { href: '/blog', label: 'Blog' },
           ]}
         />
-        <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-8">
+        <h1 className="text-4xl font-bold text-gray-800 mb-8">
         Sanjana M Shenoy's Nutrition Blog        </h1>
         
         <Suspense fallback={
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[...Array(9)].map((_, i) => (
-              <div key={i} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <div className="w-full h-[200px] bg-gray-200 dark:bg-gray-700 animate-pulse" />
+              <div key={i} className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="w-full h-[200px] bg-gray-200 animate-pulse" />
                 <div className="p-6">
-                  <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-2 animate-pulse" />
-                  <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/4 mb-3 animate-pulse" />
+                  <div className="h-6 bg-gray-200 rounded w-3/4 mb-2 animate-pulse" />
+                  <div className="h-4 bg-gray-200 rounded w-1/4 mb-3 animate-pulse" />
                   <div className="space-y-2">
-                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full animate-pulse" />
-                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full animate-pulse" />
-                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-2/3 animate-pulse" />
+                    <div className="h-4 bg-gray-200 rounded w-full animate-pulse" />
+                    <div className="h-4 bg-gray-200 rounded w-full animate-pulse" />
+                    <div className="h-4 bg-gray-200 rounded w-2/3 animate-pulse" />
                   </div>
                   <div className="flex gap-2 mt-4">
-                    <div className="h-6 w-16 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
-                    <div className="h-6 w-16 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse" />
+                    <div className="h-6 w-16 bg-gray-200 rounded-full animate-pulse" />
+                    <div className="h-6 w-16 bg-gray-200 rounded-full animate-pulse" />
                   </div>
                 </div>
               </div>

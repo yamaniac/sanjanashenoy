@@ -1,5 +1,3 @@
-import { useTheme } from "next-themes";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getSortedPosts } from "@/lib/posts";
@@ -135,7 +133,7 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateJsonLd()) }}
       />
-      <main className="bg-white dark:bg-gray-900">
+      <main className="bg-white">
         <Header />
         
         {/* Hero Section */}
@@ -150,10 +148,7 @@ export default async function Home() {
         <div>
           <Specializations />
         </div>
-        {/* Clients Section */}
-        <div className="mt-8 sm:mt-16">
-          <Clients />
-        </div>
+        <Clients />
 
         {/* Featured Services */}
         <div className="mt-8 sm:mt-16">

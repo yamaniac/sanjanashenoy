@@ -78,26 +78,26 @@ export default function BMRCalculator() {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <Header />
         <main className="max-w-6xl mx-auto pt-16">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-5xl font-extrabold text-gray-900 mb-4">
               BMR Calculator
             </h1>
-            <p className="text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
               Calculate your Basal Metabolic Rate - the amount of energy your body burns while at rest
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-10" aria-label="BMR Calculator Form">
+            <section className="bg-white rounded-2xl shadow-xl p-10" aria-label="BMR Calculator Form">
               <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                 {/* Settings Row */}
-                <div className="grid grid-cols-2 gap-6 p-6 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
+                <div className="grid grid-cols-2 gap-6 p-6 bg-gray-50 rounded-xl">
                   {/* Gender Toggle */}
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <label className="block text-sm font-medium text-gray-700">
                       Gender
                     </label>
                     <div className="flex rounded-lg shadow-sm">
@@ -105,10 +105,10 @@ export default function BMRCalculator() {
                         type="button"
                         onClick={() => setGender('male')}
                         className={`flex-1 px-4 py-2 text-sm font-medium rounded-l-lg ${
-                          gender === 'male'
-                            ? 'bg-indigo-600 text-white'
-                            : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-200'
-                        }`}
+ gender === 'male'
+ ? 'bg-indigo-600 text-white'
+ : 'bg-white text-gray-700'
+ }`}
                       >
                         Male
                       </button>
@@ -116,10 +116,10 @@ export default function BMRCalculator() {
                         type="button"
                         onClick={() => setGender('female')}
                         className={`flex-1 px-4 py-2 text-sm font-medium rounded-r-lg ${
-                          gender === 'female'
-                            ? 'bg-indigo-600 text-white'
-                            : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-200'
-                        }`}
+ gender === 'female'
+ ? 'bg-indigo-600 text-white'
+ : 'bg-white text-gray-700'
+ }`}
                       >
                         Female
                       </button>
@@ -128,7 +128,7 @@ export default function BMRCalculator() {
 
                   {/* Unit System Toggle */}
                   <div className="space-y-2">
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <label className="block text-sm font-medium text-gray-700">
                       Unit System
                     </label>
                     <div className="flex rounded-lg shadow-sm">
@@ -136,10 +136,10 @@ export default function BMRCalculator() {
                         type="button"
                         onClick={() => setIsMetric(true)}
                         className={`flex-1 px-4 py-2 text-sm font-medium rounded-l-lg ${
-                          isMetric
-                            ? 'bg-indigo-600 text-white'
-                            : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-200'
-                        }`}
+ isMetric
+ ? 'bg-indigo-600 text-white'
+ : 'bg-white text-gray-700'
+ }`}
                       >
                         Metric
                       </button>
@@ -147,10 +147,10 @@ export default function BMRCalculator() {
                         type="button"
                         onClick={() => setIsMetric(false)}
                         className={`flex-1 px-4 py-2 text-sm font-medium rounded-r-lg ${
-                          !isMetric
-                            ? 'bg-indigo-600 text-white'
-                            : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-200'
-                        }`}
+ !isMetric
+ ? 'bg-indigo-600 text-white'
+ : 'bg-white text-gray-700'
+ }`}
                       >
                         Imperial
                       </button>
@@ -160,7 +160,7 @@ export default function BMRCalculator() {
 
                 {/* Input Fields */}
                 <div className="relative">
-                  <label htmlFor="age" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">
+                  <label htmlFor="age" className="block text-lg font-medium text-gray-700 mb-3">
                     Age (15-80)
                   </label>
                   <input
@@ -168,7 +168,7 @@ export default function BMRCalculator() {
                     type="number"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
-                    className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
+                    className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
                     placeholder="Enter your age"
                     min="15"
                     max="80"
@@ -177,7 +177,7 @@ export default function BMRCalculator() {
                 </div>
 
                 <div className="relative">
-                  <label htmlFor="height" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">
+                  <label htmlFor="height" className="block text-lg font-medium text-gray-700 mb-3">
                     Height {isMetric ? '(cm)' : '(inches)'}
                   </label>
                   <input
@@ -185,7 +185,7 @@ export default function BMRCalculator() {
                     type="number"
                     value={height}
                     onChange={(e) => setHeight(e.target.value)}
-                    className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
+                    className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
                     placeholder={`Enter height in ${isMetric ? 'centimeters' : 'inches'}`}
                     min="0"
                     required
@@ -193,7 +193,7 @@ export default function BMRCalculator() {
                 </div>
 
                 <div className="relative">
-                  <label htmlFor="weight" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">
+                  <label htmlFor="weight" className="block text-lg font-medium text-gray-700 mb-3">
                     Weight {isMetric ? '(kg)' : '(lbs)'}
                   </label>
                   <input
@@ -201,7 +201,7 @@ export default function BMRCalculator() {
                     type="number"
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
-                    className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
+                    className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
                     placeholder={`Enter weight in ${isMetric ? 'kilograms' : 'pounds'}`}
                     min="0"
                     required
@@ -209,14 +209,14 @@ export default function BMRCalculator() {
                 </div>
 
                 <div className="relative">
-                  <label htmlFor="activity" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">
+                  <label htmlFor="activity" className="block text-lg font-medium text-gray-700 mb-3">
                     Activity Level
                   </label>
                   <select
                     id="activity"
                     value={activityLevel}
                     onChange={(e) => setActivityLevel(e.target.value)}
-                    className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
+                    className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
                   >
                     {Object.entries(activityMultipliers).map(([key, { label }]) => (
                       <option key={key} value={key}>
@@ -229,7 +229,7 @@ export default function BMRCalculator() {
                 <button
                   type="submit"
                   onClick={calculateBMR}
-                  className="w-full bg-indigo-600 text-white py-4 px-8 rounded-lg text-xl font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="w-full bg-indigo-600 text-white py-4 px-8 rounded-lg text-xl font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
                   aria-label="Calculate BMR"
                 >
                   Calculate BMR
@@ -237,30 +237,30 @@ export default function BMRCalculator() {
               </form>
             </section>
 
-            <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-10" aria-label="BMR Results">
+            <section className="bg-white rounded-2xl shadow-xl p-10" aria-label="BMR Results">
               {bmr ? (
                 <div className={`space-y-8 ${animation ? 'animate-fade-in' : ''}`}>
-                  <div className="p-8 rounded-xl bg-indigo-50 dark:bg-indigo-900/20">
-                    <div className="text-6xl font-bold text-gray-900 dark:text-white mb-3">
+                  <div className="p-8 rounded-xl bg-indigo-50">
+                    <div className="text-6xl font-bold text-gray-900 mb-3">
                       {bmr}
                     </div>
-                    <div className="text-3xl font-semibold text-indigo-600 dark:text-indigo-400">
+                    <div className="text-3xl font-semibold text-indigo-600">
                       Base Calories/day
                     </div>
                   </div>
 
                   <div className="space-y-6">
-                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
+                    <h3 className="text-2xl font-semibold text-gray-800">
                       Daily Calorie Needs by Activity Level
                     </h3>
                     <div className="space-y-4">
                       {Object.entries(activityMultipliers).map(([key, { factor, label }]) => (
                         <div
                           key={key}
-                          className="p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50 flex justify-between items-center"
+                          className="p-4 rounded-lg bg-gray-50 flex justify-between items-center"
                         >
-                          <span className="text-gray-700 dark:text-gray-300">{label}</span>
-                          <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+                          <span className="text-gray-700">{label}</span>
+                          <span className="font-semibold text-indigo-600">
                             {Math.round(bmr * factor)} cal
                           </span>
                         </div>
@@ -269,14 +269,14 @@ export default function BMRCalculator() {
                   </div>
                 </div>
               ) : (
-                <div className="h-full flex items-center justify-center text-xl text-gray-500 dark:text-gray-400">
+                <div className="h-full flex items-center justify-center text-xl text-gray-500">
                   Enter your details to see your BMR and daily calorie needs
                 </div>
               )}
             </section>
           </div>
 
-          <section className="mt-16 prose dark:prose-invert max-w-none">
+          <section className="mt-16 prose max-w-none">
             <h2>What is Basal Metabolic Rate (BMR)?</h2>
             <p>
               Basal Metabolic Rate (BMR) represents the minimum amount of energy your body needs to perform basic life-sustaining functions while at rest. These functions include breathing, blood circulation, cell production, and maintaining body temperature.

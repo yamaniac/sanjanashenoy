@@ -66,7 +66,7 @@ export default function VideosPage() {
         {JSON.stringify(structuredData)}
       </Script>
       
-      <main className="min-h-screen bg-gradient-to-b from-white to-pink-50 dark:from-gray-900 dark:to-gray-800">
+      <main className="min-h-screen bg-gradient-to-b from-white to-pink-50">
         <Header />
         
         <div className="container mx-auto px-4 py-8">
@@ -77,13 +77,13 @@ export default function VideosPage() {
           
           <article>
             <header>
-              <h1 className="text-4xl font-bold mb-2 text-gray-800 dark:text-gray-100">Nutrition & Wellness Videos</h1>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">Expert video content on nutrition, health, and wellness topics by Dietitian Sanjana M Shenoy.</p>
+              <h1 className="text-4xl font-bold mb-2 text-gray-800">Nutrition & Wellness Videos</h1>
+              <p className="text-lg text-gray-600 mb-6">Expert video content on nutrition, health, and wellness topics by Dietitian Sanjana M Shenoy.</p>
             </header>
             
-            <div className="bg-pink-100 dark:bg-gray-700 rounded-lg p-6 mb-8 shadow-sm">
-              <h2 className="text-2xl font-bold mb-2 text-gray-800 dark:text-gray-100">Subscribe to My YouTube Channel</h2>
-              <p className="mb-4 text-gray-600 dark:text-gray-300">Stay updated with my latest nutrition and wellness videos by subscribing to my channel. New content posted regularly!</p>
+            <div className="bg-pink-100 rounded-lg p-6 mb-8 shadow-sm">
+              <h2 className="text-2xl font-bold mb-2 text-gray-800">Subscribe to My YouTube Channel</h2>
+              <p className="mb-4 text-gray-600">Stay updated with my latest nutrition and wellness videos by subscribing to my channel. New content posted regularly!</p>
               <a 
                 href="https://www.youtube.com/@dietsanjana" 
                 target="_blank" 
@@ -96,8 +96,8 @@ export default function VideosPage() {
             </div>
           
             <section className="mb-12" aria-labelledby="long-form-content">
-              <h2 id="long-form-content" className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-100">Detailed Diet & Nutrition Videos</h2>
-              <p className="mb-6 text-gray-600 dark:text-gray-300">Detailed Diet & Nutrition videos covering important topics in depth.</p>
+              <h2 id="long-form-content" className="text-2xl font-bold mb-6 text-gray-800">Detailed Diet & Nutrition Videos</h2>
+              <p className="mb-6 text-gray-600">Detailed Diet & Nutrition videos covering important topics in depth.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {longFormVideos.map((video) => (
                   <VideoCard key={video.id} video={video} />
@@ -106,8 +106,8 @@ export default function VideosPage() {
             </section>
             
             <section className="mb-12" aria-labelledby="youtube-shorts">
-              <h2 id="youtube-shorts" className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-100">Quick Nutrition Tips & Wellness Videos</h2>
-              <p className="mb-6 text-gray-600 dark:text-gray-300">Quick nutrition tips and wellness advice in bite-sized videos.</p>
+              <h2 id="youtube-shorts" className="text-2xl font-bold mb-6 text-gray-800">Quick Nutrition Tips & Wellness Videos</h2>
+              <p className="mb-6 text-gray-600">Quick nutrition tips and wellness advice in bite-sized videos.</p>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {shortFormVideos.map((video) => (
                   <VideoCard key={video.id} video={video} />

@@ -1,13 +1,20 @@
-import { Inter } from 'next/font/google'
+import { Inter, Fraunces } from 'next/font/google'
 import "./globals.css";
-import { Providers } from "./providers";
 import Script from 'next/script'
 
 // Configure font to load only required subsets
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap', // Add display swap for better performance
   preload: true
+})
+
+// Warm display serif used for headline moments (e.g. Hero)
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fraunces',
+  weight: ['500', '600'],
 })
 
 export const metadata = {
@@ -41,16 +48,13 @@ export const metadata = {
 
 // Add viewport export for color scheme and theme color
 export const viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#111827' }
-  ]
+  colorScheme: 'light',
+  themeColor: '#ffffff'
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         {/* Add preconnect for external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -70,7 +74,10 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${fraunces.variable} bg-white text-gray-900`}>
+        <Script id="force-light-theme" strategy="beforeInteractive">
+          {`document.documentElement.classList.remove('dark');try{localStorage.removeItem('theme')}catch(e){}`}
+        </Script>
         {/* Common Organization Schema */}
         <Script id="common-schema" type="application/ld+json">
           {`
@@ -148,7 +155,7 @@ export default function RootLayout({ children }) {
             }
           `}
         </Script>
-        <Providers>{children}</Providers>
+        {children}
         <Script id="register-sw" strategy="afterInteractive">
           {`
             if ('serviceWorker' in navigator) {

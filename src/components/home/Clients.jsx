@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 export default function Clients() {
     return (
-        <section id="trusted-clients" aria-label="Trusted Client Organizations" className="bg-white dark:bg-gray-900 py-24 sm:py-32">
+        <section id="trusted-clients" aria-label="Trusted Client Organizations" className="border-y border-stone-200 bg-[#FBF7F2] pt-8 pb-12 sm:pt-10 sm:pb-16">
             <Head>
                 {/* Add structured data for Organization affiliations */}
                 <script
@@ -46,11 +46,11 @@ export default function Clients() {
             </Head>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:max-w-none">
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl mb-4 text-center">
+                    <h2 className="mb-4 text-center font-display text-2xl font-medium tracking-tight text-gray-900 sm:text-3xl">
                         Trusted Dietitian & Nutrition Consultant for India's Most Prestigious Companies
                     </h2>
                     
-                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto text-center">
+                    <p className="mx-auto mb-10 max-w-3xl text-center text-lg text-stone-700">
                         With over two decades of experience delivering specialized nutrition programs, I've helped these leading organizations improve employee wellness, enhance productivity, and create healthier workplace environments through evidence-based dietary guidance.
                     </p>
                     
@@ -61,7 +61,7 @@ export default function Clients() {
                             src="/images/logos/infosys.png"
                             width={158}
                             height={48}
-                            className="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1 dark:invert"
+                            className="col-span-2 max-h-12 w-full object-contain object-left opacity-70 grayscale lg:col-span-1"
                         />
                         <Image
                             alt="Mphasis - Information Technology solutions provider specializing in cloud and cognitive services"
@@ -69,7 +69,7 @@ export default function Clients() {
                             src="/images/logos/mphasis.png"
                             width={158}
                             height={48}
-                            className="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1 dark:invert"
+                            className="col-span-2 max-h-12 w-full object-contain object-left opacity-70 grayscale lg:col-span-1"
                         />
                         <Image
                             alt="Amway - Global leader in health, beauty, and home care products"
@@ -77,7 +77,7 @@ export default function Clients() {
                             src="/images/logos/amway.svg"
                             width={158}
                             height={48}
-                            className="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1 dark:invert"
+                            className="col-span-2 max-h-12 w-full object-contain object-left opacity-70 grayscale lg:col-span-1"
                         />
                         <Image
                             alt="Mahindra Retail - Retail division of the Mahindra Group offering premium products and services"
@@ -85,7 +85,7 @@ export default function Clients() {
                             src="/images/logos/mahindra_logo.png"
                             width={300}
                             height={300}
-                            className="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1 dark:invert"
+                            className="col-span-2 max-h-12 w-full object-contain object-left opacity-70 grayscale lg:col-span-1"
                         />
                         <Image
                             alt="MCF (Mangalore Chemicals & Fertilizers) - Leading manufacturer of plant nutrients and agricultural solutions"
@@ -93,11 +93,11 @@ export default function Clients() {
                             src="/images/logos/mcf.png"
                             width={300}
                             height={300}
-                            className="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1 dark:invert"
+                            className="col-span-2 max-h-12 w-full object-contain object-left opacity-70 grayscale lg:col-span-1"
                         />
                     </div>
                     
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-8 italic text-center">
+                    <p className="mt-8 text-center text-sm italic text-stone-600">
                         Partnering with industry leaders to promote health and wellness through personalized nutrition strategies.
                     </p>
                 </div>

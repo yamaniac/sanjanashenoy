@@ -1,10 +1,8 @@
 "use client"
 
 import Link from 'next/link'
-import { ThemeToggle } from './ThemeToggle'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect, useRef } from 'react'
-import { useTheme } from 'next-themes'
 import { createPortal } from 'react-dom'
 
 export default function Header() {
@@ -13,7 +11,6 @@ export default function Header() {
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
   const headerRef = useRef(null)
 
   // Mount effect
@@ -53,8 +50,8 @@ export default function Header() {
 
   const isActive = (path) => {
     return pathname === path ? 
-      "text-teal-600 dark:text-teal-600" : 
-      "text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400"
+      "text-teal-600" : 
+      "text-gray-600 hover:text-teal-600"
   }
 
   const handleMobileMenuClick = () => {
@@ -74,7 +71,7 @@ export default function Header() {
         />
         {/* Menu */}
         <div 
-          className="fixed top-16 left-0 right-0 z-50 bg-white dark:bg-gray-900 shadow-lg overflow-y-auto"
+          className="fixed top-16 left-0 right-0 z-50 bg-white shadow-lg overflow-y-auto"
           style={{
             maxHeight: 'calc(100vh - 64px)'
           }}
@@ -82,9 +79,9 @@ export default function Header() {
           role="navigation"
           aria-label="Mobile navigation"
         >
-          <div className="flex justify-end p-4 border-b dark:border-gray-700">
+          <div className="flex justify-end p-4 border-b">
             <button 
-              className="text-gray-600 dark:text-gray-300"
+              className="text-gray-600"
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Close Mobile Menu"
             >
@@ -162,9 +159,9 @@ export default function Header() {
       <div className="h-16" />
       <header 
         ref={headerRef}
-        className={`fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow z-40 transition-transform duration-300 ${
-          isVisible ? 'translate-y-0' : '-translate-y-full'
-        }`}
+        className={`fixed top-0 left-0 right-0 bg-white shadow z-40 transition-transform duration-300 ${
+ isVisible ? 'translate-y-0' : '-translate-y-full'
+ }`}
         role="banner"
       >
         <div className="container mx-auto px-6">
@@ -176,15 +173,7 @@ export default function Header() {
               aria-label="Sanjana Shenoy homepage"
               alt="Logo of Sanjana Shenoy"
             >
-              {/* Remove or comment out the Image component */}
-              {/*<Image
-                src="/logo.svg"
-                alt="Logo"
-                width={40}
-                height={40}
-                className="dark:invert"
-              />*/}
-              <span className="font-bold text-xl text-gray-900 dark:text-white">
+              <span className="font-bold text-xl text-gray-900">
                 Dt.Sanjana Shenoy
               </span>
             </Link>
@@ -253,42 +242,12 @@ export default function Header() {
                   Contact
                 </Link>
               </nav>
-              <div 
-                className="text-gray-800 dark:text-white relative group"
-                role="complementary"
-                aria-label="Theme toggle"
-              >
-                <ThemeToggle />
-                <div 
-                  className="absolute right-0 top-full mt-3 px-3 py-1.5 bg-gray-800 dark:bg-gray-700 text-white text-xs font-medium rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50"
-                  role="tooltip"
-                  aria-hidden="true"
-                >
-                  Switch to dark/light mode
-                  <div className="absolute right-4 top-0 -translate-y-1 w-0 h-0 border-4 border-transparent border-b-gray-800 dark:border-b-gray-700" />
-                </div>
-              </div>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="flex items-center space-x-4 md:hidden">
-              <div 
-                className="text-gray-800 dark:text-white relative group"
-                role="complementary"
-                aria-label="Theme toggle"
-              >
-                <ThemeToggle />
-                <div 
-                  className="absolute right-0 top-full mt-3 px-3 py-1.5 bg-gray-800 dark:bg-gray-700 text-white text-xs font-medium rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50"
-                  role="tooltip"
-                  aria-hidden="true"
-                >
-                  Switch to dark/light mode
-                  <div className="absolute right-4 top-0 -translate-y-1 w-0 h-0 border-4 border-transparent border-b-gray-800 dark:border-b-gray-700" />
-                </div>
-              </div>
               <button 
-                className="text-gray-600 dark:text-gray-300"
+                className="text-gray-600"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label="Toggle Mobile Menu"
                 aria-expanded={isMobileMenuOpen}

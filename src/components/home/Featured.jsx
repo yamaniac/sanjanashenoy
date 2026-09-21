@@ -87,7 +87,7 @@ export default function Featured() {
     return (
         <section 
           id={sectionId}
-          className="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32 bg-gray-50 dark:bg-gray-800 mb-20"
+          className="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32 bg-white"
           aria-labelledby={`${sectionId}-heading`}
         >
           {/* Schema.org structured data */}
@@ -119,14 +119,14 @@ export default function Featured() {
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 
               id={`${sectionId}-heading`}
-              className="text-base font-semibold leading-7 text-teal-600 dark:text-teal-400"
+              className="text-base font-medium leading-7 text-teal-800"
             >
               Expert Nutrition Services
             </h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+            <p className="mt-2 font-display text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">
               Transformative Nutrition Solutions for Optimal Health
             </p>
-            <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+            <p className="mt-6 text-lg leading-8 text-stone-700">
               Discover science-backed nutrition plans, professional health coaching, and specialized dietary programs 
               designed to optimize your wellbeing, boost energy levels, and help you achieve sustainable health outcomes.
             </p>
@@ -134,21 +134,21 @@ export default function Featured() {
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
               {services.map((service) => (
-                <div key={service.name} className="flex flex-col hover:shadow-md transition-shadow p-6 rounded-lg">
-                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900 dark:text-white">
+                <div key={service.name} className="flex flex-col border-t border-stone-200 pt-6">
+                  <dt className="flex items-center gap-x-3 text-base font-medium leading-7 text-gray-900">
                     <service.icon
-                      className="h-5 w-5 flex-none text-teal-600 dark:text-teal-400"
+                      className="h-5 w-5 flex-none text-teal-800"
                       aria-hidden="true"
                     />
                     {service.name}
                   </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 dark:text-gray-300">
+                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-stone-600">
                     <p className="flex-auto">{service.description}</p>
                     
                     <ul className="mt-4 space-y-2">
                       {service.benefits.map((benefit, index) => (
                         <li key={index} className="flex items-center">
-                          <span className="mr-2 text-teal-600 dark:text-teal-400">•</span>
+                          <span className="mr-2 text-teal-800">•</span>
                           <span>{benefit}</span>
                         </li>
                       ))}

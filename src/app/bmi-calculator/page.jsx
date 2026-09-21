@@ -59,21 +59,21 @@ export default function BMICalculator() {
 
   const getStatusColor = () => {
     switch (status) {
-      case 'Underweight': return 'text-blue-500 dark:text-blue-400';
-      case 'Normal weight': return 'text-green-500 dark:text-green-400';
-      case 'Overweight': return 'text-orange-500 dark:text-orange-400';
-      case 'Obese': return 'text-red-500 dark:text-red-400';
-      default: return 'text-gray-700 dark:text-gray-300';
+      case 'Underweight': return 'text-blue-500';
+      case 'Normal weight': return 'text-green-500';
+      case 'Overweight': return 'text-orange-500';
+      case 'Obese': return 'text-red-500';
+      default: return 'text-gray-700';
     }
   };
 
   const getStatusBackground = () => {
     switch (status) {
-      case 'Underweight': return 'bg-blue-50 dark:bg-blue-900/20';
-      case 'Normal weight': return 'bg-green-50 dark:bg-green-900/20';
-      case 'Overweight': return 'bg-orange-50 dark:bg-orange-900/20';
-      case 'Obese': return 'bg-red-50 dark:bg-red-900/20';
-      default: return 'bg-gray-50 dark:bg-gray-800';
+      case 'Underweight': return 'bg-blue-50';
+      case 'Normal weight': return 'bg-green-50';
+      case 'Overweight': return 'bg-orange-50';
+      case 'Obese': return 'bg-red-50';
+      default: return 'bg-gray-50';
     }
   };
 
@@ -153,22 +153,22 @@ export default function BMICalculator() {
 
   return (
     <>
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8 mb-10">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8 mb-10">
       <Header />
       <main className="max-w-6xl mx-auto pt-16">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-5xl font-extrabold text-gray-900 mb-4">
             BMI Calculator
           </h1>
-          <p className="text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
             Calculate your Body Mass Index to check if you're at a healthy weight
           </p>
         </div>
 
         {/* Add explanation section before the calculator */}
-        <section className="max-w-4xl mx-auto mb-16 text-gray-700 dark:text-gray-300">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <section className="max-w-4xl mx-auto mb-16 text-gray-700">
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
               How Does BMI Calculator Work?
             </h2>
             
@@ -178,7 +178,7 @@ export default function BMICalculator() {
                 if you are at a healthy weight. The formula is:
               </p>
 
-              <div className="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg my-4">
+              <div className="bg-gray-50 p-4 rounded-lg my-4">
                 <p className="font-mono text-center">
                   For metric: BMI = weight(kg) / height(m)²
                   <br />
@@ -209,7 +209,7 @@ export default function BMICalculator() {
               </div>
 
               <div className="mt-6">
-                <p className="text-sm bg-yellow-50 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-200 p-4 rounded-lg">
+                <p className="text-sm bg-yellow-50 text-yellow-800 p-4 rounded-lg">
                   <strong>Note:</strong> BMI is a general guideline and doesn't account for factors like muscle mass, 
                   bone density, age, or gender. For a more accurate health assessment, consult with a healthcare professional.
                 </p>
@@ -219,13 +219,13 @@ export default function BMICalculator() {
         </section>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-10" aria-label="BMI Input Form">
+          <section className="bg-white rounded-2xl shadow-xl p-10" aria-label="BMI Input Form">
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
               {/* Settings Row */}
-              <div className="grid grid-cols-2 gap-6 p-6 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
+              <div className="grid grid-cols-2 gap-6 p-6 bg-gray-50 rounded-xl">
                 {/* Ethnicity Toggle */}
                 <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <label className="block text-sm font-medium text-gray-700">
                     Ethnicity
                   </label>
                   <div className="flex rounded-lg shadow-sm">
@@ -233,10 +233,10 @@ export default function BMICalculator() {
                       type="button"
                       onClick={() => setIsAsian(false)}
                       className={`flex-1 px-4 py-2 text-sm font-medium rounded-l-lg ${
-                        !isAsian
-                          ? 'bg-indigo-600 text-white'
-                          : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-200'
-                      }`}
+ !isAsian
+ ? 'bg-indigo-600 text-white'
+ : 'bg-white text-gray-700'
+ }`}
                     >
                       Non-Asian
                     </button>
@@ -244,10 +244,10 @@ export default function BMICalculator() {
                       type="button"
                       onClick={() => setIsAsian(true)}
                       className={`flex-1 px-4 py-2 text-sm font-medium rounded-r-lg ${
-                        isAsian
-                          ? 'bg-indigo-600 text-white'
-                          : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-200'
-                      }`}
+ isAsian
+ ? 'bg-indigo-600 text-white'
+ : 'bg-white text-gray-700'
+ }`}
                     >
                       Asian
                     </button>
@@ -256,7 +256,7 @@ export default function BMICalculator() {
 
                 {/* Unit System Toggle */}
                 <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <label className="block text-sm font-medium text-gray-700">
                     Unit System
                   </label>
                   <div className="flex rounded-lg shadow-sm">
@@ -264,10 +264,10 @@ export default function BMICalculator() {
                       type="button"
                       onClick={() => setIsMetric(true)}
                       className={`flex-1 px-4 py-2 text-sm font-medium rounded-l-lg ${
-                        isMetric
-                          ? 'bg-indigo-600 text-white'
-                          : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-200'
-                      }`}
+ isMetric
+ ? 'bg-indigo-600 text-white'
+ : 'bg-white text-gray-700'
+ }`}
                     >
                       Metric
                     </button>
@@ -275,10 +275,10 @@ export default function BMICalculator() {
                       type="button"
                       onClick={() => setIsMetric(false)}
                       className={`flex-1 px-4 py-2 text-sm font-medium rounded-r-lg ${
-                        !isMetric
-                          ? 'bg-indigo-600 text-white'
-                          : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-200'
-                      }`}
+ !isMetric
+ ? 'bg-indigo-600 text-white'
+ : 'bg-white text-gray-700'
+ }`}
                     >
                       Imperial
                     </button>
@@ -287,7 +287,7 @@ export default function BMICalculator() {
               </div>
 
               <div className="relative">
-                <label htmlFor="height" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">
+                <label htmlFor="height" className="block text-lg font-medium text-gray-700 mb-3">
                   Height {isMetric ? '(cm)' : '(inches)'}
                 </label>
                 <input
@@ -295,7 +295,7 @@ export default function BMICalculator() {
                   type="number"
                   value={height}
                   onChange={(e) => setHeight(e.target.value)}
-                  className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
+                  className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
                   placeholder={`Enter height in ${isMetric ? 'centimeters' : 'inches'}`}
                   min="0"
                   required
@@ -303,7 +303,7 @@ export default function BMICalculator() {
               </div>
 
               <div className="relative">
-                <label htmlFor="weight" className="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">
+                <label htmlFor="weight" className="block text-lg font-medium text-gray-700 mb-3">
                   Weight {isMetric ? '(kg)' : '(lbs)'}
                 </label>
                 <input
@@ -311,7 +311,7 @@ export default function BMICalculator() {
                   type="number"
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
-                  className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
+                  className="block w-full px-6 py-4 text-lg rounded-lg border-2 border-gray-200 focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
                   placeholder={`Enter weight in ${isMetric ? 'kilograms' : 'pounds'}`}
                   min="0"
                   required
@@ -321,7 +321,7 @@ export default function BMICalculator() {
               <button
                 type="submit"
                 onClick={calculateBMI}
-                className="w-full bg-indigo-600 text-white py-4 px-8 rounded-lg text-xl font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+                className="w-full bg-indigo-600 text-white py-4 px-8 rounded-lg text-xl font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
                 aria-label="Calculate BMI"
               >
                 Calculate BMI
@@ -329,11 +329,11 @@ export default function BMICalculator() {
             </form>
           </section>
 
-          <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-10" aria-label="BMI Results">
+          <section className="bg-white rounded-2xl shadow-xl p-10" aria-label="BMI Results">
             {bmi ? (
               <div className={`space-y-8 ${animation ? 'animate-fade-in' : ''}`}>
                 <div className={`p-8 rounded-xl ${getStatusBackground()} transition-colors duration-300`}>
-                  <div className="text-6xl font-bold text-gray-900 dark:text-white mb-3">
+                  <div className="text-6xl font-bold text-gray-900 mb-3">
                     {bmi}
                   </div>
                   <div className={`text-3xl font-semibold ${getStatusColor()} transition-colors duration-300`}>
@@ -342,7 +342,7 @@ export default function BMICalculator() {
                 </div>
 
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">BMI Categories</h3>
+                  <h3 className="text-2xl font-semibold text-gray-800">BMI Categories</h3>
                   <div className="grid gap-4">
                     {[
                       { label: 'Underweight', range: '< 18.5', color: 'blue' },
@@ -352,12 +352,12 @@ export default function BMICalculator() {
                     ].map((category) => (
                       <div
                         key={category.label}
-                        className={`p-4 rounded-lg bg-${category.color}-50 dark:bg-${category.color}-900/20 flex justify-between items-center text-lg`}
+                        className={`p-4 rounded-lg bg-${category.color}-50 flex justify-between items-center text-lg`}
                       >
-                        <span className={`text-${category.color}-600 dark:text-${category.color}-400 font-medium`}>
+                        <span className={`text-${category.color}-600 font-medium`}>
                           {category.label}
                         </span>
-                        <span className={`text-${category.color}-600 dark:text-${category.color}-400`}>
+                        <span className={`text-${category.color}-600`}>
                           {category.range}
                         </span>
                       </div>
@@ -366,7 +366,7 @@ export default function BMICalculator() {
                 </div>
               </div>
             ) : (
-              <div className="h-full flex items-center justify-center text-xl text-gray-500 dark:text-gray-400">
+              <div className="h-full flex items-center justify-center text-xl text-gray-500">
                 Enter your height and weight to see your BMI result
               </div>
             )}

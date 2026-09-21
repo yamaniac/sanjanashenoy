@@ -21,19 +21,20 @@
     text-align: left;
   }
 
-  /* Dark mode styles */
-  .dark .prose table th {
-    background-color: rgb(31, 41, 55);
-  }
-
-  .dark .prose table td,
-  .dark .prose table th {
-    border-color: rgb(55, 65, 81);
-  }
 }
 
 body {
   font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+::selection {
+  background: #0f766e;
+  color: #fbf7f2;
+}
+
+:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 3px;
 }
 
 @keyframes fadeIn {

@@ -203,7 +203,7 @@ export default function Consultations() {
     ]
 
     return (
-        <div className="min-h-screen bg-white dark:bg-gray-900">
+        <div className="min-h-screen bg-white">
             <ConsultationsStructuredData />
             <Header />
             <main className="container mx-auto px-4 sm:px-6 py-8 pt-20">
@@ -214,11 +214,11 @@ export default function Consultations() {
                     ]}
                 />
                 
-                <div className="bg-white dark:bg-gray-900">
+                <div className="bg-white">
                     <div className="container mx-auto px-2 lg:px-4">
-                        <div className="text-base/7 text-gray-700 dark:text-gray-300">
-                            <p className="text-base/7 font-semibold text-indigo-600 dark:text-teal-400">Consultations</p>
-                            <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 dark:text-white sm:text-5xl">
+                        <div className="text-base/7 text-gray-700">
+                            <p className="text-base/7 font-semibold text-indigo-600">Consultations</p>
+                            <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
                             Personalized Diet and Nutrition Consultations By - Dt.Sanjana M Shenoy
                             </h1>
                             <p className="mt-6 text-xl/8">
@@ -228,14 +228,14 @@ export default function Consultations() {
 
                         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {services.map((service, index) => (
-                                <div key={index} className="group hover:scale-105 transition-transform duration-300 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg dark:shadow-gray-900 border border-gray-100 dark:border-gray-700">
+                                <div key={index} className="group hover:scale-105 transition-transform duration-300 bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                                     <div className="flex items-center space-x-4 mb-4">
-                                        <div className="p-3 bg-indigo-100 dark:bg-indigo-900 rounded-lg">
-                                            <service.icon className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                                        <div className="p-3 bg-indigo-100 rounded-lg">
+                                            <service.icon className="h-6 w-6 text-indigo-600" />
                                         </div>
-                                        <h2 className="text-xl font-semibold dark:text-white">{service.title}</h2>
+                                        <h2 className="text-xl font-semibold">{service.title}</h2>
                                     </div>
-                                    <ul className="list-none space-y-3 dark:text-gray-300">
+                                    <ul className="list-none space-y-3">
                                         {service.items.map((item, itemIndex) => (
                                             <li key={itemIndex} className="flex items-start space-x-3">
                                                 <span className="text-green-500 flex-shrink-0">✓</span>

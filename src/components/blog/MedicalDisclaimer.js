@@ -56,19 +56,19 @@ export default function MedicalDisclaimer({ className = "", type = "blog" }) {
   return (
     <aside
       aria-label="Medical disclaimer"
-      className={`border-l-4 border-red-500 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md ${className} my-6 transition-all duration-300 animate-pulse-once`}
+      className={`border-l-4 border-red-500 bg-gray-50 rounded-lg shadow-md ${className} my-6 transition-all duration-300 animate-pulse-once`}
     >
       <div className="p-4 md:p-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <AlertTriangle className="h-6 w-6 text-red-500" />
-            <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-lg md:text-xl font-bold text-gray-900">
               {currentDisclaimer.title}
             </h2>
           </div>
           <button
             onClick={handleToggle}
-            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+            className="text-gray-500 hover:text-gray-700"
             aria-expanded={isExpanded}
             aria-controls="disclaimer-content"
           >
@@ -79,12 +79,12 @@ export default function MedicalDisclaimer({ className = "", type = "blog" }) {
         {isExpanded && (
           <div
             id="disclaimer-content"
-            className="mt-4 text-gray-700 dark:text-gray-300 space-y-3"
+            className="mt-4 text-gray-700 space-y-3"
           >
             {currentDisclaimer.content.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
-            <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+            <p className="text-sm text-gray-500 italic">
               Last updated: {currentDate}
             </p>
           </div>
