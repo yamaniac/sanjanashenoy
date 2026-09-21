@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Image from 'next/image';
@@ -18,12 +18,12 @@ const FILTERS = [
 
 export default function NewsEvents() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [, setCurrentImageIndex] = useState(0);
   const [filter, setFilter] = useState('all');
   const closeButtonRef = useRef(null);
   const lastFocusRef = useRef(null);
 
-  const galleryImages = getEventData();
+  const galleryImages = useMemo(() => getEventData(), []);
 
   const filteredImages = useMemo(() => {
     return filter === 'all'
@@ -37,26 +37,24 @@ export default function NewsEvents() {
     setCurrentImageIndex(index);
   };
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setSelectedImage(null);
     if (lastFocusRef.current instanceof HTMLElement) {
       lastFocusRef.current.focus();
     }
-  };
+  }, []);
 
-  const navigateImage = (direction) => {
+  const navigateImage = useCallback((direction) => {
     if (!filteredImages.length) return;
 
-    let newIndex;
-    if (direction === 'next') {
-      newIndex = (currentImageIndex + 1) % filteredImages.length;
-    } else {
-      newIndex = (currentImageIndex - 1 + filteredImages.length) % filteredImages.length;
-    }
-
-    setCurrentImageIndex(newIndex);
-    setSelectedImage(filteredImages[newIndex]);
-  };
+    setCurrentImageIndex((idx) => {
+      const newIndex = direction === 'next'
+        ? (idx + 1) % filteredImages.length
+        : (idx - 1 + filteredImages.length) % filteredImages.length;
+      setSelectedImage(filteredImages[newIndex]);
+      return newIndex;
+    });
+  }, [filteredImages]);
 
   useEffect(() => {
     if (!selectedImage) return;
@@ -76,7 +74,7 @@ export default function NewsEvents() {
       window.removeEventListener('keydown', onKeyDown);
       document.body.style.overflow = previousOverflow;
     };
-  }, [selectedImage, currentImageIndex, filter]);
+  }, [selectedImage, closeModal, navigateImage]);
 
   const eventsSchema = {
     "@context": "https://schema.org",
@@ -152,12 +150,10 @@ export default function NewsEvents() {
           />
           <div className="max-w-3xl">
             <h1 className="font-display text-4xl font-medium tracking-tight text-gray-900 sm:text-5xl">
-              Sanjana M. Shenoy: Mangalore's Leading Dietitian and Nutritionist
+              {"Sanjana M. Shenoy: Mangalore's Leading Dietitian and Nutritionist"}
             </h1>
             <p className="mt-6 text-xl leading-8 text-stone-700">
-              Sanjana M. Shenoy, Consultant Dietitian from Mangalore, has conducted various workshops and health education programs. Here you'll find a collection of events where she've shared evidence-based
-              dietary guidance and practical wellness strategies. Browse through these programs to see how
-              she've been transforming community health through proper Diet, nutrition and lifestyle education.
+              {"Sanjana M. Shenoy, Consultant Dietitian from Mangalore, has conducted various workshops and health education programs. Here you'll find a collection of events where she've shared evidence-based dietary guidance and practical wellness strategies. Browse through these programs to see how she've been transforming community health through proper Diet, nutrition and lifestyle education."}
             </p>
           </div>
         </div>

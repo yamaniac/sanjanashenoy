@@ -210,7 +210,7 @@ export default async function BlogPage({ searchParams }) {
           ]}
         />
         <h1 className="text-4xl font-bold text-gray-800 mb-8">
-        Sanjana M Shenoy's Nutrition Blog        </h1>
+        {"Sanjana M Shenoy's Nutrition Blog"}        </h1>
         
         <Suspense fallback={
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
