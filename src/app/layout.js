@@ -1,20 +1,12 @@
-import { Inter, Fraunces } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import "./globals.css";
 import Script from 'next/script'
 
-// Configure font to load only required subsets
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap', // Add display swap for better performance
-  preload: true
-})
-
-// Warm display serif used for headline moments (e.g. Hero)
-const fraunces = Fraunces({
-  subsets: ['latin'],
   display: 'swap',
-  variable: '--font-fraunces',
-  weight: ['500', '600'],
+  preload: true,
+  variable: '--font-inter',
 })
 
 export const metadata = {
@@ -51,12 +43,8 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <head>
-        {/* Add preconnect for external resources */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DPXMYJ2Z47"
@@ -71,7 +59,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body className={`${inter.className} ${fraunces.variable} bg-white text-gray-900`}>
+      <body className={`${inter.className} bg-white text-gray-900`}>
         <Script id="force-light-theme" strategy="beforeInteractive">
           {`document.documentElement.classList.remove('dark');try{localStorage.removeItem('theme')}catch(e){}`}
         </Script>

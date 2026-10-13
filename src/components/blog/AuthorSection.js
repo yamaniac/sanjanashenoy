@@ -90,7 +90,7 @@ export default function AuthorSection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema) }}
       />
 
-      <h2 className="pt-10 font-display text-2xl font-medium text-gray-900">
+      <h2 className="pt-10 text-2xl font-medium text-gray-900">
         Written by Medical Professional
       </h2>
 
@@ -113,7 +113,7 @@ export default function AuthorSection() {
           </div>
 
           <div className="flex-1 text-center md:text-left">
-            <h3 className="font-display text-2xl font-medium text-gray-900">
+            <h3 className="text-2xl font-medium text-gray-900">
               {AUTHOR_INFO.name}
             </h3>
 
@@ -137,14 +137,14 @@ export default function AuthorSection() {
             <dl className="mt-8 grid grid-cols-2 gap-8">
               <div>
                 <dt className="text-sm font-medium text-stone-600">Clinical Experience</dt>
-                <dd className="mt-1 font-display text-2xl font-medium text-gray-900">
+                <dd className="mt-1 text-2xl font-medium text-gray-900">
                   {AUTHOR_INFO.clinicalExperience.split(' ')[0]}
                 </dd>
                 <p className="mt-0.5 text-xs text-stone-600">Years in Practice</p>
               </div>
               <div>
                 <dt className="text-sm font-medium text-stone-600">Patients Helped</dt>
-                <dd className="mt-1 font-display text-2xl font-medium text-gray-900">
+                <dd className="mt-1 text-2xl font-medium text-gray-900">
                   {AUTHOR_INFO.patientsCounted}
                 </dd>
                 <p className="mt-0.5 text-xs text-stone-600">Patient Cases</p>

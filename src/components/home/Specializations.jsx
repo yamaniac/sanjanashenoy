@@ -116,7 +116,7 @@ export default function Specializations() {
             <p className="mb-4 text-sm font-medium text-teal-800">
               Expert Services
             </p>
-            <h2 className="mb-4 font-display text-4xl font-medium tracking-tight text-gray-900">Diet & Nutrition Consultations</h2>
+            <h2 className="mb-4 text-4xl font-medium tracking-tight text-gray-900">Diet & Nutrition Consultations</h2>
             <p className="mt-4 text-lg text-stone-700">
               Expert nutrition services tailored to your unique needs and goals, backed by science and personalized care
             </p>

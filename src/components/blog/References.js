@@ -12,7 +12,7 @@ export default function References({ references }) {
       <div className="rounded-xl bg-gray-50 border border-gray-100 p-8">
         <h2 
           id="references" 
-          className="text-2xl font-serif font-semibold mb-2 text-gray-800 flex items-center gap-3"
+          className="text-2xl font-semibold mb-2 text-gray-800 flex items-center gap-3"
         >
           <svg 
             className="w-6 h-6 text-gray-400" 
@@ -39,7 +39,7 @@ export default function References({ references }) {
                 className="flex gap-4 text-gray-600 leading-relaxed group hover:bg-white rounded-lg transition-colors duration-200 p-3 -ml-2"
               >
                 <span 
-                  className="font-mono text-sm min-w-[2.5rem] pt-1 text-gray-400 group-hover:text-gray-600 font-semibold"
+                  className="text-sm min-w-[2.5rem] pt-1 text-gray-400 group-hover:text-gray-600 font-semibold"
                   aria-label={`Reference number ${index + 1}`}
                 >
                   [{index + 1}]

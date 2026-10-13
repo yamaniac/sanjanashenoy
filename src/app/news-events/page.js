@@ -149,10 +149,11 @@ export default function NewsEvents() {
             ]}
           />
           <div className="max-w-3xl">
-            <h1 className="font-display text-4xl font-medium tracking-tight text-gray-900 sm:text-5xl">
+            <p className="text-sm font-medium text-teal-800">News & Events</p>
+            <h1 className="mt-3 text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">
               {"Sanjana M. Shenoy: Mangalore's Leading Dietitian and Nutritionist"}
             </h1>
-            <p className="mt-6 text-xl leading-8 text-stone-700">
+            <p className="mt-4 text-lg leading-8 text-stone-700">
               {"Sanjana M. Shenoy, Consultant Dietitian from Mangalore, has conducted various workshops and health education programs. Here you'll find a collection of events where she've shared evidence-based dietary guidance and practical wellness strategies. Browse through these programs to see how she've been transforming community health through proper Diet, nutrition and lifestyle education."}
             </p>
           </div>
@@ -160,7 +161,7 @@ export default function NewsEvents() {
 
         <div className="container mx-auto px-4 sm:px-6 py-16">
           <section aria-labelledby="gallery-heading">
-            <h2 id="gallery-heading" className="font-display text-3xl font-medium text-gray-900">
+            <h2 id="gallery-heading" className="text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">
               Community Health Initiatives
             </h2>
             <div className="mt-6 flex flex-wrap gap-2" role="tablist" aria-label="Event categories">
@@ -210,17 +211,17 @@ export default function NewsEvents() {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         loading="lazy"
                       />
-                      <span className="absolute top-3 right-3 bg-teal-800 px-2 py-1 text-xs capitalize text-white">
+                      <span className="absolute top-3 right-3 rounded-full bg-teal-800 px-2.5 py-1 text-xs font-medium capitalize text-white">
                         {image.category}
                       </span>
                     </div>
                     <time className="mt-5 block text-sm text-stone-600" dateTime={image.date}>
                       {image.date}
                     </time>
-                    <h3 className="mt-2 text-xl font-medium text-gray-900 group-hover:text-teal-800">
+                    <h3 className="mt-2 text-lg font-medium leading-6 text-gray-900 group-hover:text-teal-800">
                       {image.title}
                     </h3>
-                    <p className="mt-3 line-clamp-2 text-stone-600">{image.description}</p>
+                    <p className="mt-3 line-clamp-2 text-sm leading-6 text-stone-600">{image.description}</p>
                   </button>
                 </article>
               ))
@@ -288,14 +289,14 @@ export default function NewsEvents() {
               </div>
 
               <div className="bg-white px-6 py-5">
-                <p className="text-xs font-medium capitalize text-teal-800">{selectedImage.category}</p>
-                <h3 id="modal-title" className="mt-2 font-display text-2xl font-medium text-gray-900">
+                <p className="text-sm font-medium capitalize text-teal-800">{selectedImage.category}</p>
+                <h3 id="modal-title" className="mt-2 text-xl font-medium leading-7 text-gray-900">
                   {selectedImage.title}
                 </h3>
                 <time className="mt-1 block text-sm text-stone-600" dateTime={selectedImage.date}>
                   {selectedImage.date}
                 </time>
-                <p className="mt-3 text-stone-700">{selectedImage.description}</p>
+                <p className="mt-3 text-sm leading-6 text-stone-700">{selectedImage.description}</p>
               </div>
             </div>
           </div>

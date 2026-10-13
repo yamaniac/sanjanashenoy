@@ -19,7 +19,7 @@ module.exports = {
         card: '1rem',
       },
       fontFamily: {
-        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        sans: ['var(--font-inter)', 'sans-serif'],
       },
       typography: {
         DEFAULT: {

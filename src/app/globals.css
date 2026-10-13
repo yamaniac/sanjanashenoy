@@ -23,10 +23,6 @@
 
 }
 
-body {
-  font-family: var(--font-geist-sans), Arial, sans-serif;
-}
-
 ::selection {
   background: #0f766e;
   color: #fbf7f2;

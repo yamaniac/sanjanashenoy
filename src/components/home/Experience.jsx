@@ -28,7 +28,7 @@ export default function Experience() {
                   <h2 className="mt-3 text-base font-medium text-teal-800">
                     Two Decades of Nutrition Excellence              
                   </h2>
-                  <h3 className="mt-3 font-display text-4xl font-medium tracking-tight text-pretty text-gray-900 sm:text-5xl">
+                  <h3 className="mt-3 text-4xl font-medium tracking-tight text-pretty text-gray-900 sm:text-5xl">
                     Transforming Lives Through Evidence-Based Nutrition
                   </h3>
                   <p className="mt-6 text-lg/8 text-stone-700">
@@ -47,7 +47,7 @@ export default function Experience() {
                         <dt className="text-sm/6 font-medium text-stone-600">
                           {stat.name}
                         </dt>
-                        <dd className="order-first font-display text-3xl font-medium tracking-tight text-gray-900">
+                        <dd className="order-first text-3xl font-medium tracking-tight text-gray-900">
                           {stat.value}
                         </dd>
                         <p className="text-xs text-stone-600">

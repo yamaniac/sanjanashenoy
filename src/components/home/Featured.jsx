@@ -123,7 +123,7 @@ export default function Featured() {
             >
               Expert Nutrition Services
             </h2>
-            <p className="mt-2 font-display text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">
+            <p className="mt-2 text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">
               Transformative Nutrition Solutions for Optimal Health
             </p>
             <p className="mt-6 text-lg leading-8 text-stone-700">

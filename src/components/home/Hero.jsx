@@ -6,10 +6,10 @@ export default function Hero() {
     <div className="relative bg-[#FBF7F2]">
       <div className="mx-auto max-w-7xl px-6 pb-20 pt-16 sm:pb-28 sm:pt-24 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-12 lg:gap-x-12 lg:gap-y-6">
-          <h1 className="mb-10 w-full text-center font-display text-3xl font-medium tracking-tight text-gray-900 sm:text-6xl lg:col-span-12">
+          <h1 className="mb-10 w-full text-center text-3xl font-medium tracking-tight text-gray-900 sm:text-6xl lg:col-span-12">
             Dt. Sanjana M Shenoy
             <div className="divider mx-auto mt-10 mb-10 max-w-xs border-t border-stone-300/80"></div>
-            <span className="font-display text-2xl font-medium text-teal-800 sm:text-4xl">
+            <span className="text-2xl font-medium text-teal-800 sm:text-4xl">
               Consultant Dietitian & Nutritionist in Mangalore
             </span>
           </h1>

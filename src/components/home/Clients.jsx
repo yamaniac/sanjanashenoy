@@ -46,7 +46,7 @@ export default function Clients() {
             </Head>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:max-w-none">
-                    <h2 className="mb-4 text-center font-display text-2xl font-medium tracking-tight text-gray-900 sm:text-3xl">
+                    <h2 className="mb-4 text-center text-2xl font-medium tracking-tight text-gray-900 sm:text-3xl">
                         Trusted Dietitian & Nutrition Consultant for India's Most Prestigious Companies
                     </h2>
                     

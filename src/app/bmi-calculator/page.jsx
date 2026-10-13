@@ -179,7 +179,7 @@ export default function BMICalculator() {
               </p>
 
               <div className="bg-gray-50 p-4 rounded-lg my-4">
-                <p className="font-mono text-center">
+                <p className="text-center">
                   For metric: BMI = weight(kg) / height(m)²
                   <br />
                   For imperial: BMI = (weight(lbs) × 703) / height(inches)²

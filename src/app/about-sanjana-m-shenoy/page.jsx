@@ -25,9 +25,9 @@ export const metadata = {
       "Meet Dt. Sanjana M Shenoy, Mangalore's leading dietitian with 15+ years of expertise in clinical nutrition, weight management & diabetes care. PhD researcher, certified bariatric nutritionist & diabetes educator.",
     images: [
       {
-        url: "/images/sanjana_shenoy.png",
-        width: 800,
-        height: 800,
+        url: "/images/sanjana-shenoy-dietitian.jpg",
+        width: 682,
+        height: 1024,
         alt: "Dt. Sanjana M Shenoy - Dietitian & Nutritionist in Mangalore",
       },
     ],
@@ -52,7 +52,7 @@ export const metadata = {
       "Dt. Sanjana M Shenoy - Expert Dietitian & Nutritionist in Mangalore",
     description:
       "Meet t. Sanjana M Shenoy, Mangalore's leading dietitian with 15+ years of expertise in clinical nutrition, weight management & diabetes care.",
-    images: ["/images/sanjana_shenoy.png"],
+    images: ["/images/sanjana-shenoy-dietitian.jpg"],
   },
 };
 
@@ -69,9 +69,9 @@ export default async function About() {
       "Consultant dietitian and nutritionist based in Mangalore, specializing in clinical nutrition and personalized diet plans",
     image: {
       "@type": "ImageObject",
-      url: "https://www.sanjanashenoy.in/images/sanjana_shenoy.png",
-      width: "800",
-      height: "800",
+      url: "https://www.sanjanashenoy.in/images/sanjana-shenoy-dietitian.jpg",
+      width: "682",
+      height: "1024",
     },
     address: {
       "@type": "PostalAddress",
@@ -256,10 +256,11 @@ export default async function About() {
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
               <Image
-                src="/images/sanjana_shenoy.png"
-                alt="Sanjana Shenoy"
+                src="/images/sanjana-shenoy-dietitian.jpg"
+                alt="Dt. Sanjana M Shenoy, dietitian and nutritionist in Mangalore"
                 fill
-                className="object-cover"
+                className="object-cover object-[center_22%]"
+                priority
               />
             </div>
           </div>

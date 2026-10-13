@@ -27,8 +27,9 @@ export default function LatestNews() {
     <section className="bg-white py-16">
       <div className="container mx-auto px-4">
         <div className="mb-12 flex flex-col items-center text-center">
-          <h2 className="font-display text-3xl font-medium text-gray-900 md:text-4xl">Latest Workshops & Seminars</h2>
-          <p className="mt-4 max-w-3xl text-xl text-stone-700">
+          <p className="text-sm font-medium text-teal-800">News & Events</p>
+          <h2 className="mt-3 text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl">Latest Workshops & Seminars</h2>
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-stone-700">
             Latest workshops, on diet, nutrition, health education programs, and community events
           </p>
         </div>
@@ -47,15 +48,15 @@ export default function LatestNews() {
                   className="object-cover"
                 />
                 <div className="absolute top-3 right-3">
-                  <span className="bg-teal-800 px-2 py-1 text-xs text-white">
+                  <span className="rounded-full bg-teal-800 px-2.5 py-1 text-xs font-medium capitalize text-white">
                     {event.category}
                   </span>
                 </div>
               </div>
               <div className="pt-5">
                 <time className="text-sm text-stone-600">{event.date}</time>
-                <h3 className="mt-2 text-xl font-medium text-gray-900">{event.title}</h3>
-                <p className="mt-3 line-clamp-2 text-stone-600">{event.description}</p>
+                <h3 className="mt-2 text-lg font-medium leading-6 text-gray-900">{event.title}</h3>
+                <p className="mt-3 line-clamp-2 text-sm leading-6 text-stone-600">{event.description}</p>
               </div>
             </article>
           ))}
