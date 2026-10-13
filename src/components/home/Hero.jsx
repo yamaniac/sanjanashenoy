@@ -90,11 +90,11 @@ export default function Hero() {
               </p>
               <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden">
                 <Image
-                  src="/images/sanjana_shenoy.png"
+                  src="/images/sanjana-shenoy-dietitian.jpg"
                   alt="Dr. Sanjana M Shenoy - Professional Dietitian and Nutritionist in Mangalore specializing in weight management, diabetes, and PCOS"
-                  width={800}
-                  height={800}
-                  className="h-full w-full object-cover"
+                  width={682}
+                  height={1024}
+                  className="h-full w-full object-cover object-[center_22%]"
                   priority
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">

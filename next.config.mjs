@@ -18,7 +18,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: process.env.IMAGE_DOMAIN || 'sanjanashenoy.com',
+        hostname: process.env.IMAGE_DOMAIN || 'sanjanashenoy.in',
         port: '',
         pathname: '/**',
       },

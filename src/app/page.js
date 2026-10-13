@@ -71,16 +71,18 @@ export const generateJsonLd = () => {
           "https://www.instagram.com/dt.sanjanashenoy",
           "https://www.youtube.com/@dietsanjana",
         ],
-        memberOf: {
-          "@type": "Organization",
-          name: "Indian Dietetics Association",
-          url: "https://idaindia.com",
-        },
-        memberOf: {
-          "@type": "Organization",
-          name: "Nutrition Society of India",
-          url: "https://nutritionsocietyindia.com/",
-        },
+        memberOf: [
+          {
+            "@type": "Organization",
+            name: "Indian Dietetic Association",
+            url: "https://idaindia.com",
+          },
+          {
+            "@type": "Organization",
+            name: "Nutrition Society of India",
+            url: "https://nutritionsocietyindia.com/",
+          },
+        ],
       },
       {
         "@type": "LocalBusiness",

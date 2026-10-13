@@ -33,9 +33,6 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code', // Replace with your actual verification code
-  },
   alternates: {
     canonical: '/',
     languages: {
